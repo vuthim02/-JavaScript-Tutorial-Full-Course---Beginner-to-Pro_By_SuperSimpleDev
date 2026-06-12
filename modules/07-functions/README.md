@@ -523,6 +523,25 @@ function getSummary(scores) {
 
 console.log(getSummary([85, 90, 78, 92, 88]));  // Average: 86.60, Grade: B
 ```
+# Summerize
+```js
+function add(num) {}
+const add = function(num) {}
+const add = (num) => {}
+const add = num => {}
+(function(num) {})(34)
+((num) => {})(34)
+new Function(...)
+{
+    add(num) {}
+}
+class A {
+    add(num) {}
+}
+function* add(num) {}
+async function add(num) {}
+const add = async (num) => {}
+```
 
 ## Summary
 

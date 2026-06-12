@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 9 — DOM Manipulation & Events</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 20px; }
+    .box { width: 100px; height: 100px; background: #3498db; margin: 10px; display: inline-block; cursor: pointer; transition: 0.3s; }
+    .box.active { background: #e74c3c; transform: scale(1.1); }
+    .highlight { background: #f1c40f !important; }
+    #message { margin: 10px 0; padding: 10px; border: 1px solid #ccc; min-height: 20px; }
+    #list li { cursor: pointer; padding: 4px; }
+    #list li:hover { background: #eee; }
+  </style>
+</head>
+<body>
+  <h1>Part 9 — DOM Manipulation & Events</h1>
+
+  <section>
+    <h2>1. Selecting & Manipulating Elements</h2>
+    <button id="changeTextBtn">Change Text</button>
+    <p id="targetText">This text will change.</p>
+  </section>
+
+  <section>
+    <h2>2. Creating & Appending Elements</h2>
+    <button id="addBoxBtn">Add Box</button>
+    <div id="boxContainer"></div>
+  </section>
+
+  <section>
+    <h2>3. Event Delegation</h2>
+    <p>Click any item below (event delegation pattern):</p>
+    <ul id="list">
+      <li data-id="1">Item 1</li>
+      <li data-id="2">Item 2</li>
+      <li data-id="3">Item 3</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Form Handling</h2>
+    <form id="sampleForm">
+      <input type="text" id="nameInput" placeholder="Enter your name" />
+      <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+  </section>
+
+  <script>
+    // Wait for DOM to be fully loaded before executing
+    document.addEventListener('DOMContentLoaded', function () {
+      // ---------------------------------------------------------------
+      // 1. Selecting elements
+      // ---------------------------------------------------------------
+      const changeTextBtn = document.getElementById('changeTextBtn');
+      const targetText = document.querySelector('#targetText');
+
+      changeTextBtn.addEventListener('click', function () {
+        targetText.textContent = 'Text was changed at ' + new Date().toLocaleTimeString();
+        targetText.style.color = '#e74c3c';
+      });
+
+      // ---------------------------------------------------------------
+      // 2. Creating & appending elements
+      // ---------------------------------------------------------------
+      const addBoxBtn = document.getElementById('addBoxBtn');
+      const boxContainer = document.getElementById('boxContainer');
+      let boxCount = 0;
+
+      addBoxBtn.addEventListener('click', function () {
+        boxCount++;
+        // Create a new div element
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.textContent = boxCount;
+
+        // Add click event to each box
+        box.addEventListener('click', function () {
+          this.classList.toggle('active');
+        });
+
+        // Append to container
+        boxContainer.appendChild(box);
+      });
+
+      // ---------------------------------------------------------------
+      // 3. Event delegation — one listener on parent
+      // ---------------------------------------------------------------
+      const list = document.getElementById('list');
+
+      list.addEventListener('click', function (event) {
+        // Check if the clicked element is an <li>
+        const li = event.target.closest('li');
+        if (li) {
+          const id = li.getAttribute('data-id');
+          const text = li.textContent;
+          console.log('Delegated click —', { id: id, text: text });
+          li.classList.toggle('highlight');
+        }
+      });
+
+      // ---------------------------------------------------------------
+      // 4. Form handling — prevent default, read values
+      // ---------------------------------------------------------------
+      const sampleForm = document.getElementById('sampleForm');
+      const messageDiv = document.getElementById('message');
+
+      sampleForm.addEventListener('submit', function (event) {
+        // Prevent the browser from reloading the page
+        event.preventDefault();
+
+        const nameInput = document.getElementById('nameInput');
+        const name = nameInput.value.trim();
+
+        if (name === '') {
+          messageDiv.textContent = 'Please enter a name.';
+          messageDiv.style.color = 'red';
+        } else {
+          messageDiv.innerHTML = 'Hello, <strong>' + name + '</strong>!';
+          messageDiv.style.color = 'green';
+          nameInput.value = '';
+        }
+      });
+
+      // ---------------------------------------------------------------
+      // 5. ClassList manipulation
+      // ---------------------------------------------------------------
+      console.log('DOM is ready. ClassList example:');
+      document.querySelectorAll('.box').forEach(function (box) {
+        box.classList.add('active');
+        setTimeout(function () {
+          box.classList.remove('active');
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>

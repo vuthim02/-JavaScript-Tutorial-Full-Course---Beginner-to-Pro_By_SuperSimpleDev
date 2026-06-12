@@ -196,4 +196,5 @@ console.log(10 - '5');       // ?
 
 ## Next Steps
 
-[Proceed to Module 2](../02-numbers-and-math/README.md/): Numbers and Math to learn about mathematical operations in JavaScript.
+[Proceed to Module 2](../02-numbers-and-math/README.md): Numbers and Math to learn about mathematical operations in JavaScript.
+

@@ -1,0 +1,16 @@
+{
+  "name": "part17-testing-example",
+  "version": "1.0.0",
+  "description": "Companion example for Part 17 — Testing with Jest",
+  "main": "sum.js",
+  "scripts": {
+    "test": "jest",
+    "test:verbose": "jest --verbose",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": ["jest", "testing", "unit-test", "javascript", "tutorial"],
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}

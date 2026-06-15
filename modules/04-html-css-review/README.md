@@ -449,7 +449,47 @@ Create a page with a button that changes the background color when clicked.
 </body>
 </html>
 ```
+## How it works
+```mermaid
+flowchart TD
+    A["Page Load"] --> B["index = 0"]
+    B --> C["Button Click"]
+    C --> D["index = (index + 1) mod 5"]
+    D --> E["Get colors[index]"]
+    E --> F["Change Background Color"]
+    F --> G["console.log()"]
+    G --> C
 
+    classDef start fill:#96ceb4,stroke:#333,stroke-width:2px;
+    classDef process fill:#45b7d1,stroke:#333,stroke-width:2px,color:white;
+    classDef action fill:#ff6b6b,stroke:#333,stroke-width:2px,color:white;
+    classDef output fill:#ffeaa7,stroke:#333,stroke-width:2px;
+
+    class A start;
+    class B,C,D,E process;
+    class F action;
+    class G output;
+```
+
+## Notic:
+| Expression | Division              | Remainder | Result |
+| ---------- | --------------------- | --------- | ------ |
+| 1 % 5      | 1 ÷ 5 = 0 remainder 1 | 1         | 1      |
+| 2 % 5      | 2 ÷ 5 = 0 remainder 2 | 2         | 2      |
+| 3 % 5      | 3 ÷ 5 = 0 remainder 3 | 3         | 3      |
+| 4 % 5      | 4 ÷ 5 = 0 remainder 4 | 4         | 4      |
+| 5 % 5      | 5 ÷ 5 = 1 remainder 0 | 0         | 0      |
+| 6 % 5      | 6 ÷ 5 = 1 remainder 1 | 1         | 1      |
+| 7 % 5      | 7 ÷ 5 = 1 remainder 2 | 2         | 2      |
+
+```mermaid
+flowchart LR
+    A[0] --> B[1]
+    B --> C[2]
+    C --> D[3]
+    D --> E[4]
+    E --> A[0]
+```
 ## Summary
 
 - Use VS Code as your code editor with Live Server extension

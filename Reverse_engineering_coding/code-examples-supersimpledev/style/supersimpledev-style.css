@@ -1,0 +1,68 @@
+/*
+  SuperSimpleDev CSS Style Guide
+  ==============================
+  Based on the JavaScript Tutorial Full Course:
+  https://youtu.be/EerdGm-ehJQ
+
+  This file documents the CSS patterns used in the course.
+*/
+
+/* --- 1. Dark Theme (Rock Paper Scissors project) --- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+
+/* --- 2. Buttons with transparent background + border --- */
+.move-button {
+  background-color: transparent;
+  border: 3px solid white;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+/* --- 3. Toggle button (on/off style) --- */
+.toggle-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.is-toggled {
+  background-color: black;
+  color: white;
+}
+
+/* --- 4. Subscribe button (YouTube style) --- */
+.sub-button {
+  background-color: rgb(200, 0, 0);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.sub-button.is-subscribed {
+  background-color: rgb(240, 240, 240);
+  color: black;
+}
+
+/* --- 5. Simple colored buttons --- */
+.red-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.yellow-button {
+  background-color: yellow;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}

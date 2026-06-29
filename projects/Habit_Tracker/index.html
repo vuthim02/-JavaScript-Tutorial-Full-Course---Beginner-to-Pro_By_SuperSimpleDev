@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Habit Tracker</h1>
+
+    <div class="streak-card">
+      <p class="streak-label">Current Streak</p>
+      <p class="streak" id="streak">0 days</p>
+    </div>
+
+    <div class="calendar-header">
+      <button id="prevBtn">&larr;</button>
+      <span id="monthYear"></span>
+      <button id="nextBtn">&rarr;</button>
+    </div>
+
+    <div class="weekdays">
+      <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+      <span>Thu</span><span>Fri</span><span>Sat</span>
+    </div>
+
+    <div class="days" id="days"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

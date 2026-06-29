@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 9: Document Object Model (DOM)</title>
+    <style>
+      button {
+        padding: 10px 20px;
+        margin: 4px;
+        cursor: pointer;
+      }
+      .js-button {
+        background-color: lightblue;
+      }
+      .game-button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="js-button" onclick="
+      console.log('clicked');
+    ">
+      Click me (console.log)
+    </button>
+
+    <button class="js-button" onclick="
+      const button = document.querySelector('.js-button');
+      button.innerHTML = 'Changed!';
+    ">
+      Click me (change text)
+    </button>
+
+    <!-- Toggle button -->
+    <button onclick="
+      const button = document.querySelector('.toggle-button');
+      if (button.classList.contains('is-toggled')) {
+        button.classList.remove('is-toggled');
+        button.innerHTML = 'Off';
+      } else {
+        button.classList.add('is-toggled');
+        button.innerHTML = 'On';
+      }
+    " class="toggle-button game-button">
+      Off
+    </button>
+
+    <style>
+      .is-toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Selecting elements
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+
+      // Getting text
+      console.log(buttonElement.innerHTML);
+      console.log(buttonElement.innerText);
+
+      // Changing text
+      // buttonElement.innerHTML = 'New text';
+
+      // Interacting with CSS classes
+      // buttonElement.classList.add('active');
+      // buttonElement.classList.remove('active');
+      // buttonElement.classList.contains('active');  // true/false
+      // buttonElement.classList.toggle('active');
+
+      // Changing styles
+      // buttonElement.style.backgroundColor = 'green';
+
+      // Creating elements
+      const newButton = document.createElement('button');
+      newButton.innerHTML = 'Created by JS';
+      document.body.appendChild(newButton);
+    </script>
+  </body>
+</html>

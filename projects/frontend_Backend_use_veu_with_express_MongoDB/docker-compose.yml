@@ -1,0 +1,32 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: fullstack-mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+  server:
+    build: ./server
+    container_name: fullstack-server
+    ports:
+      - '5000:5000'
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/fullstack
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRES_IN=7d
+      - NODE_ENV=production
+    depends_on:
+      - mongodb
+
+  client:
+    build: ./client
+    container_name: fullstack-client
+    ports:
+      - '80:80'
+    depends_on:
+      - server
+
+volumes:
+  mongo-data:

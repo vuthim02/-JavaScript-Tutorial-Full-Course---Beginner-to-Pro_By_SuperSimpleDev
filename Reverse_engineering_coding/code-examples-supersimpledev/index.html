@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SuperSimpleDev Style - JavaScript Code Examples</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(25, 25, 25);
+        color: white;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        color: #aaa;
+        margin-bottom: 40px;
+      }
+
+      .lesson-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .lesson-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(40, 40, 40);
+        padding: 16px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: white;
+        transition: background-color 0.15s;
+      }
+
+      .lesson-link:hover {
+        background-color: rgb(60, 60, 60);
+      }
+
+      .lesson-number {
+        color: rgb(0, 150, 255);
+        font-weight: bold;
+        min-width: 120px;
+      }
+
+      .lesson-title {
+        flex: 1;
+        margin-left: 16px;
+      }
+
+      .status {
+        font-size: 13px;
+        padding: 4px 12px;
+        border-radius: 12px;
+      }
+
+      .status-done {
+        background-color: rgb(0, 150, 0);
+        color: white;
+      }
+
+      .status-soon {
+        background-color: rgb(80, 80, 80);
+        color: #aaa;
+      }
+
+      .topic-tracker {
+        margin-top: 60px;
+        padding: 24px;
+        background-color: rgb(35, 35, 35);
+        border-radius: 4px;
+      }
+
+      .topic-tracker h2 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-size: 20px;
+      }
+
+      .topic-tracker table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+
+      .topic-tracker th,
+      .topic-tracker td {
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 1px solid rgb(50, 50, 50);
+      }
+
+      .topic-tracker th {
+        color: rgb(0, 150, 255);
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+      }
+
+      .tag-md { background-color: rgb(100, 100, 200); color: white; }
+      .tag-html { background-color: rgb(200, 100, 0); color: white; }
+      .tag-css { background-color: rgb(0, 100, 200); color: white; }
+      .tag-js { background-color: rgb(200, 180, 0); color: black; }
+
+      .tag-pending { background-color: rgb(60, 60, 60); color: #888; }
+      .tag-done { background-color: rgb(0, 130, 0); color: white; }
+    </style>
+  </head>
+  <body>
+    <h1>SuperSimpleDev Style</h1>
+    <p class="subtitle">
+      JavaScript code examples written in the style of
+      <a href="https://youtu.be/EerdGm-ehJQ" style="color: rgb(0,150,255);">
+        SuperSimpleDev's JavaScript course
+      </a>
+    </p>
+
+    <div class="lesson-grid">
+      <a class="lesson-link" href="lesson-01-js-basics.html">
+        <span class="lesson-number">Lesson 1</span>
+        <span class="lesson-title">JavaScript Basics</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-02-numbers-math.html">
+        <span class="lesson-number">Lesson 2</span>
+        <span class="lesson-title">Numbers and Math</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-03-strings.html">
+        <span class="lesson-number">Lesson 3</span>
+        <span class="lesson-title">Strings</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-04-html-css-review.html">
+        <span class="lesson-number">Lesson 4</span>
+        <span class="lesson-title">HTML CSS Review</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-05-variables.html">
+        <span class="lesson-number">Lesson 5</span>
+        <span class="lesson-title">Variables</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-06-booleans-if.html">
+        <span class="lesson-number">Lesson 6</span>
+        <span class="lesson-title">Booleans and If-Statements</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-07-functions.html">
+        <span class="lesson-number">Lesson 7</span>
+        <span class="lesson-title">Functions</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-08-objects.html">
+        <span class="lesson-number">Lesson 8</span>
+        <span class="lesson-title">Objects</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-09-dom.html">
+        <span class="lesson-number">Lesson 9</span>
+        <span class="lesson-title">Document Object Model (DOM)</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-10-html-css-js-together.html">
+        <span class="lesson-number">Lesson 10</span>
+        <span class="lesson-title">HTML, CSS, and JS Together (Rock Paper Scissors)</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-11-arrays-loops.html">
+        <span class="lesson-number">Lesson 11</span>
+        <span class="lesson-title">Arrays and Loops</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" href="lesson-12-advanced-functions.html">
+        <span class="lesson-number">Lesson 12</span>
+        <span class="lesson-title">Advanced Functions</span>
+        <span class="status status-done">&#10003;</span>
+      </a>
+
+      <a class="lesson-link" style="opacity: 0.5; cursor: default;">
+        <span class="lesson-number">Lesson 13+</span>
+        <span class="lesson-title">Amazon Project, Git, Modules ...</span>
+        <span class="status status-soon">soon</span>
+      </a>
+    </div>
+
+    <div class="topic-tracker">
+      <h2>Topic Tracker</h2>
+      <p style="color: #aaa; font-size: 14px;">
+        Tracks what topics have been covered in the
+        <code style="color: rgb(0,150,255);">Reverse_engineering_coding/</code>
+        directory (markdown docs) vs what's covered in the video course.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Video</th>
+            <th>MD Docs</th>
+            <th>Code Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. JavaScript Basics</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">01-foundations</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>2. Numbers and Math</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">01-foundations</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>3. Strings</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">01-foundations</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>4. HTML CSS Review</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">09-browser-dom</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>5. Variables</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">01-foundations, 02-core-concepts</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>6. Booleans and If-Statements</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">01-foundations, 03-control-flow</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>7. Functions</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">05-functions-closures</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>8. Objects</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">04-arrays-objects</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>9. Document Object Model (DOM)</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">09-browser-dom</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>10. HTML, CSS, JS Together</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">09-browser-dom</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>11. Arrays and Loops</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">04-arrays-objects</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>12. Advanced Functions</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">05-functions-closures</span></td>
+            <td><span class="tag tag-html">done</span></td>
+          </tr>
+          <tr>
+            <td>13. Amazon Project + Git</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">08-modules-build</span></td>
+            <td><span class="tag tag-pending">pending</span></td>
+          </tr>
+          <tr>
+            <td>14. Modules</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">08-modules-build</span></td>
+            <td><span class="tag tag-pending">pending</span></td>
+          </tr>
+          <tr>
+            <td>15. External Libraries</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">08-modules-build</span></td>
+            <td><span class="tag tag-pending">pending</span></td>
+          </tr>
+          <tr>
+            <td>16. Testing</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">17-testing</span></td>
+            <td><span class="tag tag-pending">pending</span></td>
+          </tr>
+          <tr>
+            <td>17. OOP / Classes</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">06-prototypes-classes</span></td>
+            <td><span class="tag tag-pending">pending</span></td>
+          </tr>
+          <tr>
+            <td>18. Backend, Async/Await</td>
+            <td><span class="tag tag-done">done</span></td>
+            <td><span class="tag tag-md">07-async-js</span></td>
+            <td><span class="tag tag-pending">pending</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

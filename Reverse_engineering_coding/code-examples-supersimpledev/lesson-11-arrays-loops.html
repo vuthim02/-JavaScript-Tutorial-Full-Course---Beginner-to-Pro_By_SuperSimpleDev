@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 11: Arrays and Loops</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+      input, button {
+        padding: 6px 12px;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>TODO List</p>
+
+    <input placeholder="Add a todo" class="js-todo-input">
+    <button onclick="addTodo();">Add</button>
+
+    <p class="js-todo-list"></p>
+
+    <script>
+      // Arrays = ordered list of values
+      const array = [1, 2, 3];
+      console.log(array);
+
+      const todoList = ['make dinner', 'wash dishes', 'watch youtube'];
+      console.log(todoList);
+
+      // Access elements by index (starts at 0)
+      console.log(todoList[0]);  // 'make dinner'
+      console.log(todoList[1]);  // 'wash dishes'
+      console.log(todoList[2]);  // 'watch youtube'
+      console.log(todoList.length);  // 3
+
+      // Add to end
+      todoList.push('new todo');
+      console.log(todoList);
+
+      // Remove from end
+      todoList.pop();
+      console.log(todoList);
+
+      // Modify an element
+      todoList[1] = 'wash dishes and put away';
+      console.log(todoList);
+
+      // For loop
+      for (let i = 0; i < todoList.length; i++) {
+        console.log(todoList[i]);
+      }
+
+      // While loop
+      let i = 0;
+      while (i < todoList.length) {
+        console.log(todoList[i]);
+        i++;
+      }
+
+      // forEach loop (modern way)
+      todoList.forEach(function(todo) {
+        console.log(todo);
+      });
+
+      // Arrow function with forEach
+      todoList.forEach((todo, index) => {
+        console.log(`${index}: ${todo}`);
+      });
+
+      // --- Practical: TODO List ---
+      function addTodo() {
+        const inputElement = document.querySelector('.js-todo-input');
+        const name = inputElement.value;
+
+        todoList.push(name);
+        inputElement.value = '';
+
+        renderTodoList();
+      }
+
+      function renderTodoList() {
+        let todoListHTML = '';
+
+        for (let i = 0; i < todoList.length; i++) {
+          const todo = todoList[i];
+          const html = `<p>${todo}</p>`;
+          todoListHTML += html;
+        }
+
+        document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+      }
+
+      renderTodoList();
+    </script>
+  </body>
+</html>

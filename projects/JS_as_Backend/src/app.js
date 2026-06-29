@@ -3,6 +3,8 @@ import cors from 'cors';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import {
   createUser,
   deleteUser,
@@ -17,9 +19,13 @@ dotenv.config();
 const app = express();
 const port = Number(process.env.PORT) || 3000;
 const jwtSecret = process.env.JWT_SECRET || 'change-this-secret';
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(cors());
 app.use(express.json());
+
+const publicDir = path.resolve(currentDir, '../public');
+app.use(express.static(publicDir));
 
 function signToken(user) {
   return jwt.sign(

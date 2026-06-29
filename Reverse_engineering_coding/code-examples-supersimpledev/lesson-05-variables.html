@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 5: Variables</title>
+  </head>
+  <body>
+    <p>Open the Console to see variable examples.</p>
+
+    <script>
+      // let: variable can be changed later
+      let variable1 = 3;
+      console.log(variable1);  // 3
+
+      variable1 = 5;
+      console.log(variable1);  // 5
+
+      variable1 = variable1 + 1;
+      console.log(variable1);  // 6
+
+      // const: variable cannot be changed later
+      const calculation = 2 + 2;
+      console.log(calculation);  // 4
+
+      // calculation = 5;  // ERROR: can't reassign a const
+
+      // Reusing calculation results
+      const result = calculation + 2;
+      console.log(result);  // 6
+
+      // Variables with strings
+      const message = 'hello';
+      console.log(message);  // 'hello'
+
+      // Practical: cart quantity
+      let cartQuantity = 0;
+      console.log(`Cart quantity: ${cartQuantity}`);
+
+      cartQuantity = cartQuantity + 1;
+      console.log(`Cart quantity: ${cartQuantity}`);
+    </script>
+  </body>
+</html>

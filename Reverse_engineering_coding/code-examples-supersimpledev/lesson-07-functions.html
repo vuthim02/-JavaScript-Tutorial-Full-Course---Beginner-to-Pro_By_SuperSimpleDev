@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 7: Functions</title>
+  </head>
+  <body>
+    <p>Open the Console to see function examples.</p>
+
+    <script>
+      // Function = reusable block of code
+      function function1() {
+        console.log('hello');
+        console.log(2 + 2);
+      }
+
+      // Call the function
+      function1();
+      function1();  // runs again
+
+      // Function with parameters
+      function calculateTax(cost, taxPercent = 0.1) {
+        console.log(cost * taxPercent);
+      }
+
+      calculateTax(2000, 0.2);  // 400
+      calculateTax(5000);        // 500 (uses default 0.1)
+
+      // Function that returns a value
+      function double(number) {
+        return number * 2;
+      }
+
+      const result = double(5);
+      console.log(result);  // 10
+
+      // Multiple parameters
+      function calculateTotal(cost, taxPercent) {
+        return cost + (cost * taxPercent);
+      }
+
+      console.log(calculateTotal(100, 0.1));  // 110
+
+      // Practical: convert temperature
+      function toFahrenheit(celsius) {
+        return (celsius * 9/5) + 32;
+      }
+
+      console.log(toFahrenheit(0));   // 32
+      console.log(toFahrenheit(100)); // 212
+
+      // Function vs variable naming: describe what it does
+      // Good: calculateTotal, toFahrenheit, getPrice
+      // Avoid: func, doStuff, calculate
+    </script>
+  </body>
+</html>

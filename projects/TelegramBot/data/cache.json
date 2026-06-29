@@ -1,0 +1,374 @@
+{
+  "lastUpdated": "2026-06-27T18:15:37.597Z",
+  "github": [
+    {
+      "title": "freeCodeCamp/freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "desc": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "author": "",
+      "stars": 450631,
+      "language": "TypeScript",
+      "source": "GitHub"
+    },
+    {
+      "title": "practical-tutorials/project-based-learning",
+      "url": "https://github.com/practical-tutorials/project-based-learning",
+      "desc": "Curated list of project-based tutorials",
+      "author": "",
+      "stars": 271097,
+      "language": "N/A",
+      "source": "GitHub"
+    },
+    {
+      "title": "react/react",
+      "url": "https://github.com/react/react",
+      "desc": "The library for web and native user interfaces.",
+      "author": "",
+      "stars": 246127,
+      "language": "JavaScript",
+      "source": "GitHub"
+    },
+    {
+      "title": "vuejs/vue",
+      "url": "https://github.com/vuejs/vue",
+      "desc": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+      "author": "",
+      "stars": 209954,
+      "language": "TypeScript",
+      "source": "GitHub"
+    },
+    {
+      "title": "trekhleb/javascript-algorithms",
+      "url": "https://github.com/trekhleb/javascript-algorithms",
+      "desc": "📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+      "author": "",
+      "stars": 196144,
+      "language": "JavaScript",
+      "source": "GitHub"
+    }
+  ],
+  "devto": [
+    {
+      "title": "7 New JavaScript Features (And 2 I'm Still Waiting For)",
+      "url": "https://dev.to/sylwia-lask/7-new-javascript-features-and-2-im-still-waiting-for-2ck8",
+      "desc": "Remember how I promised you (or rather myself) two weeks ago that from now on I'd only write light,...",
+      "author": "Sylwia Laskowska",
+      "source": "Dev.to"
+    },
+    {
+      "title": "Choreography of validation: how to make your auth form seamless and usable",
+      "url": "https://dev.to/a-dev/choreography-of-validation-how-to-make-your-auth-form-seamless-and-usable-1dpm",
+      "desc": "You know, for users the best login is no login at all. But we still need one, and the most popular is...",
+      "author": "a-dev",
+      "source": "Dev.to"
+    },
+    {
+      "title": "You Don't Use Linked Lists. But They're Running Half Your Software.",
+      "url": "https://dev.to/islamhafez0/you-dont-use-linked-lists-but-theyre-running-half-your-software-4b37",
+      "desc": "The data structure everyone learns for interviews and forgets by Monday — and why that's...",
+      "author": "Islam Hafez",
+      "source": "Dev.to"
+    },
+    {
+      "title": "The Illusion of Consent: How E-Commerce Cookie Walls Bypass Privacy Laws (And What Actually Fixes It)",
+      "url": "https://dev.to/carlos_lopez_e0907403c1b4/the-illusion-of-consent-how-e-commerce-cookie-walls-bypass-privacy-laws-and-what-actually-fixes-p8f",
+      "desc": "Every time you land on a website, a banner appears. Sometimes it's a thin strip at the bottom....",
+      "author": "carlos lopez",
+      "source": "Dev.to"
+    },
+    {
+      "title": "The 60% Trap: Why E-Commerce Giants Are Laundering Discounts (And How to Protect Yourself)",
+      "url": "https://dev.to/carlos_lopez_e0907403c1b4/the-60-trap-why-e-commerce-giants-are-laundering-discounts-and-how-to-protect-yourself-40p6",
+      "desc": "Last Black Friday I watched someone in my flat buy a pair of headphones because the price tag showed...",
+      "author": "carlos lopez",
+      "source": "Dev.to"
+    }
+  ],
+  "hackernews": [
+    {
+      "title": "Anonymous GitHub account mass-dropping undisclosed 0-days",
+      "url": "https://github.com/bikini/exploitarium",
+      "desc": "301 points | 123 comments",
+      "author": "binyu",
+      "source": "Hacker News"
+    },
+    {
+      "title": "OpenRA",
+      "url": "https://www.openra.net/",
+      "desc": "357 points | 73 comments",
+      "author": "tosh",
+      "source": "Hacker News"
+    },
+    {
+      "title": "DSpark: Speculative decoding accelerates LLM inference [pdf]",
+      "url": "https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf",
+      "desc": "655 points | 249 comments",
+      "author": "aurenvale",
+      "source": "Hacker News"
+    },
+    {
+      "title": "AI Is Designing Radio Chips That Humans Couldn't Even Imagine",
+      "url": "https://spectrum.ieee.org/ai-radio-chip-design",
+      "desc": "26 points | 7 comments",
+      "author": "Brajeshwar",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Suspicious Discontinuities (2020)",
+      "url": "https://danluu.com/discontinuities/",
+      "desc": "127 points | 36 comments",
+      "author": "tosh",
+      "source": "Hacker News"
+    }
+  ],
+  "stackoverflow": [
+    {
+      "title": "How can I remove a specific item from an array in JavaScript?",
+      "url": "https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript",
+      "desc": "⬆ 12256 | 51 answers | 13617721 views",
+      "author": "Walker",
+      "source": "Stack Overflow"
+    },
+    {
+      "title": "How do I check if an element is hidden in jQuery?",
+      "url": "https://stackoverflow.com/questions/178325/how-do-i-check-if-an-element-is-hidden-in-jquery",
+      "desc": "⬆ 8740 | 67 answers | 3265801 views",
+      "author": "Philip Morton",
+      "source": "Stack Overflow"
+    },
+    {
+      "title": "What does &quot;use strict&quot; do in JavaScript, and what is the reasoning behind it?",
+      "url": "https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it",
+      "desc": "⬆ 8544 | 32 answers | 1237479 views",
+      "author": "Mark Rogers",
+      "source": "Stack Overflow"
+    },
+    {
+      "title": "How do I redirect to another webpage?",
+      "url": "https://stackoverflow.com/questions/503093/how-do-i-redirect-to-another-webpage",
+      "desc": "⬆ 7694 | 58 answers | 8179597 views",
+      "author": "venkatachalam",
+      "source": "Stack Overflow"
+    },
+    {
+      "title": "var functionName = function() {} vs function functionName() {}",
+      "url": "https://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname",
+      "desc": "⬆ 7671 | 42 answers | 1245709 views",
+      "author": "Richard Garside",
+      "source": "Stack Overflow"
+    }
+  ],
+  "reddit": [
+    {
+      "title": "freeCodeCamp/freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "desc": "⭐ 450631 trending repos | freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "author": "",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "practical-tutorials/project-based-learning",
+      "url": "https://github.com/practical-tutorials/project-based-learning",
+      "desc": "⭐ 271097 trending repos | Curated list of project-based tutorials",
+      "author": "",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "react/react",
+      "url": "https://github.com/react/react",
+      "desc": "⭐ 246127 trending repos | The library for web and native user interfaces.",
+      "author": "",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "vuejs/vue",
+      "url": "https://github.com/vuejs/vue",
+      "desc": "⭐ 209954 trending repos | This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+      "author": "",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "trekhleb/javascript-algorithms",
+      "url": "https://github.com/trekhleb/javascript-algorithms",
+      "desc": "⭐ 196144 trending repos | 📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+      "author": "",
+      "source": "GitHub Trending"
+    }
+  ],
+  "mdn": [
+    {
+      "title": "JavaScript Guide",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+      "desc": "Complete JS guide",
+      "author": "MDN",
+      "source": "MDN"
+    },
+    {
+      "title": "JS Reference",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference",
+      "desc": "Full JS reference",
+      "author": "MDN",
+      "source": "MDN"
+    },
+    {
+      "title": "DOM Manipulation",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model",
+      "desc": "DOM API docs",
+      "author": "MDN",
+      "source": "MDN"
+    },
+    {
+      "title": "CSS Reference",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference",
+      "desc": "Complete CSS reference",
+      "author": "MDN",
+      "source": "MDN"
+    },
+    {
+      "title": "HTML Elements",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element",
+      "desc": "All HTML elements",
+      "author": "MDN",
+      "source": "MDN"
+    }
+  ],
+  "hashnode": [
+    {
+      "title": "7 New JavaScript Features (And 2 I'm Still Waiting For)",
+      "url": "https://dev.to/sylwia-lask/7-new-javascript-features-and-2-im-still-waiting-for-2ck8",
+      "desc": "Remember how I promised you (or rather myself) two weeks ago that from now on I'd only write light,...",
+      "author": "Sylwia Laskowska",
+      "source": "Hashnode"
+    },
+    {
+      "title": "Choreography of validation: how to make your auth form seamless and usable",
+      "url": "https://dev.to/a-dev/choreography-of-validation-how-to-make-your-auth-form-seamless-and-usable-1dpm",
+      "desc": "You know, for users the best login is no login at all. But we still need one, and the most popular is...",
+      "author": "a-dev",
+      "source": "Hashnode"
+    },
+    {
+      "title": "You Don't Use Linked Lists. But They're Running Half Your Software.",
+      "url": "https://dev.to/islamhafez0/you-dont-use-linked-lists-but-theyre-running-half-your-software-4b37",
+      "desc": "The data structure everyone learns for interviews and forgets by Monday — and why that's...",
+      "author": "Islam Hafez",
+      "source": "Hashnode"
+    },
+    {
+      "title": "The Illusion of Consent: How E-Commerce Cookie Walls Bypass Privacy Laws (And What Actually Fixes It)",
+      "url": "https://dev.to/carlos_lopez_e0907403c1b4/the-illusion-of-consent-how-e-commerce-cookie-walls-bypass-privacy-laws-and-what-actually-fixes-p8f",
+      "desc": "Every time you land on a website, a banner appears. Sometimes it's a thin strip at the bottom....",
+      "author": "carlos lopez",
+      "source": "Hashnode"
+    },
+    {
+      "title": "The 60% Trap: Why E-Commerce Giants Are Laundering Discounts (And How to Protect Yourself)",
+      "url": "https://dev.to/carlos_lopez_e0907403c1b4/the-60-trap-why-e-commerce-giants-are-laundering-discounts-and-how-to-protect-yourself-40p6",
+      "desc": "Last Black Friday I watched someone in my flat buy a pair of headphones because the price tag showed...",
+      "author": "carlos lopez",
+      "source": "Hashnode"
+    }
+  ],
+  "freecodecamp": [
+    {
+      "title": " How to Build a Personal AI Web Research Agent with Ollama and Qwen ",
+      "url": "https://www.freecodecamp.org/news/build-a-personal-ai-web-research-agent-with-ollama-and-qwen/",
+      "desc": "",
+      "author": "freeCodeCamp",
+      "source": "freeCodeCamp"
+    },
+    {
+      "title": " ﻿The Best Cloudflare Tunnel Alternatives – How to Choose the Right Tunneling Solution for Your Use Case ",
+      "url": "https://www.freecodecamp.org/news/how-to-choose-the-right-tunneling-tool/",
+      "desc": "",
+      "author": "freeCodeCamp",
+      "source": "freeCodeCamp"
+    },
+    {
+      "title": " Scaling Your AI Models with Micro-DDP ",
+      "url": "https://www.freecodecamp.org/news/scaling-your-ai-models-with-micro-ddp/",
+      "desc": "",
+      "author": "freeCodeCamp",
+      "source": "freeCodeCamp"
+    },
+    {
+      "title": " Why Computers Can’t Count Money ",
+      "url": "https://www.freecodecamp.org/news/why-computers-can-t-count-money/",
+      "desc": "",
+      "author": "freeCodeCamp",
+      "source": "freeCodeCamp"
+    },
+    {
+      "title": " Build an AI Agent in Telegram with Vercel, Cursor, Composio ",
+      "url": "https://www.freecodecamp.org/news/build-an-ai-agent-in-telegram-with-vercel-cursor-composio/",
+      "desc": "",
+      "author": "freeCodeCamp",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "mit": [
+    {
+      "title": "Introduction to CS",
+      "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/",
+      "desc": "MIT's intro CS course",
+      "author": "MIT",
+      "source": "MIT OCW"
+    },
+    {
+      "title": "Software Construction",
+      "url": "https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/",
+      "desc": "Software design & construction",
+      "author": "MIT",
+      "source": "MIT OCW"
+    },
+    {
+      "title": "Introduction to Algorithms",
+      "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+      "desc": "Core algorithms course",
+      "author": "MIT",
+      "source": "MIT OCW"
+    },
+    {
+      "title": "Mathematics for CS",
+      "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/",
+      "desc": "Discrete math for CS",
+      "author": "MIT",
+      "source": "MIT OCW"
+    },
+    {
+      "title": "Full Stack Development",
+      "url": "https://ocw.mit.edu/courses/6-148-web-development/",
+      "desc": "MIT web development",
+      "author": "MIT",
+      "source": "MIT OCW"
+    }
+  ],
+  "crypto": [
+    {
+      "coin": "Bitcoin",
+      "price": 60433,
+      "change24h": "0.83"
+    },
+    {
+      "coin": "Cardano",
+      "price": 0.146493,
+      "change24h": "-1.23"
+    },
+    {
+      "coin": "Dogecoin",
+      "price": 0.075317,
+      "change24h": "-0.35"
+    },
+    {
+      "coin": "Ethereum",
+      "price": 1589.86,
+      "change24h": "0.75"
+    },
+    {
+      "coin": "Solana",
+      "price": 71.99,
+      "change24h": "-1.17"
+    }
+  ],
+  "lastCryptoUpdate": "2026-06-27T18:15:36.990Z"
+}

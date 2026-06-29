@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "username": "Alice",
+    "email": "alice@test.com",
+    "password": "$2b$12$HQF2BIMKMzQi780OiO1WHuX9W14xltAwoWh.AbEamcZsJgcgG5Ub2",
+    "createdAt": "2026-06-26T16:40:44.280Z"
+  }
+]

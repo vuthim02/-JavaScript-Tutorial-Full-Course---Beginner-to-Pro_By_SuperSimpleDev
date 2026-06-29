@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 3: Strings</title>
+  </head>
+  <body>
+    <p>Open the Console to see string examples.</p>
+
+    <script>
+      // Strings = text
+      console.log('hello');
+
+      // Strings and numbers behave differently
+      console.log('hello' + 'world');   // 'helloworld'
+      console.log('hello ' + 'world');  // 'hello world'
+      console.log('$' + 100 + 50);       // '$10050'
+
+      // Fix with brackets
+      console.log('$' + (100 + 50));     // '$150'
+
+      // Escape characters
+      console.log("I'm learning JavaScript");
+      console.log('I\'m learning JavaScript');  // using backslash
+
+      // Multi-line strings
+      console.log('line 1\nline 2');
+
+      // Template strings (backticks)
+      const item = 'shirt';
+      const price = 10;
+      console.log(`The ${item} costs $${price}`);
+
+      // Multi-line template string
+      console.log(`
+        line 1
+        line 2
+      `);
+    </script>
+  </body>
+</html>

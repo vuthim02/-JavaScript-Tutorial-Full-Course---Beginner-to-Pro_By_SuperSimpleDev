@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  width: 460px;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.streak-card {
+  background: #fff8e1;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.streak-label {
+  font-size: 0.85rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.streak {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f39c12;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #3498db;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.calendar-header button:hover {
+  background: #ebf5fb;
+}
+
+#monthYear {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.weekdays span {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #555;
+  border-radius: 8px;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.day:hover {
+  background: #e9ecef;
+  transform: scale(1.05);
+}
+
+.day.done {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.day.empty {
+  background: none;
+  cursor: default;
+}
+
+.day.empty:hover {
+  transform: none;
+}
+
+.day.today {
+  border: 2px solid #3498db;
+}

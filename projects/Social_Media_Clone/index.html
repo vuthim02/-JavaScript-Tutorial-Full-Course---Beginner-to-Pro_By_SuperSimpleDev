@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="logo">social</span>
+      <div class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" placeholder="Search Social">
+      </div>
+    </div>
+    <div class="nav-center">
+      <div class="nav-tab active" data-tab="home">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      </div>
+      <div class="nav-tab" data-tab="watch">
+        <svg viewBox="0 0 24 24"><path d="M10 8v8l5-4zm9-5H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
+      </div>
+      <div class="nav-tab" data-tab="marketplace">
+        <svg viewBox="0 0 24 24"><path d="M21.9 8.89l-1.05-4.37c-.22-.9-1.01-1.52-1.95-1.52H5.05c-.94 0-1.73.62-1.95 1.52L2.05 8.89c-.03.12-.05.24-.05.36 0 1.09.89 1.96 2 1.96.56 0 1.07-.23 1.44-.6.36.37.88.6 1.44.6.56 0 1.08-.23 1.44-.6.36.37.88.6 1.44.6.56 0 1.08-.23 1.44-.6.36.37.88.6 1.44.6.56 0 1.07-.23 1.44-.6.36.37.88.6 1.44.6.56 0 1.08-.23 1.44-.6.36.37.88.6 1.44.6 1.11 0 2-.87 2-1.96 0-.12-.02-.24-.05-.36zM19 16h-2c0 1.65-1.35 3-3 3s-3-1.35-3-3H5v4h14v-4z"/></svg>
+      </div>
+      <div class="nav-tab" data-tab="groups">
+        <svg viewBox="0 0 24 24"><path d="M12 12.75c1.63 0 3.07.39 4.24.9 1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73 1.17-.52 2.61-.91 4.24-.91zM4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm1.13 1.1c-.37-.06-.74-.1-1.13-.1-.99 0-1.93.21-2.78.58C.48 14.9 0 15.62 0 16.43V18h4.5v-1.61c0-.83.23-1.61.63-2.29zM20 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4 3.43c0-.81-.48-1.53-1.22-1.85-.85-.37-1.79-.58-2.78-.58-.39 0-.76.04-1.13.1.4.68.63 1.46.63 2.29V18H24v-1.57zM12 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="nav-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+      </div>
+      <div class="nav-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      </div>
+      <div class="nav-avatar" id="navAvatar">A</div>
+    </div>
+  </nav>
+
+  <div class="main-layout">
+    <!-- Left Sidebar -->
+    <aside class="left-sidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar">A</div>
+        <span>Alex Johnson</span>
+      </div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Friends</div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg> Groups</div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M21 6h-2v3h-2V6h-2V4h2V1h2v3h2v2zm-10-2v2H3v2h10v2h2V6h2V4h-2V2h-2v2H3v2h8zM3 16v2h18v-2H3zm0 4v2h18v-2H3z"/></svg> Marketplace</div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6v-2zm0 4h8v2H6v-2zm10 0h2v2h-2v-2zm-6-4h8v2h-8v-2z"/></svg> Watch</div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Memories</div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg> Events</div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-shortcuts-title">Your Shortcuts</div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg> Web Dev Community</div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2z"/></svg> Tech Talks</div>
+      <div class="sidebar-item"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> JavaScript Group</div>
+    </aside>
+
+    <!-- Main Feed -->
+    <main class="feed">
+      <!-- Stories -->
+      <div class="stories-row">
+        <div class="story story-create">
+          <div class="story-bg" style="background:#e4e6eb"></div>
+          <div class="story-create-icon">+</div>
+          <div class="story-label">Create Story</div>
+        </div>
+        <div class="story">
+          <div class="story-bg" style="background:linear-gradient(45deg,#f093fb,#f5576c)"></div>
+          <div class="story-avatar">S</div>
+          <div class="story-label">Sarah</div>
+        </div>
+        <div class="story">
+          <div class="story-bg" style="background:linear-gradient(45deg,#4facfe,#00f2fe)"></div>
+          <div class="story-avatar">M</div>
+          <div class="story-label">Mike</div>
+        </div>
+        <div class="story">
+          <div class="story-bg" style="background:linear-gradient(45deg,#43e97b,#38f9d7)"></div>
+          <div class="story-avatar">E</div>
+          <div class="story-label">Emma</div>
+        </div>
+        <div class="story">
+          <div class="story-bg" style="background:linear-gradient(45deg,#fa709a,#fee140)"></div>
+          <div class="story-avatar">J</div>
+          <div class="story-label">James</div>
+        </div>
+      </div>
+
+      <!-- Create Post -->
+      <div class="create-post">
+        <div class="create-post-top">
+          <div class="post-avatar">A</div>
+          <div class="create-post-input" id="createPostInput">What's on your mind, Alex?</div>
+        </div>
+        <div class="create-post-divider"></div>
+        <div class="create-post-actions">
+          <div class="post-action" id="openVideo">
+            <svg viewBox="0 0 24 24" fill="#f02849"><path d="M10 8v8l5-4zm9-5H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+            Live video
+          </div>
+          <div class="post-action" id="openPhoto">
+            <svg viewBox="0 0 24 24" fill="#45bd62"><path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM5 4h14v10.54l-3-3-5 5-3-3-3 3V4z"/></svg>
+            Photo/video
+          </div>
+          <div class="post-action" id="openFeeling">
+            <svg viewBox="0 0 24 24" fill="#f7b928"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+            Feeling/activity
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Modal -->
+      <div class="post-modal-overlay" id="postModalOverlay"></div>
+      <div class="post-modal" id="postModal">
+        <div class="post-modal-header">
+          <h3>Create Post</h3>
+          <button class="post-modal-close" id="postModalClose">&times;</button>
+        </div>
+        <div class="post-modal-body">
+          <div class="post-modal-user">
+            <div class="post-avatar">A</div>
+            <div><strong>Alex Johnson</strong><br><span class="post-privacy">🌐 Public</span></div>
+          </div>
+          <textarea class="post-modal-textarea" id="postTextarea" placeholder="What's on your mind, Alex?" rows="4"></textarea>
+          <div class="post-modal-actions-bar">
+            <span>Add to your post</span>
+            <div class="post-modal-icons">
+              <span title="Photo">🖼️</span>
+              <span title="Tag people">🏷️</span>
+              <span title="Feeling">😊</span>
+              <span title="Location">📍</span>
+              <span title="GIF">🎬</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-modal-footer">
+          <button class="post-btn" id="postSubmitBtn">Post</button>
+        </div>
+      </div>
+
+      <!-- Feed Posts -->
+      <div id="feedPosts"></div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="right-sidebar">
+      <div class="right-title">Sponsored</div>
+      <div class="sponsored-card">
+        <div class="sponsored-img" style="background:linear-gradient(135deg,#667eea,#764ba2)"></div>
+        <div class="sponsored-text">
+          <div class="sponsored-title">Master JavaScript</div>
+          <div class="sponsored-url">codingcourse.com</div>
+        </div>
+      </div>
+      <div class="sponsored-card">
+        <div class="sponsored-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)"></div>
+        <div class="sponsored-text">
+          <div class="sponsored-title">React for Beginners</div>
+          <div class="sponsored-url">reactcourse.io</div>
+        </div>
+      </div>
+
+      <div class="right-divider"></div>
+      <div class="right-title">Birthdays</div>
+      <div class="birthday-item">🎂 <strong>Lisa Wang</strong> and <strong>2 others</strong> have birthdays today.</div>
+
+      <div class="right-divider"></div>
+      <div class="right-title">Contacts</div>
+      <div class="contact-item"><div class="contact-avatar online">S</div> Sarah Chen</div>
+      <div class="contact-item"><div class="contact-avatar online">M</div> Mike Torres</div>
+      <div class="contact-item"><div class="contact-avatar">E</div> Emma Wilson</div>
+      <div class="contact-item"><div class="contact-avatar online">J</div> James Brown</div>
+      <div class="contact-item"><div class="contact-avatar">L</div> Lisa Wang</div>
+      <div class="contact-item"><div class="contact-avatar">D</div> David Kim</div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

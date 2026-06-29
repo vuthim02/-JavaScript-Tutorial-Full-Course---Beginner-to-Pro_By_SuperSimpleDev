@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Character Counter</h1>
+    <textarea id="textarea" maxlength="200" placeholder="Start typing..."></textarea>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="stats">
+      <span id="charCount">0</span> / <span id="maxCount">200</span> characters
+      <span id="remaining">(200 remaining)</span>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

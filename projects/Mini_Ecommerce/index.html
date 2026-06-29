@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Shop</h1>
+      <button class="cart-btn" id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+    </header>
+
+    <div class="products" id="products"></div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart" id="closeCart">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+        <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+
+    <div class="checkout-modal" id="checkoutModal">
+      <div class="checkout-content">
+        <h2>Checkout</h2>
+        <div class="checkout-summary" id="checkoutSummary"></div>
+        <form id="checkoutForm">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="text" placeholder="Address" required>
+          <button type="submit">Place Order</button>
+        </form>
+        <button class="close-checkout" id="closeCheckout">&times;</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

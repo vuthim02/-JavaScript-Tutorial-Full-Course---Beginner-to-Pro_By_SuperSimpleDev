@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS REPL · Backend Playground</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', Consolas, monospace;
+  background: #1e1e2e; color: #cdd6f4; height: 100vh; display: flex; flex-direction: column;
+}
+header {
+  background: #181825; padding: 12px 20px; border-bottom: 1px solid #313244;
+  display: flex; align-items: center; justify-content: space-between;
+}
+header h1 { font-size: 16px; font-weight: 600; color: #cba6f7; }
+header span { font-size: 12px; color: #6c7086; }
+#root { display: flex; flex: 1; overflow: hidden; }
+.panel {
+  flex: 1; display: flex; flex-direction: column; min-width: 0;
+}
+.panel + .panel { border-left: 1px solid #313244; }
+.panel-header {
+  background: #181825; padding: 8px 16px; font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; color: #6c7086;
+  border-bottom: 1px solid #313244; display: flex; justify-content: space-between; align-items: center;
+}
+.panel-header button {
+  background: #313244; border: none; color: #cdd6f4; cursor: pointer;
+  font-family: inherit; font-size: 11px; padding: 4px 12px; border-radius: 4px;
+  transition: background .15s;
+}
+.panel-header button:hover { background: #45475a; }
+textarea {
+  flex: 1; background: #1e1e2e; color: #cdd6f4; border: none; outline: none;
+  font-family: inherit; font-size: 13px; line-height: 1.6; padding: 16px;
+  resize: none; tab-size: 2;
+}
+#output {
+  flex: 1; background: #11111b; overflow-y: auto; padding: 16px;
+  font-size: 13px; line-height: 1.6;
+}
+#output .log { color: #cdd6f4; }
+#output .info { color: #89b4fa; }
+#output .warn { color: #f9e2af; }
+#output .error { color: #f38ba8; }
+#output .result { color: #a6e3a1; }
+#output .divider { border: none; border-top: 1px solid #313244; margin: 8px 0; }
+#toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: #313244; color: #cdd6f4; padding: 8px 20px; border-radius: 6px;
+  font-size: 13px; opacity: 0; transition: opacity .25s; pointer-events: none;
+}
+#toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>◈ JS REPL</h1>
+  <span>Backend: <span id="status">connecting…</span></span>
+</header>
+<div id="root">
+  <div class="panel">
+    <div class="panel-header">
+      <span>code</span>
+      <div>
+        <button id="runBtn">▶ Run</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+    </div>
+    <textarea id="code" spellcheck="false" placeholder="// type JavaScript here and hit Run">// ── helpers ────────────────────────────
+// register(email, password, username)
+// login(email, password)
+// getMe()
+// getUsers()
+// updateUser(id, { username, email })
+// deleteUser(id)
+//
+// The current token is stored in localStorage
+// so you stay logged in across page reloads.
+//
+// Example:
+const res = await register('alice@test.com', 'secret123', 'Alice');
+console.log('Registered:', res);
+
+const me = await getMe();
+console.log('My profile:', me);</textarea>
+  </div>
+  <div class="panel">
+    <div class="panel-header">
+      <span>console output</span>
+      <button id="clearOutputBtn">Clear</button>
+    </div>
+    <div id="output"></div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script>
+// ─── output helpers ──────────────────────
+const output = document.getElementById('output');
+
+function print(type, ...args) {
+  const el = document.createElement('div');
+  el.className = type;
+  el.textContent = args.map(a => typeof a === 'object' ? JSON.stringify(a, null, 2) : String(a)).join(' ');
+  output.appendChild(el);
+  output.scrollTop = output.scrollHeight;
+}
+
+const _origLog = console.log;
+const _origInfo = console.info;
+const _origWarn = console.warn;
+const _origError = console.error;
+
+console.log = (...args) => { print('log', ...args); _origLog(...args); };
+console.info = (...args) => { print('info', ...args); _origInfo(...args); };
+console.warn = (...args) => { print('warn', ...args); _origWarn(...args); };
+console.error = (...args) => { print('error', ...args); _origError(...args); };
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2000);
+}
+
+// ─── API helpers ─────────────────────────
+const BASE = '';
+
+function getToken() { return localStorage.getItem('token'); }
+function setToken(t) { if (t) localStorage.setItem('token', t); else localStorage.removeItem('token'); }
+
+async function api(path, options = {}) {
+  const token = getToken();
+  const headers = { 'Content-Type': 'application/json', ...options.headers };
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  const res = await fetch(`${BASE}${path}`, { ...options, headers });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || `HTTP ${res.status}`);
+  return data;
+}
+
+async function register(email, password, username) {
+  const data = await api('/api/register', {
+    method: 'POST',
+    body: JSON.stringify({ email, password, username }),
+  });
+  setToken(data.token);
+  return data;
+}
+
+async function login(email, password) {
+  const data = await api('/api/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+  });
+  setToken(data.token);
+  return data;
+}
+
+async function getMe() {
+  return api('/api/me');
+}
+
+async function getUsers() {
+  return api('/api/users');
+}
+
+async function updateUser(id, changes) {
+  return api(`/api/users/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify(changes),
+  });
+}
+
+async function deleteUser(id) {
+  return api(`/api/users/${id}`, { method: 'DELETE' });
+}
+
+// ─── run code ────────────────────────────
+const codeArea = document.getElementById('code');
+saveSnippet();
+
+function saveSnippet() {
+  try { localStorage.setItem('snippet', codeArea.value); } catch {}
+}
+
+function loadSnippet() {
+  try {
+    const saved = localStorage.getItem('snippet');
+    if (saved) codeArea.value = saved;
+  } catch {}
+}
+
+loadSnippet();
+
+document.getElementById('runBtn').addEventListener('click', async () => {
+  saveSnippet();
+  const divider = document.createElement('hr');
+  divider.className = 'divider';
+  output.appendChild(divider);
+  try {
+    const result = await eval(`(async () => { ${codeArea.value} })()`);
+    if (result !== undefined) print('result', '=>', result);
+  } catch (err) {
+    print('error', '✖', err.message || String(err));
+  }
+  output.scrollTop = output.scrollHeight;
+});
+
+document.getElementById('clearBtn').addEventListener('click', () => {
+  codeArea.value = '';
+  saveSnippet();
+  codeArea.focus();
+});
+
+document.getElementById('clearOutputBtn').addEventListener('click', () => {
+  output.innerHTML = '';
+});
+
+// CodeMirror-like keyboard shortcut
+codeArea.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    document.getElementById('runBtn').click();
+  }
+});
+
+// ─── health check ────────────────────────
+(async () => {
+  try {
+    const h = await api('/health');
+    document.getElementById('status').textContent = h.status === 'ok' ? 'connected ✓' : 'unknown';
+  } catch {
+    document.getElementById('status').textContent = 'offline ✗';
+  }
+})();
+</script>
+</body>
+</html>

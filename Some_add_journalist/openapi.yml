@@ -1,0 +1,492 @@
+openapi: 3.0.3
+info:
+  title: Todo API
+  description: |
+    A production-grade Todo API built with Express + Prisma + PostgreSQL.
+    Features JWT authentication, pagination, filtering, sorting, and full CRUD.
+  version: 1.0.0
+  contact:
+    name: API Support
+servers:
+  - url: http://localhost:3000
+    description: Development server
+  - url: https://api.mytodoapp.com
+    description: Production server
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        JWT token obtained from POST /api/login.
+        Format: `Authorization: Bearer <token>`
+
+  schemas:
+    # ─── Error ───
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          example: Item not found
+        status:
+          type: integer
+          example: 404
+      required: [error]
+
+    ValidationError:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              msg:
+                type: string
+                example: Name must be 1-200 characters
+              param:
+                type: string
+                example: name
+              location:
+                type: string
+                example: body
+
+    # ─── Item ───
+    Item:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+          example: Buy milk
+        completed:
+          type: boolean
+          default: false
+          example: false
+        userId:
+          type: integer
+          example: 1
+        createdAt:
+          type: string
+          format: date-time
+          example: 2026-06-27T12:00:00Z
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2026-06-27T12:00:00Z
+      required: [id, name, completed, userId, createdAt, updatedAt]
+
+    ItemInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+          example: Buy milk
+        completed:
+          type: boolean
+          default: false
+          example: false
+      required: [name]
+
+    ItemUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+          example: Buy milk (updated)
+        completed:
+          type: boolean
+          example: true
+      minProperties: 1
+
+    PaginatedItems:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+        total:
+          type: integer
+          example: 42
+        page:
+          type: integer
+          example: 1
+        perPage:
+          type: integer
+          example: 20
+        totalPages:
+          type: integer
+          example: 3
+      required: [data, total, page, perPage, totalPages]
+
+    # ─── Auth ───
+    LoginInput:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          example: user@example.com
+        password:
+          type: string
+          format: password
+          example: mypassword123
+      required: [email, password]
+
+    LoginResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIs...
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              example: 1
+            email:
+              type: string
+              example: user@example.com
+      required: [token, user]
+
+    ProfileResponse:
+      type: object
+      properties:
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+            email:
+              type: string
+            name:
+              type: string
+      required: [user]
+
+    # ─── Health ───
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: ok
+        uptime:
+          type: number
+          example: 3600.42
+        db:
+          type: string
+          example: connected
+        memory:
+          type: object
+          properties:
+            used:
+              type: string
+              example: 45.2 MB
+            total:
+              type: string
+              example: 512 MB
+
+paths:
+  # ─── Health ───
+  /api/health:
+    get:
+      summary: Health check
+      description: Returns server status, database connectivity, uptime, and memory usage.
+      tags: [System]
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '503':
+          description: Service degraded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ─── Auth ───
+  /api/login:
+    post:
+      summary: Login
+      description: Authenticate with email and password. Returns a JWT token.
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginInput'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '400':
+          description: Missing or invalid fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: Invalid email or password
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/profile:
+    get:
+      summary: Get current user profile
+      description: Returns the authenticated user's profile.
+      tags: [Auth]
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Profile data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileResponse'
+        '401':
+          description: Missing or invalid token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ─── Items ───
+  /api/items:
+    get:
+      summary: List all items
+      description: |
+        Get paginated list of items for the authenticated user.
+        Supports filtering by completion status, sorting, and pagination.
+      tags: [Items]
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: completed
+          in: query
+          description: Filter by completion status
+          schema:
+            type: string
+            enum: [true, false]
+          example: true
+        - name: sortBy
+          in: query
+          description: Field to sort by
+          schema:
+            type: string
+            default: createdAt
+            enum: [createdAt, name, updatedAt]
+          example: name
+        - name: order
+          in: query
+          description: Sort direction
+          schema:
+            type: string
+            default: desc
+            enum: [asc, desc]
+          example: asc
+        - name: page
+          in: query
+          description: Page number (1-indexed)
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          example: 2
+        - name: perPage
+          in: query
+          description: Items per page (max 100)
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+          example: 10
+        - name: search
+          in: query
+          description: Full-text search on item name
+          schema:
+            type: string
+          example: milk
+      responses:
+        '200':
+          description: Paginated list of items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedItems'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    post:
+      summary: Create item
+      description: Create a new todo item for the authenticated user.
+      tags: [Items]
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItemInput'
+      responses:
+        '201':
+          description: Item created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/items/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: Item ID
+        schema:
+          type: integer
+          minimum: 1
+          example: 5
+
+    get:
+      summary: Get item by ID
+      description: Retrieve a single item by its ID.
+      tags: [Items]
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Item found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    patch:
+      summary: Update item
+      description: Partially update an item (one or more fields).
+      tags: [Items]
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItemUpdate'
+      responses:
+        '200':
+          description: Item updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    delete:
+      summary: Delete item
+      description: Permanently delete an item.
+      tags: [Items]
+      security:
+        - BearerAuth: []
+      responses:
+        '204':
+          description: Item deleted (no body)
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Item not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ─── CSRF ───
+  /api/csrf-token:
+    get:
+      summary: Get CSRF token
+      description: Retrieve a CSRF token for state-changing requests (session-based auth).
+      tags: [Auth]
+      responses:
+        '200':
+          description: CSRF token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  csrfToken:
+                    type: string
+                    example: xyz123abc

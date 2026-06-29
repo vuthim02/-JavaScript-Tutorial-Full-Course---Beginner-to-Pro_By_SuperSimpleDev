@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" x-data="app()">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine + Express Todo</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Alpine + Express Todo</h1>
+
+    <form @submit.prevent="addItem" class="add-form">
+      <input type="text" x-model="newItemName" placeholder="Add a new item..." required>
+      <button type="submit">Add</button>
+    </form>
+
+    <p x-show="loading" class="loading">Loading...</p>
+    <p x-show="error" x-text="error" class="error"></p>
+
+    <ul class="item-list">
+      <template x-for="item in items" :key="item.id">
+        <li class="item" :class="{ completed: item.completed }">
+          <input type="checkbox" :checked="item.completed" @change="toggleItem(item)">
+          <span x-text="item.name" @dblclick="startEdit(item)" class="item-name"></span>
+          <input type="text" x-show="editingId === item.id" x-model="editName"
+                 @keydown.enter="saveEdit(item)" @keydown.escape="cancelEdit"
+                 @blur="saveEdit(item)" class="edit-input">
+          <button @click="deleteItem(item.id)" class="delete-btn">x</button>
+        </li>
+      </template>
+    </ul>
+
+    <p x-show="!loading && items.length === 0" class="empty">No items yet. Add one above!</p>
+  </div>
+</body>
+</html>

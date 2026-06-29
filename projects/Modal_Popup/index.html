@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Popup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="open-btn" id="openBtn">Open Modal</button>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <h2>Modal Title</h2>
+      <button class="close-btn" id="closeBtn">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>This is a modal popup. You can close it by clicking the × button, clicking outside the modal, or pressing the <kbd>Esc</kbd> key.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 12: Advanced Functions</title>
+    <style>
+      body { font-family: Arial; }
+      button { padding: 8px 16px; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <button class="js-button">Click me</button>
+    <p>Open the Console to see advanced function examples.</p>
+
+    <script>
+      // --- Event Listeners (better than onclick) ---
+      const buttonElement = document.querySelector('.js-button');
+
+      buttonElement.addEventListener('click', () => {
+        console.log('click');
+      });
+
+      // --- Functions are values ---
+      const function1 = function() {
+        console.log('hello');
+      };
+      console.log(function1);     // prints the function
+      console.log(typeof function1);  // 'function'
+      function1();
+
+      // Pass function as parameter (callback)
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log('hello4');
+      });
+
+      // --- setTimeout ---
+      setTimeout(function() {
+        console.log('timeout - 3 seconds later');
+      }, 3000);
+
+      // --- setInterval ---
+      // setInterval(function() {
+      //   console.log('interval - every 3 seconds');
+      // }, 3000);
+
+      // --- Arrow functions ---
+      const regularFunction = function(param, param2) {
+        console.log('hello');
+        return 5;
+      };
+
+      const arrowFunction = (param, param2) => {
+        console.log('hello');
+        return 5;
+      };
+      arrowFunction();
+
+      // One parameter = no parentheses needed
+      const oneParam = param => {
+        console.log(param + 1);
+      };
+      oneParam(2);
+
+      // One line = implicit return
+      const oneLine = () => 2 + 3;
+      console.log(oneLine());  // 5
+
+      // --- Array methods with arrow functions ---
+      // filter: keep values that pass the test
+      console.log([1, -3, 5].filter(value => value >= 0));  // [1, 5]
+
+      // map: transform each value
+      console.log([1, 1, 3].map(value => value * 2));  // [2, 2, 6]
+
+      // forEach: do something for each value
+      ['a', 'b', 'c'].forEach((value, index) => {
+        console.log(`${index}: ${value}`);
+      });
+
+      // --- Closures ---
+      function outerFunction() {
+        const message = 'I am from the outer function';
+
+        function innerFunction() {
+          console.log(message);
+        }
+
+        return innerFunction;
+      }
+
+      const myClosure = outerFunction();
+      myClosure();  // 'I am from the outer function'
+    </script>
+  </body>
+</html>

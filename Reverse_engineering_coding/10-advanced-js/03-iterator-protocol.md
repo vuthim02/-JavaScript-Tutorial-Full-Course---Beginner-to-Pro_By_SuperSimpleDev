@@ -1,8 +1,5 @@
 # 03 — Iterator Protocol
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is an Iterator?
 
 An object that provides sequential access to values. It contains a `next()` method that returns:

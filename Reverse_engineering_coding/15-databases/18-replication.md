@@ -1,8 +1,5 @@
 # 18 — Replication: Scaling Reads
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Architecture
 
 ```

@@ -1,8 +1,5 @@
 # 11 — node_modules
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Contains All Dependencies
 
 Can contain thousands of folders.

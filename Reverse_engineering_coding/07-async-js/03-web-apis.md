@@ -1,8 +1,5 @@
 # Web APIs and Node APIs
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Web APIs Provide
 
 The browser provides APIs that run **outside** the JavaScript engine:
@@ -33,6 +30,7 @@ Crypto               → Hashing, encryption
 ```
 
 ## How Web APIs Interact with JS
+<img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1675507275018/ae02135a-6824-4028-9aa8-11d14491db0a.gif" alt="Even loop" width="600px" hieght="300px">
 
 ```
 JS Call Stack

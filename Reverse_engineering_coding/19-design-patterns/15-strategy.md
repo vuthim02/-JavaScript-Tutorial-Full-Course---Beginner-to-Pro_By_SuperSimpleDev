@@ -1,8 +1,5 @@
 # Strategy Pattern
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 An object needs to use different algorithms at different times. Instead of conditional statements (`if`/`switch`), you encapsulate each algorithm and make them interchangeable.

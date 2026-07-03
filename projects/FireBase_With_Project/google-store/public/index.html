@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Store - Modern Shopping</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- AUTH OVERLAY -->
+  <div id="auth-overlay">
+    <div class="auth-bg">
+      <div class="auth-bg-shape shape-1"></div>
+      <div class="auth-bg-shape shape-2"></div>
+      <div class="auth-bg-shape shape-3"></div>
+    </div>
+    <div class="auth-box">
+      <div class="auth-box-inner">
+        <div class="auth-brand">
+          <i class="fas fa-store auth-brand-icon"></i>
+          <span class="auth-brand-text">Google Store</span>
+        </div>
+
+        <div id="auth-login">
+          <h2 class="auth-title">Welcome back</h2>
+          <p class="auth-subtitle">Sign in to your account</p>
+          <div class="input-group">
+            <i class="fas fa-envelope input-icon"></i>
+            <input type="email" id="login-email" placeholder="Email address" autocomplete="email" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock input-icon"></i>
+            <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" />
+          </div>
+          <button id="login-btn" class="btn-primary">Sign In</button>
+          <div class="divider"><span>or continue with</span></div>
+          <button id="google-btn" class="btn-google">
+            <svg viewBox="0 0 48 48" class="google-icon"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 019.5 24c0-1.59.28-3.14.76-4.59l-7.98-6.19A23.99 23.99 0 000 24c0 3.77.87 7.35 2.56 10.56l7.97-6.17z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+            Sign in with Google
+          </button>
+          <p id="auth-error" class="error-msg"></p>
+          <p class="auth-toggle">Don't have an account? <a href="#" id="show-signup">Create one</a></p>
+        </div>
+
+        <div id="auth-signup" class="hidden">
+          <h2 class="auth-title">Create account</h2>
+          <p class="auth-subtitle">Join Google Store today</p>
+          <div class="input-group">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" id="signup-name" placeholder="Full name" autocomplete="name" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope input-icon"></i>
+            <input type="email" id="signup-email" placeholder="Email address" autocomplete="email" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock input-icon"></i>
+            <input type="password" id="signup-password" placeholder="Create a password (6+ chars)" autocomplete="new-password" />
+          </div>
+          <button id="signup-btn" class="btn-primary">Create Account</button>
+          <div class="divider"><span>or continue with</span></div>
+          <button id="google-btn-signup" class="btn-google">
+            <svg viewBox="0 0 48 48" class="google-icon"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 019.5 24c0-1.59.28-3.14.76-4.59l-7.98-6.19A23.99 23.99 0 000 24c0 3.77.87 7.35 2.56 10.56l7.97-6.17z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+            Sign in with Google
+          </button>
+          <p id="signup-error" class="error-msg"></p>
+          <p class="auth-toggle">Already have an account? <a href="#" id="show-login">Sign in</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="hidden">
+    <!-- Top Navbar -->
+    <nav class="top-nav">
+      <div class="nav-left">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-brand" data-page="home">
+          <i class="fas fa-store"></i>
+          <span>google<span class="brand-highlight">store</span></span>
+        </div>
+      </div>
+      <div class="nav-search">
+        <input type="text" id="search-input" placeholder="Search Google Store products..." />
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+      <div class="nav-right">
+        <a href="#" data-page="wishlist" class="nav-item wishlist-nav-item">
+          <div class="cart-icon-wrap">
+            <i class="far fa-heart"></i>
+            <span id="wishlist-count" class="badge hidden">0</span>
+          </div>
+        </a>
+        <div class="nav-item nav-user-wrap">
+          <span class="nav-label">Hello, <span id="nav-user">Sign in</span></span>
+          <span class="nav-sub-label">Account & Lists</span>
+        </div>
+        <a href="#" data-page="orders" class="nav-item">
+          <span class="nav-label">Returns</span>
+          <span class="nav-sub-label">& Orders</span>
+        </a>
+        <a href="#" data-page="cart" class="nav-item cart-link">
+          <div class="cart-icon-wrap">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count" class="badge hidden">0</span>
+          </div>
+          <span class="cart-text">Cart</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Sub Navbar -->
+    <nav class="sub-nav">
+      <div class="sub-nav-inner">
+        <button class="all-btn" id="hamburger2">
+          <i class="fas fa-bars"></i> All
+        </button>
+        <a href="#" data-page="home">Today's Deals</a>
+        <a href="#" data-page="products">All Products</a>
+        <a href="#" data-page="orders">Your Orders</a>
+        <a href="#" data-page="store-locator">Find a Store</a>
+        <a href="#" class="sub-nav-link">Customer Service</a>
+        <a href="#" class="sub-nav-link">Gift Cards</a>
+        <span id="nav-user-sub" class="sub-nav-user"></span>
+        <button id="logout-btn" class="sub-logout">Sign Out</button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden">
+      <div class="mobile-menu-header">
+        <span><i class="fas fa-user-circle"></i> <span id="mobile-user-name">Hello, Sign in</span></span>
+      </div>
+      <div class="mobile-menu-content">
+        <a href="#" data-page="home"><i class="fas fa-home"></i> Home</a>
+        <a href="#" data-page="products"><i class="fas fa-box"></i> Products</a>
+        <a href="#" data-page="wishlist"><i class="fas fa-heart"></i> Wishlist <span id="wishlist-count-mobile" class="badge-mobile hidden">0</span></a>
+        <a href="#" data-page="orders"><i class="fas fa-clipboard-list"></i> Orders</a>
+        <a href="#" data-page="cart"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count-mobile" class="badge-mobile hidden">0</span></a>
+        <a href="#" data-page="profile"><i class="fas fa-user"></i> My Account</a>
+        <a href="#" data-page="store-locator"><i class="fas fa-map-marker-alt"></i> Store Locator</a>
+        <hr />
+        <button id="logout-btn-mobile" class="mobile-logout"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <main id="main-content"></main>
+
+    <!-- Back to Top -->
+    <button id="scroll-top" class="scroll-top hidden" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="#" data-page="about">About Us</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Help</a>
+          <a href="#" data-page="store-locator">Store Locator</a>
+        </div>
+        <p>&copy; 2026 Google Store &mdash; Full Stack E-Commerce</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://accounts.google.com/gsi/client"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="data/products.js"></script>
+  <script src="utils/api.js"></script>
+  <script src="utils/toast.js"></script>
+  <script src="pages/home.js"></script>
+  <script src="pages/products.js"></script>
+  <script src="pages/cart.js"></script>
+  <script src="pages/checkout.js"></script>
+  <script src="pages/orders.js"></script>
+  <script src="pages/wishlist.js"></script>
+  <script src="pages/profile.js"></script>
+  <script src="pages/store-locator.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

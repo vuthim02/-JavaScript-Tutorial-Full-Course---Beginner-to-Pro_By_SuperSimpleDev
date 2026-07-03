@@ -1,8 +1,5 @@
 # Factory Method Pattern
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 Creating objects with `new` hard-codes the class. When the exact type is only known at runtime, or when creation logic is complex or scattered, you centralize it in a factory.

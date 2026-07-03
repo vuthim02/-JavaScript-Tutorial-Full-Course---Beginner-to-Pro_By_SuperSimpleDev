@@ -1,8 +1,5 @@
 # Part 16 — Express.js, Middleware, MVC, Error Handling, Validation, Authentication, Logging, Caching, and Production Backend Engineering
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split chapter files from the original monolithic document.
 
 ## Files
@@ -41,6 +38,14 @@ Split chapter files from the original monolithic document.
 ## Source
 
 Derived from `part16-expressjs-middleware-mvc-error-handling-validation-auth-production-backend.md`
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/16-express.js
+```
 
 ## Next Steps
 

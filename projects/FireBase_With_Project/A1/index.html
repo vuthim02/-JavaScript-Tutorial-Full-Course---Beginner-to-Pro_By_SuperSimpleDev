@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firebase Auth - A1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- SIGNUP FORM -->
+    <div id="signup-form" class="auth-form">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" />
+      <input type="email" id="signup-email" placeholder="Email" />
+      <input type="password" id="signup-password" placeholder="Password (6+ chars)" />
+      <button id="signup-btn">Sign Up</button>
+      <button id="google-btn-signup" class="google-btn">Sign in with Google</button>
+      <p class="toggle">Already have an account? <a href="#" id="go-to-login">Login</a></p>
+      <p id="signup-error" class="error-message"></p>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div id="login-form" class="auth-form hidden">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button id="login-btn">Login</button>
+      <button id="google-btn" class="google-btn">Sign in with Google</button>
+      <p class="toggle">Don't have an account? <a href="#" id="go-to-signup">Sign Up</a></p>
+      <p id="login-error" class="error-message"></p>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="hidden">
+      <h2>Welcome, <span id="user-name">User</span>!</h2>
+      <p>You are logged in with: <span id="user-email"></span></p>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

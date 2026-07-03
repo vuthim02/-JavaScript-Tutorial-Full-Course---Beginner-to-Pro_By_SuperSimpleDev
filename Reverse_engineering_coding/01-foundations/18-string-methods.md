@@ -1,8 +1,5 @@
 # String Methods
 
-<img src="https://media.giphy.com/media/E470LZUmy2Jiw/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Strings Have Built-in Methods
 
 Every string comes with methods you can call to inspect or transform it.

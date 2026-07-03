@@ -1,8 +1,5 @@
 # 09 — Memory Leaks: Globals, Timers & Detached DOM
 
-<img src="https://media.giphy.com/media/NSzHiAwAcazs7dcDr9/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Global Variables
 
 ### The Problem

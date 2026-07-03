@@ -1,8 +1,5 @@
 # Iterating Arrays and Objects: `for...of`, `for...in`, and `for`
 
-<img src="https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## `for...of` — Iterate Array Values (ES2015)
 
 ### Syntax
@@ -233,5 +230,5 @@ for (const n of arr) { /* ... */ }
 | When must I use `for...in`?           | When iterating object property names                |
 ## Next Steps
 
-[Back to Chapter 24](24-object-extra-methods.md): Object Extra Methods: `freeze`, `seal`, `fromEntries`, `hasOwn`
+[Back to Module 6 Chapter 8](../06-prototypes-classes/08-object-static-methods.md): Object Static Methods (`keys`, `values`, `assign`, `groupBy`)
 [Proceed to Module 5](../05-functions-closures/README.md): Functions & Closures to learn about functions and closures in JavaScript.

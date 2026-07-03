@@ -59,5 +59,10 @@ In 1995, every website was a static HTML page. If you submitted a form, the enti
 | Why is it the most used language? | It runs everywhere — browsers, servers, mobile, desktop, IoT |
 ## Next Steps
 
+## Tip
+- How different between thread vs process vs program
+
+<img src="https://media.licdn.com/dms/image/v2/D4D12AQH2WousAWDIdw/article-inline_image-shrink_1500_2232/B4DZZJ4S0_G8AU-/0/1744996232293?e=2147483647&v=beta&t=E4-65iEEcFIRd5uqMpLNdTyu8_r5bpLznZj2tmmayMg" alt="processVSprogramVSthread" width="500px" hieght="1000px">
+
 [Back to Module Overview](README.md)
 [Proceed to Chapter 2](02-javascript-engines.md): JavaScript Engines to learn about javascript engines.

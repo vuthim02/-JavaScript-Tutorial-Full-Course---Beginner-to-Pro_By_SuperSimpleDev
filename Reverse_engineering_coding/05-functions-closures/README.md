@@ -1,8 +1,5 @@
 # 05 — Functions & Closures
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split chapter files from the comprehensive Part 5 guide on JavaScript functions, closures, higher-order functions, execution context, and memory.
 
 ## File Listing (in order)
@@ -30,20 +27,26 @@ Split chapter files from the comprehensive Part 5 guide on JavaScript functions,
 | 19 | [19-generators-basics.md](19-generators-basics.md) | Generator Basics, `yield`, `yield*` |
 | 20 | [20-generators-advanced.md](20-generators-advanced.md) | Advanced Generators, Async Generators |
 | 21 | [21-garbage-collection.md](21-garbage-collection.md) | Garbage Collection, Reachability |
-| 22 | [22-memory-leaks.md](22-memory-leaks.md) | Memory Leaks (6 patterns) |
-| 23 | [23-weakref-finalization.md](23-weakref-finalization.md) | `WeakRef`, `FinalizationRegistry` |
-| 24 | [24-composition-and-pure-functions.md](24-composition-and-pure-functions.md) | Function Composition, Pure Functions |
-| 25 | [25-side-effects-and-checklist.md](25-side-effects-and-checklist.md) | Side Effects, Senior Engineer Checklist |
-| 26 | [26-projects-part1.md](26-projects-part1.md) | Projects 1–3 (Counter, Event Emitter, Pipeline) |
-| 27 | [27-projects-part2.md](27-projects-part2.md) | Projects 4–6 (Lazy Sequence, Smart Cache, State Machine) |
-| 28 | [28-mastery-map-and-next.md](28-mastery-map-and-next.md) | Complete Function Mastery Map, What's Next |
-| 29 | [29-method-shorthand-computed-get-set.md](29-method-shorthand-computed-get-set.md) | Method Shorthand, Computed Properties, Getters & Setters |
-| 30 | [30-error-handling-function-patterns.md](30-error-handling-function-patterns.md) | try/catch/finally, Error Propagation, Custom Errors |
-| 31 | [31-optional-chaining-function-calls.md](31-optional-chaining-function-calls.md) | `?.()` Optional Chaining, `??` Nullish Coalescing |
+| 22 | [23-weakref-finalization.md](23-weakref-finalization.md) | `WeakRef`, `FinalizationRegistry` |
+| 23 | [24-composition-and-pure-functions.md](24-composition-and-pure-functions.md) | Function Composition, Pure Functions |
+| 24 | [25-side-effects-and-checklist.md](25-side-effects-and-checklist.md) | Side Effects, Senior Engineer Checklist |
+| 25 | [26-projects-part1.md](26-projects-part1.md) | Projects 1–3 (Counter, Event Emitter, Pipeline) |
+| 26 | [27-projects-part2.md](27-projects-part2.md) | Projects 4–6 (Lazy Sequence, Smart Cache, State Machine) |
+| 27 | [28-mastery-map-and-next.md](28-mastery-map-and-next.md) | Complete Function Mastery Map, What's Next |
+| 28 | [29-method-shorthand-computed-get-set.md](29-method-shorthand-computed-get-set.md) | Method Shorthand, Computed Properties, Getters & Setters |
+| 29 | [31-optional-chaining-function-calls.md](31-optional-chaining-function-calls.md) | `?.()` Optional Chaining, `??` Nullish Coalescing |
 
 ## Source
 
 Derived from `part5-functions-closures-higher-order-execution-context-memory.md` in the parent directory.
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/05-functions-closures.js
+```
 
 ## Next Steps
 

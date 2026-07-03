@@ -1,8 +1,5 @@
 # 04 — Manual Iterator Usage & for...of Internals
 
-<img src="https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Walking Through an Iterator
 
 ```javascript

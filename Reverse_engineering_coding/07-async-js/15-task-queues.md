@@ -1,8 +1,5 @@
 # Task Queues: Macrotask vs Microtask
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Macrotask Queue (Lower Priority)
 
 One macrotask is processed per event loop iteration.

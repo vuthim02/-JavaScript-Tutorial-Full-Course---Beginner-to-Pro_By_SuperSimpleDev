@@ -1,8 +1,5 @@
 # Callback Functions
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is a Callback?
 
 A **callback** is a function passed to another function to be called at a specific moment.

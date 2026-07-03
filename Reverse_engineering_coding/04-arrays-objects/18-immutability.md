@@ -1,8 +1,5 @@
 # Immutability
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is Immutability?
 
 **Immutability** means never modifying data after creation. Instead of changing an existing object, you create a **new** object with the desired changes.

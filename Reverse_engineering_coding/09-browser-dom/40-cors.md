@@ -1,8 +1,5 @@
 # CORS (Cross-Origin Resource Sharing)
 
-<img src="https://media.giphy.com/media/NSzHiAwAcazs7dcDr9/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Same-Origin Policy
 
 Browsers block JavaScript from making requests to a different origin (protocol + domain + port).

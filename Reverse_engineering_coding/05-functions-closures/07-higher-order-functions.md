@@ -1,6 +1,6 @@
 # Higher-Order Functions
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://static.d-libro.com/01-course-content-images/3000-11-JavaScript-Coding-with-AI/010-main-figures/higher-order-function-id300011050910.webp" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## Definition

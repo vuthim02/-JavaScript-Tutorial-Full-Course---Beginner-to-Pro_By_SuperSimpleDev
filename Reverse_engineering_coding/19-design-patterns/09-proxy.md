@@ -1,8 +1,5 @@
 # Proxy Pattern
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 You need to control access to an object — for lazy initialization, access control, logging, caching, or validation. The Proxy pattern provides a surrogate that controls access to the real object.

@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Type Conversion Playground</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2333;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --green: #3fb950;
+      --red: #f85149;
+      --orange: #d29922;
+      --code-bg: #1c2128;
+      --radius: 8px;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    /* ---- Input ---- */
+    .input-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .input-group input {
+      flex: 1;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .input-group input:focus {
+      border-color: var(--accent);
+    }
+
+    .input-group input::placeholder {
+      color: var(--text-muted);
+      font-family: var(--font);
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface2);
+      color: var(--text);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+
+    .btn:hover { background: #212c42; border-color: var(--text-muted); }
+    .btn:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0d1117;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .btn-success {
+      background: #2ea043;
+      color: #fff;
+      border-color: #2ea043;
+    }
+
+    .btn-success:hover { background: #3fb950; border-color: #3fb950; }
+
+    .btn-danger {
+      background: #da3633;
+      color: #fff;
+      border-color: #da3633;
+    }
+
+    .btn-danger:hover { background: #f85149; border-color: #f85149; }
+
+    .btn-outline-accent {
+      background: transparent;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-outline-accent:hover { background: rgba(88,166,255,0.1); }
+
+    .btn-outline-accent.active {
+      background: var(--accent);
+      color: #0d1117;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    /* ---- Original Value ---- */
+    .original-value {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-family: var(--mono);
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .original-value .label {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: var(--font);
+      font-weight: 600;
+    }
+
+    .original-value .value {
+      color: var(--orange);
+      word-break: break-all;
+    }
+
+    .original-value .value.type-string { color: #a5d6ff; }
+    .original-value .value.type-number { color: #ffa657; }
+    .original-value .value.type-boolean { color: #7ee787; }
+    .original-value .value.type-object { color: #d2a8ff; }
+    .original-value .value.type-undefined { color: #ff7b72; }
+    .original-value .value.type-null { color: #ff7b72; }
+    .original-value .value.type-function { color: #d2a8ff; }
+
+    .original-value .tag {
+      font-size: 0.7rem;
+      background: var(--surface2);
+      padding: 2px 10px;
+      border-radius: 20px;
+      color: var(--text-muted);
+      font-family: var(--font);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ---- Conversion Table ---- */
+    .conv-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .conv-table th {
+      text-align: left;
+      padding: 10px 16px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .conv-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.92rem;
+    }
+
+    .conv-table tr:last-child td { border-bottom: none; }
+    .conv-table tr:hover td { background: rgba(88,166,255,0.04); }
+
+    .conv-table .method {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .conv-table .result {
+      color: var(--orange);
+      word-break: break-all;
+    }
+
+    .conv-table .result.type-string { color: #a5d6ff; }
+    .conv-table .result.type-number { color: #ffa657; }
+    .conv-table .result.type-boolean { color: #7ee787; }
+    .conv-table .result.type-object { color: #d2a8ff; }
+    .conv-table .result.type-undefined { color: #ff7b72; }
+
+    .conv-table .val-type {
+      font-family: var(--font);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ---- Steps ---- */
+    .steps-section { margin-top: 20px; }
+    .steps-section.hidden { display: none; }
+
+    .step-group {
+      margin-bottom: 16px;
+    }
+
+    .step-group-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .step-chain {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-family: var(--mono);
+      font-size: 0.88rem;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+
+    .step-chain .line { white-space: pre; }
+    .step-chain .arrow { color: var(--text-muted); }
+    .step-chain .highlight { color: var(--accent); font-weight: 500; }
+    .step-chain .highlight-val { color: var(--orange); }
+    .step-chain .highlight-str { color: #a5d6ff; }
+    .step-chain .highlight-bool { color: #7ee787; }
+    .step-chain .highlight-null { color: #ff7b72; }
+    .step-chain .indent { padding-left: 24px; }
+    .step-chain .indent2 { padding-left: 48px; }
+    .step-chain .result-line { color: var(--green); font-weight: 500; }
+    .step-chain .branch { color: var(--text-muted); }
+
+    /* ---- Compare ---- */
+    .compare-section { margin-top: 20px; }
+    .compare-section.hidden { display: none; }
+
+    .compare-inputs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .compare-inputs .input-box {
+      flex: 1;
+    }
+
+    .compare-inputs label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .compare-inputs input {
+      width: 100%;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .compare-inputs input:focus { border-color: var(--accent); }
+
+    .compare-results {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      line-height: 2;
+    }
+
+    .compare-results .cmp-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .compare-results .cmp-row .op { color: var(--text-muted); }
+    .compare-results .cmp-true { color: var(--green); font-weight: 600; }
+    .compare-results .cmp-false { color: var(--red); font-weight: 600; }
+    .compare-results .cmp-sep { color: var(--border); }
+
+    .compare-results .reason {
+      color: var(--text-muted);
+      font-family: var(--font);
+      font-size: 0.88rem;
+      margin-top: 4px;
+    }
+
+    .compare-steps { margin-top: 8px; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 640px) {
+      body { padding: 20px 12px; }
+      h1 { font-size: 1.5rem; }
+      .input-group { flex-direction: column; }
+      .toolbar { flex-wrap: wrap; }
+      .compare-inputs { flex-direction: column; }
+      .conv-table th:nth-child(3), .conv-table td:nth-child(3) { display: none; }
+      .card { padding: 16px; }
+    }
+
+    /* ---- Empty state ---- */
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+    }
+
+    .empty-state .icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    .empty-state p { font-size: 0.95rem; }
+    .empty-state .hint { font-size: 0.82rem; margin-top: 6px; }
+
+    .error-shake {
+      animation: shake 0.3s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    /* ---- loading pulse for conversions ---- */
+    .pulse { animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Type Conversion Playground</h1>
+    <p class="subtitle">Enter any JavaScript value and see how it converts into every other type</p>
+
+    <!-- Input -->
+    <div class="card">
+      <div class="card-title">Input</div>
+      <div class="input-group">
+        <input id="inputField" type="text" placeholder='e.g. "123", 42, [], {}, true, null' spellcheck="false" />
+        <button id="convertBtn" class="btn btn-primary">Convert</button>
+      </div>
+      <div class="toolbar">
+        <button id="randomBtn" class="btn btn-success">Random Test</button>
+        <button id="clearBtn" class="btn btn-danger">Clear</button>
+        <button id="compareBtn" class="btn btn-outline-accent">Compare</button>
+        <button id="stepsBtn" class="btn btn-outline-accent">Show Steps</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="resultsContainer">
+      <div class="empty-state" id="emptyState">
+        <div class="icon">&#9889;</div>
+        <p>Enter a value above and click <strong>Convert</strong> to see type conversions</p>
+        <p class="hint">or try <strong>Random Test</strong> for a quick demo</p>
+      </div>
+
+      <div id="resultsContent" class="hidden">
+        <!-- Original Value -->
+        <div class="original-value" id="originalValue">
+          <span class="label">Original</span>
+          <span class="value" id="originalValueDisplay"></span>
+          <span class="tag" id="originalTypeTag"></span>
+        </div>
+
+        <!-- Conversion Table -->
+        <div class="card">
+          <div class="card-title">Conversions</div>
+          <table class="conv-table">
+            <thead>
+              <tr><th>Conversion</th><th>Result</th><th>typeof</th></tr>
+            </thead>
+            <tbody id="convBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Steps (bonus) -->
+        <div class="card steps-section hidden" id="stepsSection">
+          <div id="stepsContent"></div>
+        </div>
+
+        <!-- Compare -->
+        <div class="card compare-section hidden" id="compareSection">
+          <div class="card-title">Compare Mode</div>
+          <div class="compare-inputs">
+            <div class="input-box">
+              <label for="compareA">Value A</label>
+              <input id="compareA" type="text" placeholder='e.g. 0' spellcheck="false" />
+            </div>
+            <div class="input-box">
+              <label for="compareB">Value B</label>
+              <input id="compareB" type="text" placeholder='e.g. false' spellcheck="false" />
+            </div>
+          </div>
+          <button id="compareConvertBtn" class="btn btn-primary" style="margin-bottom:12px;">Compare</button>
+          <div id="compareResultsContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ─── State ──────────────────────────────────────────────────────────────
+    const state = {
+      parsed: undefined,
+      compareMode: false,
+      showSteps: false,
+    };
+
+    // ─── DOM refs ──────────────────────────────────────────────────────────
+    const $ = (s) => document.querySelector(s);
+    const inputField = $('#inputField');
+    const convertBtn = $('#convertBtn');
+    const randomBtn = $('#randomBtn');
+    const clearBtn = $('#clearBtn');
+    const compareBtn = $('#compareBtn');
+    const stepsBtn = $('#stepsBtn');
+    const emptyState = $('#emptyState');
+    const resultsContent = $('#resultsContent');
+    const originalValueDisplay = $('#originalValueDisplay');
+    const originalTypeTag = $('#originalTypeTag');
+    const convBody = $('#convBody');
+    const stepsSection = $('#stepsSection');
+    const stepsContent = $('#stepsContent');
+    const compareSection = $('#compareSection');
+    const compareA = $('#compareA');
+    const compareB = $('#compareB');
+    const compareConvertBtn = $('#compareConvertBtn');
+    const compareResultsContainer = $('#compareResultsContainer');
+
+    // ─── Helpers ──────────────────────────────────────────────────────────
+
+    function parseInput(str) {
+      if (str.trim() === '') return undefined;
+      const trimmed = str.trim();
+
+      // Single-quoted or backtick strings
+      const sq = trimmed.match(/^'(.*)'$/s);
+      if (sq) return sq[1];
+      const bt = trimmed.match(/^`(.*)`$/s);
+      if (bt) return bt[1];
+
+      // Try JSON
+      try { return JSON.parse(trimmed); } catch {}
+
+      // Special values
+      if (trimmed === 'undefined') return undefined;
+      if (trimmed === 'NaN') return NaN;
+      if (trimmed === 'Infinity') return Infinity;
+      if (trimmed === '-Infinity') return -Infinity;
+
+      // Try evaluating as a JS expression (safe — literals only)
+      try {
+        const fn = new Function('return (' + trimmed + ')');
+        const result = fn();
+        if (typeof result !== 'function') return result;
+      } catch {}
+
+      // Fallback: treat as string
+      return trimmed;
+    }
+
+    function formatValue(v) {
+      if (v === undefined) return 'undefined';
+      if (v === null) return 'null';
+      if (typeof v === 'string') return '"' + v + '"';
+      if (typeof v === 'number') {
+        if (Number.isNaN(v)) return 'NaN';
+        if (!isFinite(v)) return v > 0 ? 'Infinity' : '-Infinity';
+        return String(v);
+      }
+      if (typeof v === 'boolean') return v ? 'true' : 'false';
+      if (typeof v === 'object') {
+        try { return JSON.stringify(v); } catch { return String(v); }
+      }
+      return String(v);
+    }
+
+    function formatInline(v) {
+      if (typeof v === 'string') return '"' + v + '"';
+      return formatValue(v);
+    }
+
+    function typeClass(v) {
+      if (v === null) return 'type-null';
+      if (v === undefined) return 'type-undefined';
+      return 'type-' + typeof v;
+    }
+
+    function typeName(v) {
+      if (v === null) return 'null';
+      if (v === undefined) return 'undefined';
+      return typeof v;
+    }
+
+    function isPrimitive(v) {
+      return v === null || v === undefined || typeof v !== 'object';
+    }
+
+    // ─── Random Value Generator ──────────────────────────────────────────
+
+    const randomPool = [
+      { display: '0', val: 0 },
+      { display: '1', val: 1 },
+      { display: '-1', val: -1 },
+      { display: '""', val: '' },
+      { display: '"0"', val: '0' },
+      { display: '"false"', val: 'false' },
+      { display: '[]', val: [] },
+      { display: '{}', val: {} },
+      { display: 'null', val: null },
+      { display: 'undefined', val: undefined },
+      { display: 'NaN', val: NaN },
+      { display: 'Infinity', val: Infinity },
+      { display: 'true', val: true },
+      { display: 'false', val: false },
+    ];
+
+    function getRandomValue() {
+      return randomPool[Math.floor(Math.random() * randomPool.length)];
+    }
+
+    // ─── Conversions ────────────────────────────────────────────────────
+
+    function getConversions(v) {
+      return [
+        { label: 'typeof', value: typeof v },
+        { label: 'Number()', value: Number(v) },
+        { label: 'String()', value: String(v) },
+        { label: 'Boolean()', value: Boolean(v) },
+        { label: 'Unary +', value: +v },
+        { label: 'Double !!', value: !!v },
+        { label: 'parseInt()', value: parseInt(v) },
+        { label: 'parseFloat()', value: parseFloat(v) },
+        { label: 'Is NaN?', value: Number.isNaN(v) },
+      ];
+    }
+
+    // ─── Steps (Bonus) ──────────────────────────────────────────────────
+
+    function traceToPrimitive(v, hint) {
+      const lines = [];
+      const indent = '  ';
+
+      lines.push({ text: `ToPrimitive(${formatValue(v)}, ${hint})`, cls: 'highlight' });
+
+      if (isPrimitive(v)) {
+        lines.push({ text: `${indent}${formatValue(v)} is already primitive`, cls: '' });
+        return { primitive: v, lines };
+      }
+
+      // valueOf
+      let val;
+      try { val = v.valueOf(); } catch { val = v; }
+      const valPrim = isPrimitive(val);
+      lines.push({
+        text: `${indent}${formatValue(v)}.valueOf() → ${formatValue(val)} ${valPrim ? '(primitive)' : '(not primitive)'}`,
+        cls: valPrim ? 'highlight-val' : '',
+      });
+      if (valPrim) {
+        lines.push({ text: `${indent}→ Use ${formatValue(val)}`, cls: 'result-line' });
+        return { primitive: val, lines };
+      }
+
+      // toString
+      let str;
+      try { str = v.toString(); } catch { str = String(v); }
+      const strPrim = isPrimitive(str);
+      lines.push({
+        text: `${indent}${formatValue(v)}.toString() → ${formatValue(str)} ${strPrim ? '(primitive)' : '(not primitive)'}`,
+        cls: strPrim ? 'highlight-val' : '',
+      });
+      if (strPrim) {
+        lines.push({ text: `${indent}→ Use ${formatValue(str)}`, cls: 'result-line' });
+        return { primitive: str, lines };
+      }
+
+      lines.push({ text: `${indent}TypeError: cannot convert to primitive`, cls: 'highlight-null' });
+      throw new TypeError('Cannot convert object to primitive value');
+    }
+
+    function getNumberSteps(v) {
+      const lines = [];
+      const expr = formatValue(v);
+      lines.push({ text: `Number(${expr})`, cls: 'highlight' });
+
+      if (v === null) {
+        lines.push({ text: `  null → 0`, cls: 'arrow' });
+        lines.push({ text: `→ 0`, cls: 'result-line' });
+        return lines;
+      }
+      if (v === undefined) {
+        lines.push({ text: `  undefined → NaN`, cls: 'arrow' });
+        lines.push({ text: `→ NaN`, cls: 'result-line' });
+        return lines;
+      }
+      if (typeof v === 'boolean') {
+        lines.push({ text: `  ${v} → ${Number(v)}`, cls: 'arrow' });
+        lines.push({ text: `→ ${Number(v)}`, cls: 'result-line' });
+        return lines;
+      }
+      if (typeof v === 'number') {
+        lines.push({ text: `  ${expr} is already a number`, cls: '' });
+        lines.push({ text: `→ ${expr}`, cls: 'result-line' });
+        return lines;
+      }
+      if (typeof v === 'string') {
+        const n = Number(v);
+        lines.push({ text: `  Number("${v}") → ${n}`, cls: 'arrow' });
+        lines.push({ text: `→ ${n}`, cls: 'result-line' });
+        return lines;
+      }
+      if (typeof v === 'object' && v !== null) {
+        const { primitive, lines: tpLines } = traceToPrimitive(v, 'number');
+        lines.push(...tpLines.map(l => ({ ...l, text: '  ' + l.text })));
+        const n = Number(primitive);
+        lines.push({ text: `  Number(${formatValue(primitive)}) → ${n}`, cls: 'arrow' });
+        lines.push({ text: `→ ${n}`, cls: 'result-line' });
+        return lines;
+      }
+
+      const n = Number(v);
+      lines.push({ text: `→ ${n}`, cls: 'result-line' });
+      return lines;
+    }
+
+    function getStringSteps(v) {
+      const lines = [];
+      const expr = formatValue(v);
+      lines.push({ text: `String(${expr})`, cls: 'highlight' });
+
+      if (v === null) {
+        lines.push({ text: `  null → "null"`, cls: 'arrow' });
+        lines.push({ text: `→ "null"`, cls: 'result-line' });
+        return lines;
+      }
+      if (v === undefined) {
+        lines.push({ text: `  undefined → "undefined"`, cls: 'arrow' });
+        lines.push({ text: `→ "undefined"`, cls: 'result-line' });
+        return lines;
+      }
+      if (typeof v === 'boolean' || typeof v === 'number') {
+        const s = String(v);
+        lines.push({ text: `  ${expr} → "${s}"`, cls: 'arrow' });
+        lines.push({ text: `→ "${s}"`, cls: 'result-line' });
+        return lines;
+      }
+      if (typeof v === 'string') {
+        lines.push({ text: `  "${v}" is already a string`, cls: '' });
+        lines.push({ text: `→ "${v}"`, cls: 'result-line' });
+        return lines;
+      }
+      if (typeof v === 'object' && v !== null) {
+        const { primitive, lines: tpLines } = traceToPrimitive(v, 'string');
+        lines.push(...tpLines.map(l => ({ ...l, text: '  ' + l.text })));
+        const s = String(primitive);
+        lines.push({ text: `  String(${formatValue(primitive)}) → "${s}"`, cls: 'arrow' });
+        lines.push({ text: `→ "${s}"`, cls: 'result-line' });
+        return lines;
+      }
+
+      const s = String(v);
+      lines.push({ text: `→ "${s}"`, cls: 'result-line' });
+      return lines;
+    }
+
+    function getEqualitySteps(a, b) {
+      const lines = [];
+      const fa = formatValue(a);
+      const fb = formatValue(b);
+
+      lines.push({ text: `${fa} == ${fb}`, cls: 'highlight' });
+
+      let x = a;
+      let y = b;
+
+      while (true) {
+        const tx = typeof x;
+        const ty = typeof y;
+
+        if (tx === ty) {
+          const eq = x === y;
+          lines.push({ text: `  Same type → ${fa} === ${fb} → ${eq}`, cls: eq ? 'result-line' : '' });
+          lines.push({ text: `→ ${eq}`, cls: eq ? 'result-line' : 'highlight-null' });
+          return lines;
+        }
+
+        if ((x === null || x === undefined) && (y === null || y === undefined)) {
+          lines.push({ text: `  null == undefined → true`, cls: 'result-line' });
+          lines.push({ text: `→ true`, cls: 'result-line' });
+          return lines;
+        }
+
+        if (tx === 'number' && ty === 'string') {
+          const ny = Number(y);
+          lines.push({ text: `  String → Number: ${formatValue(y)} → ${ny}`, cls: 'arrow' });
+          y = ny;
+          continue;
+        }
+
+        if (tx === 'string' && ty === 'number') {
+          const nx = Number(x);
+          lines.push({ text: `  String → Number: ${formatValue(x)} → ${nx}`, cls: 'arrow' });
+          x = nx;
+          continue;
+        }
+
+        if (tx === 'boolean') {
+          const nx = Number(x);
+          lines.push({ text: `  Boolean → Number: ${formatValue(x)} → ${nx}`, cls: 'arrow' });
+          x = nx;
+          continue;
+        }
+
+        if (ty === 'boolean') {
+          const ny = Number(y);
+          lines.push({ text: `  Boolean → Number: ${formatValue(y)} → ${ny}`, cls: 'arrow' });
+          y = ny;
+          continue;
+        }
+
+        if ((tx === 'object' || tx === 'function') && x !== null && (ty === 'string' || ty === 'number' || ty === 'symbol' || ty === 'bigint')) {
+          let primitive;
+          try {
+            const result = traceToPrimitive(x, 'default');
+            primitive = result.primitive;
+          } catch {
+            lines.push({ text: `  TypeError: Cannot convert object to primitive`, cls: 'highlight-null' });
+            return lines;
+          }
+          lines.push({ text: `  Object → Primitive: ${formatValue(x)} → ${formatValue(primitive)}`, cls: 'arrow' });
+          x = primitive;
+          continue;
+        }
+
+        if ((ty === 'object' || ty === 'function') && y !== null && (tx === 'string' || tx === 'number' || tx === 'symbol' || tx === 'bigint')) {
+          let primitive;
+          try {
+            const result = traceToPrimitive(y, 'default');
+            primitive = result.primitive;
+          } catch {
+            lines.push({ text: `  TypeError: Cannot convert object to primitive`, cls: 'highlight-null' });
+            return lines;
+          }
+          lines.push({ text: `  Object → Primitive: ${formatValue(y)} → ${formatValue(primitive)}`, cls: 'arrow' });
+          y = primitive;
+          continue;
+        }
+
+        // Fallback
+        const eq = x == y;
+        lines.push({ text: `→ ${eq}`, cls: eq ? 'result-line' : 'highlight-null' });
+        return lines;
+      }
+    }
+
+    function getEqualityReason(a, b) {
+      const ta = typeof a;
+      const tb = typeof b;
+
+      if (ta !== tb) {
+        if (a === null && b === undefined || a === undefined && b === null) {
+          return 'null == undefined is always true';
+        }
+        if (ta === 'boolean') {
+          return `${formatValue(a)} (boolean) is converted to ${Number(a)} (number)`;
+        }
+        if (tb === 'boolean') {
+          return `${formatValue(b)} (boolean) is converted to ${Number(b)} (number)`;
+        }
+        if ((ta === 'string' || ta === 'number') && (tb === 'object' && b !== null)) {
+          return `${formatValue(b)} (object) is converted to a primitive via valueOf()/toString()`;
+        }
+        if ((tb === 'string' || tb === 'number') && (ta === 'object' && a !== null)) {
+          return `${formatValue(a)} (object) is converted to a primitive via valueOf()/toString()`;
+        }
+        if (ta === 'string' && tb === 'number') {
+          return `"${a}" (string) is converted to ${Number(a)} (number)`;
+        }
+        if (ta === 'number' && tb === 'string') {
+          return `"${b}" (string) is converted to ${Number(b)} (number)`;
+        }
+        return `types differ (${ta} vs ${tb}), so type coercion is applied`;
+      }
+      return 'same type, strict comparison';
+    }
+
+    // ─── Render ─────────────────────────────────────────────────────────
+
+    function renderConversions(v) {
+      const convs = getConversions(v);
+      convBody.innerHTML = convs.map(c => {
+        const fv = formatValue(c.value);
+        const tc = typeClass(c.value);
+        const tn = c.label === 'typeof' ? '—' : typeName(c.value);
+        // Special: format typeof result as string
+        const displayVal = c.label === 'typeof' ? `"${c.value}"` : fv;
+        const valClass = c.label === 'typeof' ? 'type-string' : tc;
+        return `<tr>
+          <td class="method">${c.label}</td>
+          <td class="result ${valClass}">${displayVal}</td>
+          <td class="val-type">${tn}</td>
+        </tr>`;
+      }).join('');
+    }
+
+    function renderOriginalValue(v) {
+      const fv = formatValue(v);
+      originalValueDisplay.textContent = fv;
+      originalValueDisplay.className = 'value ' + typeClass(v);
+      originalTypeTag.textContent = typeName(v);
+    }
+
+    function renderSteps(v) {
+      if (!state.showSteps) {
+        stepsSection.classList.add('hidden');
+        return;
+      }
+
+      // Only show steps when input is an object (for educational value)
+      if (typeof v !== 'object' || v === null) {
+        stepsSection.classList.add('hidden');
+        return;
+      }
+
+      stepsSection.classList.remove('hidden');
+
+      let html = '<div class="step-group-title">Number() — Step by Step</div>';
+      const numSteps = getNumberSteps(v);
+      html += '<div class="step-chain">' +
+        numSteps.map(l => `<div class="line ${l.cls}">${l.text}</div>`).join('') +
+        '</div>';
+
+      html += '<div class="step-group-title" style="margin-top:16px;">String() — Step by Step</div>';
+      const strSteps = getStringSteps(v);
+      html += '<div class="step-chain">' +
+        strSteps.map(l => `<div class="line ${l.cls}">${l.text}</div>`).join('') +
+        '</div>';
+
+      stepsContent.innerHTML = html;
+    }
+
+    function renderCompare(a, b) {
+      const seq = a === b;
+      const sseq = Object.is(a, b);
+
+      const eq = a == b;
+
+      let stepsHtml = '';
+      if (state.showSteps) {
+        const eqSteps = getEqualitySteps(a, b);
+        stepsHtml = '<div class="compare-steps"><div class="step-group-title" style="margin-top:12px;">== Steps</div><div class="step-chain">' +
+          eqSteps.map(l => `<div class="line ${l.cls}">${l.text}</div>`).join('') +
+          '</div></div>';
+      }
+
+      const reason = getEqualityReason(a, b);
+
+      compareResultsContainer.innerHTML = `
+        <div class="compare-results">
+          <div class="cmp-row">
+            <span class="op">==</span>
+            <span class="${eq ? 'cmp-true' : 'cmp-false'}">${eq}</span>
+          </div>
+          <div class="cmp-row">
+            <span class="op">===</span>
+            <span class="${seq ? 'cmp-true' : 'cmp-false'}">${seq}</span>
+          </div>
+          <div class="cmp-sep" style="margin:6px 0 2px;">&nbsp;</div>
+          <div class="reason">Reason: ${reason}</div>
+          ${stepsHtml}
+        </div>
+      `;
+    }
+
+    function showEmpty(show) {
+      emptyState.classList.toggle('hidden', !show);
+      resultsContent.classList.toggle('hidden', show);
+    }
+
+    function doConvert(inputStr) {
+      const v = parseInput(inputStr);
+      state.parsed = v;
+      showEmpty(false);
+      renderOriginalValue(v);
+      renderConversions(v);
+      renderSteps(v);
+
+      if (state.compareMode) {
+        compareSection.classList.remove('hidden');
+        doCompare();
+      } else {
+        compareSection.classList.add('hidden');
+      }
+    }
+
+    function doCompare() {
+      const av = parseInput(compareA.value);
+      const bv = parseInput(compareB.value);
+      renderCompare(av, bv);
+    }
+
+    // ─── Event Handlers ────────────────────────────────────────────────
+
+    convertBtn.addEventListener('click', () => {
+      if (!inputField.value.trim()) {
+        inputField.classList.add('error-shake');
+        setTimeout(() => inputField.classList.remove('error-shake'), 300);
+        inputField.focus();
+        return;
+      }
+      doConvert(inputField.value);
+    });
+
+    inputField.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') convertBtn.click();
+    });
+
+    randomBtn.addEventListener('click', () => {
+      const r = getRandomValue();
+      inputField.value = r.display;
+      doConvert(r.display);
+    });
+
+    clearBtn.addEventListener('click', () => {
+      inputField.value = '';
+      state.parsed = undefined;
+      showEmpty(true);
+      compareA.value = '';
+      compareB.value = '';
+      compareResultsContainer.innerHTML = '';
+      compareSection.classList.add('hidden');
+      inputField.focus();
+    });
+
+    compareBtn.addEventListener('click', () => {
+      state.compareMode = !state.compareMode;
+      compareBtn.classList.toggle('active', state.compareMode);
+      if (state.compareMode) {
+        compareSection.classList.remove('hidden');
+        if (state.parsed !== undefined) doCompare();
+      } else {
+        compareSection.classList.add('hidden');
+      }
+    });
+
+    stepsBtn.addEventListener('click', () => {
+      state.showSteps = !state.showSteps;
+      stepsBtn.classList.toggle('active', state.showSteps);
+      if (state.parsed !== undefined) {
+        renderSteps(state.parsed);
+        if (state.compareMode) doCompare();
+      }
+    });
+
+    compareConvertBtn.addEventListener('click', doCompare);
+    compareA.addEventListener('keydown', (e) => { if (e.key === 'Enter') doCompare(); });
+    compareB.addEventListener('keydown', (e) => { if (e.key === 'Enter') doCompare(); });
+
+    // ─── Init with demo value ──────────────────────────────────────────
+
+    // Start with a demo value
+    inputField.value = '"123"';
+    doConvert('"123"');
+  </script>
+</body>
+</html>

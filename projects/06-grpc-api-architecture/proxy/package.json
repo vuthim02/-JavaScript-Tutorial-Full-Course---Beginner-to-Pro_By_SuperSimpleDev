@@ -1,0 +1,9 @@
+{
+  "name": "grpc-load-balancer",
+  "version": "1.0.0",
+  "description": "TCP load balancer for gRPC servers",
+  "main": "proxy.js",
+  "scripts": {
+    "start": "node proxy.js"
+  }
+}

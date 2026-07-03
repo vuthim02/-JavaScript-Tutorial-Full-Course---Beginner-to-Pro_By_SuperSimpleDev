@@ -1,8 +1,5 @@
 # Web Workers — True Parallelism
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Are Web Workers?
 
 Web Workers allow JavaScript to run in **separate threads** — true parallel execution, not just concurrency.

@@ -7,10 +7,11 @@
 
 These combine boolean conditions:
 
+
 | Operator | Name | Example | Result |
 |---|---|---|---|
 | `&&` | AND | `true && false` | `false` |
-| `||` | OR | `true || false` | `true` |
+| `\|\|` | OR | `true \|\| false` | `true` |
 | `!` | NOT | `!true` | `false` |
 
 **AND (`&&`):** Returns `true` only if BOTH sides are true.

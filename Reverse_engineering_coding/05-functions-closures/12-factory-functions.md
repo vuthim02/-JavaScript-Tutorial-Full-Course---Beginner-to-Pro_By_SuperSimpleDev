@@ -1,8 +1,5 @@
 # Factory Functions
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is a Factory Function?
 
 A factory function **creates and returns** a new object without using `class` or `new`.

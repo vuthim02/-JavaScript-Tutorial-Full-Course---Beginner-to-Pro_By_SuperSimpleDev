@@ -1,8 +1,5 @@
 # Part 15 — Databases and Data Engineering
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split chapter files from the main `part15-databases-and-data-engineering.md`.
 
 ## Files
@@ -32,6 +29,14 @@ Split chapter files from the main `part15-databases-and-data-engineering.md`.
 | 21 | [21-migrations.md](21-migrations.md) | Migration files, Prisma migrations, safe practices |
 | 22 | [22-code-review-checklist.md](22-code-review-checklist.md) | Code review questions, senior engineer checklist |
 | 23 | [23-projects.md](23-projects.md) | 12 hands-on database projects |
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/15-databases.js
+```
 
 ## Next Steps
 

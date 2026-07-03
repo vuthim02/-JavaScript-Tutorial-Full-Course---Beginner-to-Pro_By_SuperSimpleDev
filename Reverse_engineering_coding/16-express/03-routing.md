@@ -1,8 +1,5 @@
 # Chapter 3 — Routing
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Basic Routes
 
 ```javascript

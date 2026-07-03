@@ -1,8 +1,5 @@
 # Module Resolution and Path Aliases
 
-<img src="https://media.giphy.com/media/f4ztZcdm9Fi90vL4Zd/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Module Resolution Strategies
 
 TypeScript needs to find the module you import. The `moduleResolution` option in `tsconfig.json` controls this.

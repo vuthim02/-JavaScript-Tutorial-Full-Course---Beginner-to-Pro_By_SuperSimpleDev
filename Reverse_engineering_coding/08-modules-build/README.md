@@ -1,8 +1,5 @@
 # Part 8 — Modules, npm, Bundlers & Build Tools
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split chapter files derived from `part8-modules-npm-bundlers-build-tools.md`.
 
 ## Ecosystem Overview
@@ -102,6 +99,14 @@ Output: static files (HTML, JS, CSS) for browser / server
 | ESM/CJS interop | How to use both module systems together, dual exports |
 | import.meta | Module metadata, resolving assets relative to current file |
 | Module resolution | How Node.js finds modules in node_modules |
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/08-modules-build.js
+```
 
 ## Next Steps
 

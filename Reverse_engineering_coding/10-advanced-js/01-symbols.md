@@ -1,8 +1,5 @@
 # 01 — Symbol
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is a Symbol?
 
 A **unique** and **immutable** primitive value, used as object property keys.

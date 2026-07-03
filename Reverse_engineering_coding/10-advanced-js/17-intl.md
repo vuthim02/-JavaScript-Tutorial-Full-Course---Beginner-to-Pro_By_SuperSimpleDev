@@ -1,8 +1,5 @@
 # 17 — Internationalization API (Intl)
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Number Formatting
 
 ```javascript

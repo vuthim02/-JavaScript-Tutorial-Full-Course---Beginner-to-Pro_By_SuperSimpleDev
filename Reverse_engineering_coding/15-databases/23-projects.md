@@ -1,8 +1,5 @@
 # 23 — Database Projects
 
-<img src="https://media.giphy.com/media/wcgn5fVDjvR7pdvz4C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## 1. Mini SQL Engine
 
 Build a simple in-memory SQL engine in JavaScript.

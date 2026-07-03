@@ -1,8 +1,5 @@
 # State Pattern
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 An object's behavior depends on its internal state. With many states, conditionals become unmanageable. The State pattern delegates behavior to state objects.

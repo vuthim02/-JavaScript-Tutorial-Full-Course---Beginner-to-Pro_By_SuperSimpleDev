@@ -1,8 +1,5 @@
 # Spread Operator (`...`)
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Array Spread
 
 Expands an array into individual elements.

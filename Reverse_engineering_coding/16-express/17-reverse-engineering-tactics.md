@@ -1,7 +1,4 @@
-# Chapter 25 — Reverse Engineering Coding Tactics
-
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
+# Chapter 17 — Reverse Engineering Coding Tactics
 
 When reading Express code like this:
 
@@ -146,5 +143,5 @@ HTTP Request
 | Security? | Input validation, auth, HTTPS, Helmet |
 ## Next Steps
 
-[Back to Chapter 16](16-observability-dependency-injection.md): Chapter 23 — Observability: Logs, Metrics, Traces
-[Proceed to Chapter 18](18-projects-architecture.md): Chapter 26 — Project Ideas to learn about chapter 26 — project ideas.
+[Back to Chapter 16](16-observability-dependency-injection.md): Chapter 16 — Observability: Logs, Metrics, Traces
+[Proceed to Chapter 18](18-projects-architecture.md): Chapter 18 — Project Ideas to learn about chapter 18 — project ideas.

@@ -1,8 +1,5 @@
 # Prototypes & the Prototype Chain
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Constructor Functions (Pre-ES6)
 
 ```javascript
@@ -196,5 +193,5 @@ console.log("toString" in pure); // false
 | Is the prototype chain live? | Yes — modifications visible to existing objects |
 ## Next Steps
 
-[Back to Chapter 3](03-this-binding.md): The `this` Keyword: Binding Rules & call/apply/bind
+[Back to Module 5 Chapter 14](../05-functions-closures/14-this-keyword.md): The `this` Keyword — Rules, Pitfalls & Methods
 [Proceed to Chapter 5](05-classes.md): ES6+ Class Syntax, Inheritance & instanceof to learn about es6+ class syntax, inheritance & instanceof.

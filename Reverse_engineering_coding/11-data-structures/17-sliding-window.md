@@ -1,8 +1,5 @@
 # Sliding Window
 
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Efficient Subarray Problems
 
 The sliding window technique maintains a window (subarray) that slides across the array, avoiding redundant recalculations. It reduces O(n × k) to O(n).

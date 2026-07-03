@@ -1,8 +1,5 @@
 # Part 12 — V8 Engine Internals, Memory Management, JIT, Garbage Collection & Performance
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Chapter Files
 
 | # | File | Topics Covered |
@@ -29,6 +26,14 @@
 | 20 | [20-immutability-object-pooling.md](20-immutability-object-pooling.md) | Immutability benefits, Immer, object pool pattern, GC pressure reduction |
 | 21 | [21-strings-weak-references.md](21-strings-weak-references.md) | String interning, WeakMap vs Map, WeakRef, FinalizationRegistry |
 | 22 | [22-tactical-questions.md](22-tactical-questions.md) | Reverse engineering Q&A, senior process, projects |
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/12-v8-engine.js
+```
 
 ## Next Steps
 

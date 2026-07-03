@@ -1,0 +1,13 @@
+{
+  "name": "rest-api-theories",
+  "version": "1.0.0",
+  "description": "A project demonstrating REST API design principles and theories",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

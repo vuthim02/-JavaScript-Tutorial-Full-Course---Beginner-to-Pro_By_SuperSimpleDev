@@ -1,8 +1,5 @@
 # 11. CORS and HTTPS/TLS
 
-<img src="https://media.giphy.com/media/NSzHiAwAcazs7dcDr9/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Cross-Origin Resource Sharing (CORS)
 
 ### The Same-Origin Policy

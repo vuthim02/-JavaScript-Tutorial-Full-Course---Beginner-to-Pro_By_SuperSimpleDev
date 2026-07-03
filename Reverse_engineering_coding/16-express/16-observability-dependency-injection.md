@@ -1,7 +1,4 @@
-# Chapter 23 — Observability: Logs, Metrics, Traces
-
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
+# Chapter 16 — Observability: Logs, Metrics, Traces
 
 ## Health Check Endpoint
 
@@ -155,5 +152,5 @@ expect(res.json).toHaveBeenCalledWith({ data: [{ id: 1, name: 'Test' }] });
 | Is there loose coupling? | Classes accept dependencies vs instantiating internally |
 ## Next Steps
 
-[Back to Chapter 15](15-testing-documentation.md): Chapter 21 — Testing Express Applications
-[Proceed to Chapter 17](17-reverse-engineering-tactics.md): Chapter 25 — Reverse Engineering Coding Tactics to learn about chapter 25 — reverse engineering coding tactics.
+[Back to Chapter 15](15-testing-documentation.md): Chapter 15 — Testing Express Applications
+[Proceed to Chapter 17](17-reverse-engineering-tactics.md): Chapter 17 — Reverse Engineering Coding Tactics to learn about chapter 17 — reverse engineering coding tactics.

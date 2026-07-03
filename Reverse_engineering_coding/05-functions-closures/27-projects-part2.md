@@ -1,8 +1,5 @@
 # Projects — Part 2
 
-<img src="https://media.giphy.com/media/wcgn5fVDjvR7pdvz4C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Project 4 — Infinite Lazy Sequence (Generators)
 
 ```javascript

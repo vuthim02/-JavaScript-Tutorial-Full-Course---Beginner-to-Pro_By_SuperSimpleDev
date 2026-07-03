@@ -1,8 +1,5 @@
 # Chapter 5 — Controller → Service → Repository
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Senior engineers organize code into clear layers.
 
 ## The Layers

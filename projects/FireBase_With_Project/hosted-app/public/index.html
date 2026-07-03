@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My App - Firebase Full Stack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- AUTH OVERLAY -->
+  <div id="auth-overlay">
+    <div class="auth-box">
+      <div id="auth-login">
+        <h2>Welcome</h2>
+        <p class="subtitle">Sign in to continue</p>
+        <input type="email" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button id="login-btn">Login</button>
+        <button id="google-btn" class="google-btn">Sign in with Google</button>
+        <p id="auth-error" class="error-message"></p>
+        <p class="toggle">No account? <a href="#" id="show-signup">Sign Up</a></p>
+      </div>
+      <div id="auth-signup" class="hidden">
+        <h2>Create Account</h2>
+        <input type="text" id="signup-name" placeholder="Full Name" />
+        <input type="email" id="signup-email" placeholder="Email" />
+        <input type="password" id="signup-password" placeholder="Password (6+ chars)" />
+        <button id="signup-btn">Sign Up</button>
+        <p id="signup-error" class="error-message"></p>
+        <p class="toggle">Have an account? <a href="#" id="show-login">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="hidden">
+    <nav>
+      <div class="nav-brand">📱 My App</div>
+      <div class="nav-links">
+        <button class="tab-btn active" data-tab="notes">📝 Notes</button>
+        <button class="tab-btn" data-tab="gallery">📸 Gallery</button>
+        <button id="nav-logout" class="logout-btn">Logout</button>
+      </div>
+      <span id="nav-user" class="nav-user"></span>
+    </nav>
+
+    <main>
+      <!-- NOTES TAB -->
+      <section id="tab-notes" class="tab-content">
+        <div class="card">
+          <h3>My Notes</h3>
+          <div class="add-note">
+            <input type="text" id="note-input" placeholder="Write a note..." />
+            <button id="add-btn">Add</button>
+          </div>
+          <div id="notes-list"></div>
+        </div>
+      </section>
+
+      <!-- GALLERY TAB -->
+      <section id="tab-gallery" class="tab-content hidden">
+        <div class="card">
+          <h3>My Gallery</h3>
+          <div class="upload-area" id="upload-area">
+            <p class="upload-icon">📁</p>
+            <p>Click or drop an image</p>
+            <p class="hint">Max 5MB · JPG, PNG, GIF</p>
+            <input type="file" id="file-input" accept="image/*" hidden />
+            <div id="upload-progress" class="hidden">
+              <div class="bar"><div class="fill" id="progress-fill"></div></div>
+              <p id="progress-text">0%</p>
+            </div>
+          </div>
+          <div id="gallery-grid"></div>
+          <p id="empty-gallery" class="empty-state hidden">No images yet.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,8 +1,5 @@
 # Chapter 5 — Vitest
 
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Why Vitest
 
 Vitest is the modern alternative to Jest with:

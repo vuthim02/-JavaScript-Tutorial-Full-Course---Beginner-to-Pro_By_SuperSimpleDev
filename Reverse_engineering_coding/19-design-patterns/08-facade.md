@@ -1,8 +1,5 @@
 # Facade Pattern
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 A complex subsystem with many classes and interactions is hard to use. A *facade* provides a simple, unified interface to the subsystem.

@@ -1,8 +1,5 @@
 # Browser Object Model (BOM)
 
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is BOM?
 
 The BOM represents the browser itself — not the document. It provides objects for interacting with the browser window, navigation, screen, and more.

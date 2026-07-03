@@ -1,6 +1,6 @@
 # The Call Stack
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://raw.githubusercontent.com/fornonecs/advanced-javascript/main/event-loop/gifs/CallStack.gif" alt="Animated GIF" style="width:600px; height:400px;">
 
 
 ## What is the Call Stack?

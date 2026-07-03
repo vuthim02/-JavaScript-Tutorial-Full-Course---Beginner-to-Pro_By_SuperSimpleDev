@@ -1,8 +1,5 @@
 # Input and Output, Statements, and Comments
 
-<img src="https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Statements
 
 A **statement** is a single instruction in JavaScript. Think of it like a sentence — it tells the computer to do one thing.
@@ -143,5 +140,5 @@ rl.question("What is your name? ", (answer) => {
 | Why would someone log it? | To debug or inspect its value |
 ## Next Steps
 
-[Back to Chapter 11](11-type-conversion.md): Type Conversion
+[Back to Module 2 Chapter 7](../02-core-concepts/07-type-coercion-and-conversion.md): Type Coercion and Explicit Conversion
 [Proceed to Chapter 13](13-beginner-projects.md): Beginner Projects to learn about beginner projects.

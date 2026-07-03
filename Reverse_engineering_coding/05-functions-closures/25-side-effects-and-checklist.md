@@ -1,8 +1,5 @@
 # Side Effects
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is a Side Effect?
 
 Any observable interaction with the **outside world** — anything beyond computing a return value.

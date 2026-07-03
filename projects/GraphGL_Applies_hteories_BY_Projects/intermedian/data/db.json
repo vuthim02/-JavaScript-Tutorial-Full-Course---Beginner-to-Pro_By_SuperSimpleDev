@@ -1,0 +1,125 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "email": "alice@example.com",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Bob",
+      "email": "bob@example.com",
+      "createdAt": "2025-01-02T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Charlie",
+      "email": "charlie@example.com",
+      "createdAt": "2025-01-03T00:00:00Z"
+    },
+    {
+      "id": "1782873495948",
+      "name": "Diana",
+      "email": "diana@test.com",
+      "createdAt": "2026-07-01T02:38:15.948Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Website Redesign",
+      "description": "Redesign the company website",
+      "ownerId": "1",
+      "memberIds": [
+        "1",
+        "2"
+      ],
+      "createdAt": "2025-02-01T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Mobile App",
+      "description": "Build the React Native app",
+      "ownerId": "2",
+      "memberIds": [
+        "2",
+        "3"
+      ],
+      "createdAt": "2025-02-15T00:00:00Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Design homepage mockups",
+      "description": "Create Figma mockups for the landing page",
+      "status": "DONE",
+      "priority": "HIGH",
+      "assigneeId": "1",
+      "projectId": "1",
+      "dueDate": "2025-05-01",
+      "createdAt": "2025-03-01T00:00:00Z",
+      "updatedAt": "2026-07-01T02:38:15.694Z"
+    },
+    {
+      "id": "2",
+      "title": "Set up CI/CD",
+      "description": "Configure GitHub Actions",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "assigneeId": "2",
+      "projectId": "1",
+      "dueDate": null,
+      "createdAt": "2025-03-05T00:00:00Z",
+      "updatedAt": "2025-03-05T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "API integration",
+      "description": "Connect to backend API",
+      "status": "DONE",
+      "priority": "CRITICAL",
+      "assigneeId": "3",
+      "projectId": "2",
+      "dueDate": "2025-04-15",
+      "createdAt": "2025-03-01T00:00:00Z",
+      "updatedAt": "2025-04-10T00:00:00Z"
+    },
+    {
+      "id": "1782873495617",
+      "title": "Test GraphQL",
+      "description": "Testing subscriptions",
+      "status": "TODO",
+      "priority": "HIGH",
+      "dueDate": null,
+      "assigneeId": "1",
+      "projectId": "1",
+      "createdAt": "2026-07-01T02:38:15.617Z",
+      "updatedAt": "2026-07-01T02:38:15.617Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "content": "Looks great! Can we add animations?",
+      "authorId": "2",
+      "taskId": "1",
+      "createdAt": "2025-03-11T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "content": "Sure, I will add them in v2.",
+      "authorId": "1",
+      "taskId": "1",
+      "createdAt": "2025-03-12T00:00:00Z"
+    },
+    {
+      "id": "1782873495779",
+      "content": "New comment!",
+      "authorId": "1",
+      "taskId": "1",
+      "createdAt": "2026-07-01T02:38:15.779Z"
+    }
+  ]
+}

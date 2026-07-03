@@ -1,8 +1,5 @@
 # Projects — Applying Control Flow, Recursion, and Error Handling
 
-<img src="https://media.giphy.com/media/wcgn5fVDjvR7pdvz4C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Project 1: Multiplication Table Generator
 
 ```javascript

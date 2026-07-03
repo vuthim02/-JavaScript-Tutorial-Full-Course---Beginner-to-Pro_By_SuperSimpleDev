@@ -1,8 +1,5 @@
 # 13 — Inline Caching (IC)
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Problem
 
 ```javascript

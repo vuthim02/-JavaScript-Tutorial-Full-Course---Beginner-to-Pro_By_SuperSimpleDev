@@ -1,8 +1,5 @@
 # What Is TypeScript?
 
-<img src="https://media.giphy.com/media/f4ztZcdm9Fi90vL4Zd/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 TypeScript is a **typed superset of JavaScript** developed by Microsoft (2012). It adds static type checking, enhanced tooling, modern ECMAScript features compiled to older JS, and types as living documentation.
 
 ## Compilation vs Transpilation

@@ -1,8 +1,5 @@
 # 06 — References
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Reference Semantics
 
 JavaScript is **pass-by-reference** for objects (not pass-by-value).

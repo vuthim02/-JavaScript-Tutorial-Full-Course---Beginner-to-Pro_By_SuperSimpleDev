@@ -1,8 +1,5 @@
 # 19 — Transpilers
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Convert Modern Code to Older JavaScript
 
 Modern:

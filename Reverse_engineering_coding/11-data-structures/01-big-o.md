@@ -1,8 +1,5 @@
 # Big O: Time and Space Complexity
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Measuring Growth, Not Speed
 
 Without Big O, processing 10 elements might seem fast — but 10 million elements may become extremely slow. Big O measures **growth rate** — how time or space increases as input size grows.

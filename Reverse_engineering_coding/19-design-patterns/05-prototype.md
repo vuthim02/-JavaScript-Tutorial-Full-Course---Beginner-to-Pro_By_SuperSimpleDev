@@ -1,8 +1,5 @@
 # Prototype Pattern
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 Creating objects from scratch is expensive. Cloning an existing object (a *prototype*) is faster and preserves the original's state.

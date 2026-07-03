@@ -1,8 +1,5 @@
 # Optional Chaining (?.) and Nullish Coalescing (??)
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Problem — Safely Accessing Deeply Nested Properties
 
 Without optional chaining, accessing nested properties requires verbose checks:
@@ -139,5 +136,5 @@ function greet(user) {
 | Could optional chaining hide bugs? | Overusing `?.` might silently swallow unexpected nulls — use intentionally |
 ## Next Steps
 
-[Back to Chapter 8](08-operators.md): Operators Deep Dive
+[Back to Module 1 Chapter 7](../01-foundations/07-arithmetic-operators.md): Arithmetic Operators
 [Proceed to Chapter 10](10-comments-and-naming.md): Comments and Naming Conventions to learn about comments and naming conventions.

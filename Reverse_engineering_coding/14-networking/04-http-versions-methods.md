@@ -1,8 +1,5 @@
 # 4. HTTP Protocol Versions and Methods
 
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is HTTP?
 
 **HyperText Transfer Protocol**. Runs on top of TCP (usually port 80) or TLS (port 443).

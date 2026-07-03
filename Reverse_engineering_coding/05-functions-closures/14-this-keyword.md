@@ -1,8 +1,5 @@
 # `this` Keyword — All 5 Contexts
 
-<img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Rule: `this` is Determined by HOW the Function Is Called
 
 There are exactly 5 rules, in priority order:

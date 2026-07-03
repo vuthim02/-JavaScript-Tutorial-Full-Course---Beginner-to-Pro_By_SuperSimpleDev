@@ -1,8 +1,5 @@
 # Module Pattern
 
-<img src="https://media.giphy.com/media/f4ztZcdm9Fi90vL4Zd/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 JavaScript before ES modules had no built-in encapsulation. Variables leaked globally. The Module pattern uses closures to create private state and expose a controlled public API.

@@ -1,8 +1,5 @@
 # Prefix Sum
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Fast Range Queries
 
 Prefix sum builds an array where `prefix[i]` is the sum of elements `arr[0..i-1]`. This enables O(1) range sum queries after O(n) build time.

@@ -1,0 +1,12 @@
+{
+  "name": "full-api-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:s1": "cd server && node src/index.js",
+    "start:s2": "cd server && PORT=3002 node src/index.js",
+    "start:s3": "cd server && PORT=3003 node src/index.js",
+    "start:lb": "cd proxy && node proxy.js",
+    "start": "npm run start:s1 & npm run start:s2 & npm run start:s3 & sleep 3 && npm run start:lb"
+  }
+}

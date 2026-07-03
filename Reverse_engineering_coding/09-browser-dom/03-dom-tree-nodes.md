@@ -1,8 +1,5 @@
 # DOM (Document Object Model)
 
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is the DOM?
 
 DOM = Document Object Model. A tree representation of the HTML document.

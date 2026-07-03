@@ -1,8 +1,5 @@
 # Fetch API
 
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is Fetch?
 
 A browser API for making HTTP requests. It returns a **Promise**.
@@ -92,7 +89,27 @@ const response = await fetch(url, {
 });
 ```
 
-## Aborting a Fetch Request (AbortController)
+## Aborting a Fetch Request
+
+### Modern approach: `AbortSignal.timeout()`
+
+For simple timeouts, pass `AbortSignal.timeout(ms)` directly — no `AbortController` or `setTimeout` needed:
+
+```javascript
+try {
+    const response = await fetch("/large-file", {
+        signal: AbortSignal.timeout(3000),
+    });
+} catch (err) {
+    if (err.name === "AbortError") {
+        console.log("Request timed out");
+    }
+}
+```
+
+### Manual control: `AbortController`
+
+Use `AbortController` when you need to abort from multiple sources (user cancel + timeout + navigation):
 
 ```javascript
 const controller = new AbortController();

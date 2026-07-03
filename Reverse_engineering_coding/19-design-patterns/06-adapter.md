@@ -1,8 +1,5 @@
 # Adapter Pattern
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 Two parts of a system expect different interfaces. Instead of modifying either one, you write an *adapter* that translates calls from one interface to the other.

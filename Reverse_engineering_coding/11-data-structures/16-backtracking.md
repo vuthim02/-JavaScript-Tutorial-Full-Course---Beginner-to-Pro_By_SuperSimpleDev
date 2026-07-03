@@ -1,8 +1,5 @@
 # Backtracking
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Explore, Undo, Try Again
 
 Backtracking incrementally builds candidates and abandons them (backtracks) as soon as it determines they cannot lead to a valid solution. It is a systematic way to try all possibilities.

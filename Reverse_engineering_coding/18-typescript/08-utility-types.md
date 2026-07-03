@@ -1,8 +1,5 @@
 # Utility Types
 
-<img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 TypeScript provides built-in utility types that solve common type transformations.
 
 ## Partial\<T\>

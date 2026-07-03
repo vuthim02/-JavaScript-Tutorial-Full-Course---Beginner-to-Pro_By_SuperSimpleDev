@@ -1,8 +1,5 @@
 # Mediator Pattern
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 When many components communicate directly, they become tightly coupled — a "spaghetti" of references. A *mediator* centralizes communication so components interact only with the mediator, not with each other.

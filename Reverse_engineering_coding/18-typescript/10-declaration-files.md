@@ -1,8 +1,5 @@
 # Declaration Files and DefinitelyTyped
 
-<img src="https://media.giphy.com/media/f4ztZcdm9Fi90vL4Zd/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Are `.d.ts` Files?
 
 Declaration files (`.d.ts`) describe the shape of JavaScript modules to TypeScript. They contain **only types** — no implementation.

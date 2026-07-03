@@ -1,8 +1,5 @@
 # 30 — Module Resolution Algorithm
 
-<img src="https://media.giphy.com/media/f4ztZcdm9Fi90vL4Zd/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## How Node.js Finds Modules
 
 When you write `require("lodash")` or `import "lodash"`, Node.js follows a specific algorithm to find the file.

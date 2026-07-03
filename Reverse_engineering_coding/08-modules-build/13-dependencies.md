@@ -1,8 +1,5 @@
 # 13 — Dependencies
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Production Packages
 
 ```bash

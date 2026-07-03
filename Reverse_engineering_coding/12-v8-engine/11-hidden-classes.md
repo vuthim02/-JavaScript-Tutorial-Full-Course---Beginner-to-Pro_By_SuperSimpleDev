@@ -1,8 +1,5 @@
 # 11 — Hidden Classes (Shapes)
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Are Hidden Classes?
 
 V8 assigns a **hidden class** (also called **Map** or **Shape**) to every object. The hidden class describes the object's **property layout** — it maps property names to memory offsets.

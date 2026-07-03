@@ -1,0 +1,16 @@
+{
+  "name": "graphql-intermediate",
+  "version": "1.0.0",
+  "description": "Intermediate GraphQL project — Task Manager with subscriptions",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": ["graphql", "intermediate", "subscriptions"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "graphql-yoga": "^5.0.0"
+  }
+}

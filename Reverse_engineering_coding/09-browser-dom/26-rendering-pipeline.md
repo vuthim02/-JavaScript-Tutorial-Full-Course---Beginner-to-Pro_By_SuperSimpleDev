@@ -1,8 +1,5 @@
 # Rendering Pipeline
 
-<img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Critical Rendering Path
 
 The browser performs these steps for every frame:

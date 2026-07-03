@@ -1,8 +1,5 @@
 # Expressions vs Statements
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Building Blocks of All Code
 
 Every JavaScript program is built from two kinds of "things":
@@ -166,4 +163,4 @@ console.log(if (true) { });  // ❌ SyntaxError → if is a statement
 ## Next Steps
 
 [Back to Module Overview](README.md)
-[Proceed to Chapter 2](02-scope.md): Scope to learn about scope.
+[Proceed to Module 2 Chapter 3](../02-core-concepts/03-var-let-const.md): Scope Chain and TDZ to learn about scope.

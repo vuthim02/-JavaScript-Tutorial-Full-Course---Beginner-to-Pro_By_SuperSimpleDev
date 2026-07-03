@@ -1,8 +1,5 @@
 # Part 11 — Data Structures, Algorithms, Big-O Analysis
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split from `part11-data-structures-algorithms-big-o.md` into focused chapter files.
 
 ## Files
@@ -38,6 +35,14 @@ Split from `part11-data-structures-algorithms-big-o.md` into focused chapter fil
 ## Usage
 
 Each file is self-contained with code examples and Q&A tables. Start with `01-big-o.md` and progress sequentially.
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/11-data-structures.js
+```
 
 ## Next Steps
 

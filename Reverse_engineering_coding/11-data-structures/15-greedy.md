@@ -1,8 +1,5 @@
 # Greedy Algorithms
 
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Choose Best at Each Step
 
 Greedy algorithms make the **locally optimal** choice at each step, hoping it leads to the globally optimal solution. They don't backtrack — once a decision is made, it's final.

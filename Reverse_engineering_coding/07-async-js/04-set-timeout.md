@@ -1,8 +1,5 @@
 # setTimeout
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## How setTimeout Works
 
 The timer is managed by the Web API environment, not by the JavaScript engine.

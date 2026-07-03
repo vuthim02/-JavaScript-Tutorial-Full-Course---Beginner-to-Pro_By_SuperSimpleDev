@@ -1,8 +1,5 @@
 # Object Internals: Hidden Classes, Properties, Methods & References
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Object Literal
 
 ```javascript
@@ -77,7 +74,9 @@ user
 ```javascript
 user.greet(); // "John"
 const fn = user.greet;
-fn(); // TypeError — this is undefined (strict)
+"use strict";
+fn(); // TypeError — this is undefined (strict mode)
+// Without "use strict", this would be the global object (window)
 ```
 
 **Fix:** `const boundFn = user.greet.bind(user);`
@@ -130,6 +129,65 @@ obj.value = 20;            // mutation — allowed
 obj = { value: 30 };       // TypeError — const prevents reassignment
 ```
 
+### Property Descriptors
+
+Every property has three internal attributes:
+
+| Attribute | Controls | Default |
+|-----------|----------|---------|
+| `writable` | Can the value be changed? | `true` |
+| `enumerable` | Does it appear in `for...in` / `Object.keys()`? | `true` |
+| `configurable` | Can the descriptor itself be changed or the property deleted? | `true` |
+
+```javascript
+const obj = { x: 1 };
+console.log(Object.getOwnPropertyDescriptor(obj, "x"));
+// { value: 1, writable: true, enumerable: true, configurable: true }
+
+Object.defineProperty(obj, "x", { writable: false });
+obj.x = 2; // silently fails (or TypeError in strict mode)
+```
+
+### Getters and Setters
+
+Properties can be backed by functions instead of values:
+
+```javascript
+const user = {
+    firstName: "John",
+    lastName: "Doe",
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    },
+    set fullName(value) {
+        [this.firstName, this.lastName] = value.split(" ");
+    }
+};
+console.log(user.fullName); // "John Doe"
+user.fullName = "Jane Smith";
+console.log(user.firstName); // "Jane"
+```
+
+### The Prototype Chain
+
+Every object has an internal `[[Prototype]]` link. When you access `obj.prop`, JS first checks `obj`, then follows the prototype chain:
+
+```text
+user ──→ User.prototype ──→ Object.prototype ──→ null
+
+user.toString() works because JS finds toString on Object.prototype,
+even though user itself doesn't have it.
+```
+
+### Property Enumeration Order
+
+Integer keys come first (ascending), then string keys (insertion order), then symbols (insertion order):
+
+```javascript
+const obj = { b: 1, a: 2, 2: 3, 1: 4 };
+console.log(Object.keys(obj)); // ["1", "2", "b", "a"]
+```
+
 ### Comparing Objects
 
 ```javascript
@@ -143,6 +201,8 @@ function shallowEqual(a, b) {
     if (keysA.length !== keysB.length) return false;
     return keysA.every(key => a[key] === b[key]);
 }
+// Note: NaN !== NaN, so shallowEqual({a: NaN}, {a: NaN}) returns false
+// Use Object.is for NaN/-0 correctness
 ```
 
 ## Reverse Engineering Questions
@@ -159,6 +219,11 @@ function shallowEqual(a, b) {
 | Does mutation through one variable affect another? | Yes — if they reference the same object |
 | How do I create an independent copy? | Shallow: `{...obj}`. Deep: `structuredClone(obj)` |
 | Is `const` preventing mutation? | No — const prevents reassignment, not mutation |
+| What does `Object.defineProperty` let me do? | Control writable, enumerable, configurable per property |
+| How does `obj.toString()` work when `obj` has no `toString`? | Prototype chain — JS walks up to Object.prototype |
+| Why are integer keys ordered differently? | V8 stores numeric-indexed properties separately, sorted ascending |
+| What does `"inline or external"` mean in the memory diagram? | V8 stores properties with known shape inline; dynamic additions go to external properties store |
+| How can I detect NaN correctly when comparing? | Use `Object.is(a, b)` instead of `===` for NaN/-0 safety |
 ## Next Steps
 
 [Back to Module Overview](README.md)

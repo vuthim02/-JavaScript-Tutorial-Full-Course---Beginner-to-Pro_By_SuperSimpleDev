@@ -1,8 +1,5 @@
 # Chapter 14 — Putting It All Together
 
-<img src="https://media.giphy.com/media/wcgn5fVDjvR7pdvz4C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Project Structure
 
 ```text
@@ -180,4 +177,4 @@ test("works with async state", async () => {
 ## Next Steps
 
 [Back to Chapter 13](13-mocking-strategies.md): Chapter 13 — Mocking Strategies
-[Proceed to Module 18](../18-typescript/README.md): TypeScript Deep Dive to learn about TypeScript and type-safe JavaScript.
+[Proceed to Chapter 15](15-test-quality-mutation.md): 15 — Test Quality & Mutation Testing to learn about test quality and mutation testing.

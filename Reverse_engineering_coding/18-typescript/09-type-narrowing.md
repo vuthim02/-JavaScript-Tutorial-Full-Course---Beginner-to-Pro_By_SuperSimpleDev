@@ -1,8 +1,5 @@
 # Type Narrowing
 
-<img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is Narrowing?
 
 Narrowing is the process of refining a broader type to a more specific type within a code block:

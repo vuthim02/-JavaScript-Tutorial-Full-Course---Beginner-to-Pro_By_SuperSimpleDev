@@ -1,8 +1,5 @@
 # Part 9 — Browser Internals, DOM, BOM, Events, Forms, Storage, Rendering Pipeline, and Browser APIs
 
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Mission
 
 This part explains how JavaScript interacts with browsers.

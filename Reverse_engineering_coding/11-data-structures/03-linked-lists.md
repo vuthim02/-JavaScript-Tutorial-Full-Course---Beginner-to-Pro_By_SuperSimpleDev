@@ -1,8 +1,5 @@
 # Singly Linked List
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Node Structure
 
 ```javascript

@@ -1,7 +1,4 @@
-# Chapter 26 — Project Ideas
-
-<img src="https://media.giphy.com/media/wcgn5fVDjvR7pdvz4C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
+# Chapter 18 — Project Ideas
 
 ## 1. Blog API
 
@@ -152,5 +149,5 @@ Senior engineers think in layers:
 - **Infrastructure Layer** — caching, logging, messaging, auth
 ## Next Steps
 
-[Back to Chapter 17](17-reverse-engineering-tactics.md): Chapter 25 — Reverse Engineering Coding Tactics
+[Back to Chapter 17](17-reverse-engineering-tactics.md): Chapter 17 — Reverse Engineering Coding Tactics
 [Proceed to Module 17](../17-testing/README.md): Testing, Quality Assurance, and CI/CD to learn about testing and CI/CD practices.

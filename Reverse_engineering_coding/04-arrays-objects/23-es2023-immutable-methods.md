@@ -1,8 +1,5 @@
 # ES2023 Immutable Array Methods
 
-<img src="https://media.giphy.com/media/E470LZUmy2Jiw/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Problem They Solve
 
 Before ES2023, many common array operations **mutated** the original array (`sort()`, `splice()`, `reverse()`, `splice()`). To work immutably, you'd need manual workarounds:
@@ -169,4 +166,4 @@ const updated3 = oldArr.with(2, 99);
 ## Next Steps
 
 [Back to Chapter 22](22-array-methods-extra.md): Extra Array Methods: `forEach`, `flat`, `flatMap`, `at`
-[Proceed to Chapter 24](24-object-extra-methods.md): Object Extra Methods: `freeze`, `seal`, `fromEntries`, `hasOwn` to learn about object extra methods: `freeze`, `seal`, `fromentries`, `hasown`.
+[Proceed to Module 6 Chapter 8](../06-prototypes-classes/08-object-static-methods.md): Object Static Methods (`keys`, `values`, `assign`, `groupBy`) to learn about object static methods.

@@ -1,8 +1,5 @@
 # 12 — Object.freeze, Object.seal, Object.preventExtensions
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Object.freeze()
 
 Completely locks an object. Cannot add, delete, or modify properties.
@@ -150,5 +147,5 @@ console.log(Object.isFrozen(obj));     // true
 | Why can't I add a property? | The object is sealed, frozen, or had `preventExtensions` called. |
 ## Next Steps
 
-[Back to Chapter 11](11-property-descriptors.md): 11 — Property Descriptors
-[Proceed to Chapter 13](13-optional-chaining-nullish.md): 13 — Optional Chaining & Nullish Coalescing to learn about 13 — optional chaining & nullish coalescing.
+[Back to Module 6 Chapter 2](../06-prototypes-classes/02-property-descriptors.md): Property Descriptors, Freeze & Seal
+[Proceed to Module 2 Chapter 9](../02-core-concepts/09-optional-chaining-nullish-coalescing.md): Optional Chaining (?.) and Nullish Coalescing (??) to learn about optional chaining and nullish coalescing.

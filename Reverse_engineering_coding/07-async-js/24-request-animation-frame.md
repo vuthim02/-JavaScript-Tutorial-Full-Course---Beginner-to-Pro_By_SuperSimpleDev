@@ -1,8 +1,5 @@
 # requestAnimationFrame
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is requestAnimationFrame?
 
 A browser API that schedules a function to run **before the next paint/repaint**. The browser controls the timing — typically 60fps (every ~16.67ms).

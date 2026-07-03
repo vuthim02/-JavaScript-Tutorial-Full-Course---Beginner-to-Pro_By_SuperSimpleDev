@@ -1,8 +1,5 @@
 # 06 — Generators
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is a Generator?
 
 A special function that can pause and resume execution. It returns a **Generator object** that is both iterable and an iterator.

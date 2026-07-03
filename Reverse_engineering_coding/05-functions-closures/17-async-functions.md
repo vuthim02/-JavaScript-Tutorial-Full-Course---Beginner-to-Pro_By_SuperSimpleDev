@@ -1,8 +1,5 @@
 # Async Functions & `async`/`await`
 
-<img src="https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Problem Async Functions Solve
 
 Before `async`/`await`, chaining asynchronous operations required nesting Promises or callbacks:

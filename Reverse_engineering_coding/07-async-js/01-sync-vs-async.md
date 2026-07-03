@@ -1,8 +1,5 @@
 # Synchronous vs Asynchronous Execution
-
-<img src="https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*DKk0FVYVE5aSi88g7UqpzA.gif" >
 ## Synchronous Execution
 
 Each operation blocks until it finishes. The call stack processes one function at a time from top to bottom.

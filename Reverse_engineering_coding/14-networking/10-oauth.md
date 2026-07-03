@@ -1,8 +1,5 @@
 # 10. OAuth 2.0 — Delegated Authorization
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What OAuth Solves
 
 Before OAuth: You give your Google password to third-party apps. If the app is compromised, your Google account is compromised.

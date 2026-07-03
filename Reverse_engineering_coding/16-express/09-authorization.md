@@ -1,8 +1,5 @@
 # Chapter 9 — Authorization
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Role-Based Access Control (RBAC)
 
 ```javascript

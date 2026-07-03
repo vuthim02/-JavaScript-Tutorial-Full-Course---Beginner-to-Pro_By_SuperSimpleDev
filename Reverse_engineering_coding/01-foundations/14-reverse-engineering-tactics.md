@@ -1,8 +1,5 @@
 # Reverse Engineering Tactical Training
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Core Habit
 
 Reverse engineering is a **skill**, not just a technique. Train yourself to ask the right questions automatically.

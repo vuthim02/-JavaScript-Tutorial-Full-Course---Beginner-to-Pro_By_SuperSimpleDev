@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package bookstore;
+
+service Auth {
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+  rpc Login (LoginRequest) returns (LoginResponse);
+}
+
+service Bookstore {
+  rpc ListBooks (ListBooksRequest) returns (ListBooksResponse);
+  rpc GetBook (GetBookRequest) returns (Book);
+  rpc CreateBook (CreateBookRequest) returns (Book);
+  rpc UpdateBook (UpdateBookRequest) returns (Book);
+  rpc DeleteBook (DeleteBookRequest) returns (DeleteBookResponse);
+  rpc SearchBooks (SearchBooksRequest) returns (stream Book);
+  rpc BatchCreateBooks (stream CreateBookRequest) returns (BatchCreateResponse);
+  rpc LiveBookUpdates (stream BookAction) returns (stream BookEvent);
+}
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  string message = 1;
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+  User user = 2;
+}
+
+message User {
+  int32 id = 1;
+  string username = 2;
+  string role = 3;
+}
+
+message Book {
+  int32 id = 1;
+  string title = 2;
+  string author = 3;
+  int32 year = 4;
+  string created_at = 5;
+  string created_by = 6;
+}
+
+message ListBooksRequest {
+  string author = 1;
+  int32 year = 2;
+}
+
+message ListBooksResponse {
+  repeated Book books = 1;
+}
+
+message GetBookRequest {
+  int32 id = 1;
+}
+
+message CreateBookRequest {
+  string title = 1;
+  string author = 2;
+  int32 year = 3;
+}
+
+message UpdateBookRequest {
+  int32 id = 1;
+  string title = 2;
+  string author = 3;
+  int32 year = 4;
+}
+
+message DeleteBookRequest {
+  int32 id = 1;
+}
+
+message DeleteBookResponse {
+  string message = 1;
+}
+
+message SearchBooksRequest {
+  string query = 1;
+}
+
+message BatchCreateResponse {
+  int32 count = 1;
+  repeated Book books = 2;
+}
+
+message BookAction {
+  string type = 1;
+  int32 book_id = 2;
+  string title = 3;
+  string author = 4;
+  int32 year = 5;
+}
+
+message BookEvent {
+  string event = 1;
+  Book book = 2;
+}

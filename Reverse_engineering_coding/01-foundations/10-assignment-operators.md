@@ -1,6 +1,6 @@
 # Assignment Operators
 
-<img src="" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://i.pinimg.com/originals/7c/31/ff/7c31ff4eba5829382925296494daad8f.gif" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## What Are Assignment Operators?
@@ -85,4 +85,4 @@ console.log(settings); // { theme: "dark", volume: 75 }
 ## Next Steps
 
 [Back to Chapter 9](09-logical-operators.md): Logical Operators and Short-Circuit Evaluation
-[Proceed to Chapter 11](11-type-conversion.md): Type Conversion to learn about type conversion.
+[Proceed to Chapter 12](12-input-and-output.md): Input and Output to learn about input and output.

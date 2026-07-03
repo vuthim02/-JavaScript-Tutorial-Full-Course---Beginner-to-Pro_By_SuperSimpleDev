@@ -1,8 +1,5 @@
 # 18 — Proxy
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Intercepting Operations
 
 A Proxy wraps an object and intercepts operations on it.

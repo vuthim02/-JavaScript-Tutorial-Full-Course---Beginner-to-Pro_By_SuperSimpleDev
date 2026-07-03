@@ -1,8 +1,5 @@
 # Debouncing and Throttling
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Debouncing — Wait Before Executing
 
 Debouncing ensures a function is called only after a certain amount of time has passed **since the last invocation**. Search boxes use this.
@@ -147,4 +144,4 @@ Mouse move       → 50-100ms throttle
 ## Next Steps
 
 [Back to Chapter 18](18-concurrency-patterns.md): Concurrency Patterns
-[Proceed to Chapter 20](20-memory-leaks.md): Memory Leaks in Async Code to learn about memory leaks in async code.
+[Proceed to Module 12 Chapter 9](../12-v8-engine/09-memory-leaks-globals-timers-dom.md): Memory Leaks — Globals, Timers & DOM to learn about memory leaks.

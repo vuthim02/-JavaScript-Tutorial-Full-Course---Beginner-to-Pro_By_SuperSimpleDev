@@ -1,8 +1,5 @@
 # 02 — ES Modules
 
-<img src="https://media.giphy.com/media/f4ztZcdm9Fi90vL4Zd/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Modern Standard
 
 Introduced in ES6 (2015). Native support in modern browsers and Node.js.

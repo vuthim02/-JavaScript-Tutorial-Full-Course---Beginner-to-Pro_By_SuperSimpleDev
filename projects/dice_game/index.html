@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Dice Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="cube" id="cube">
+            <div class="face front">
+                <span class="pip"></span>
+            </div>
+            <div class="face back">
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+            </div>
+            <div class="face right">
+                <span class="pip"></span>
+                <span class="pip"></span>
+            </div>
+            <div class="face left">
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+            </div>
+            <div class="face top">
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+            </div>
+            <div class="face bottom">
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+                <span class="pip"></span>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="rollBtn">Roll Dice</button>
+        <p id="result">Roll to play!</p>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

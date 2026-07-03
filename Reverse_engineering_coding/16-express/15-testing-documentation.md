@@ -1,7 +1,4 @@
-# Chapter 21 — Testing Express Applications
-
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
+# Chapter 15 — Testing Express Applications
 
 ## Unit Testing Services
 
@@ -166,5 +163,5 @@ router.get('/users', authenticate, userController.list);
 | Where is the docs UI? | Usually at `/api-docs` |
 ## Next Steps
 
-[Back to Chapter 14](14-api-design-pagination-versioning.md): Chapter 18 — Consistent API Responses
-[Proceed to Chapter 16](16-observability-dependency-injection.md): Chapter 23 — Observability: Logs, Metrics, Traces to learn about chapter 23 — observability: logs, metrics, traces.
+[Back to Chapter 14](14-api-design-pagination-versioning.md): Chapter 14 — Consistent API Responses
+[Proceed to Chapter 16](16-observability-dependency-injection.md): Chapter 16 — Observability: Logs, Metrics, Traces to learn about chapter 16 — observability: logs, metrics, traces.

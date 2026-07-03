@@ -1,8 +1,5 @@
 # Dynamic Programming
 
-<img src="https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Memoization — Storing Repeated Results
 
 Naive Fibonacci — O(2ⁿ) — repeated calculations explode exponentially:

@@ -1,8 +1,5 @@
 # 05 — Custom Iterators
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Making Any Object Iterable
 
 To make an object iterable, add a `[Symbol.iterator]` function that returns an iterator (an object with `next()`).

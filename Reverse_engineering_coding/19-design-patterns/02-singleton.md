@@ -1,8 +1,5 @@
 # Singleton Pattern
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 Some resources must have *exactly one* instance: database connection pool, logger, configuration manager, cache.

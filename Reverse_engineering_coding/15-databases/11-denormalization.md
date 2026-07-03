@@ -1,8 +1,5 @@
 # 11 — Denormalization: Trading Storage for Speed
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## When to Denormalize
 
 Normalization is correct by default. Denormalize only when profiling proves it's needed.

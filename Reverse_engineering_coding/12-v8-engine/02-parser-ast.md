@@ -1,8 +1,5 @@
 # 02 — Parser & Abstract Syntax Tree (AST)
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## How Parsing Works
 
 When the engine receives source code, the first step is **parsing**. The parser reads raw text character by character and converts it into a stream of **tokens**.

@@ -1,8 +1,5 @@
 # Cross-Window Communication (postMessage)
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Sending Messages Between Windows
 
 `postMessage` enables secure cross-origin communication between browser windows, iframes, and popups.

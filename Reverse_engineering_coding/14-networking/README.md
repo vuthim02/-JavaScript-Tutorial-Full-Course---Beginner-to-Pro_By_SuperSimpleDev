@@ -1,8 +1,5 @@
 # Part 14 — Networking, HTTP, REST APIs, WebSockets, GraphQL, Authentication, Security, and API Architecture
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split chapter files from the original comprehensive guide. Each file covers one focused subtopic (100-200 lines).
 
 ## Files
@@ -30,6 +27,7 @@ Split chapter files from the original comprehensive guide. Each file covers one 
 | 19 | [19-api-gateway-reverse-proxy.md](19-api-gateway-reverse-proxy.md) | API gateway, Nginx reverse proxy, SSL termination |
 | 20 | [20-load-balancing-webhooks.md](20-load-balancing-webhooks.md) | Load balancing algorithms, webhooks, polling vs push |
 | 21 | [21-tactical-questions-projects.md](21-tactical-questions-projects.md) | Reverse engineering questions, bottleneck analysis, projects |
+| 22 | [22-owasp-top-10.md](22-owasp-top-10.md) | OWASP Top 10 security risks: broken access control, injection, SSRF, crypto failures, and more with Node.js defenses |
 
 ## Index of Topics
 
@@ -41,6 +39,14 @@ Split chapter files from the original comprehensive guide. Each file covers one 
 - **Authentication**: Basic, Session, JWT, OAuth 2.0, OpenID Connect
 - **Security**: CORS, CSRF, XSS, SQL injection, Helmet
 - **Rate limiting**, API gateways, caching, load balancing, webhooks
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/14-networking.js
+```
 
 ## Next Steps
 

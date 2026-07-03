@@ -149,16 +149,112 @@ console.log(totalDollars.toFixed(2)); // "25.98"
 
 ---
 
+## Assignment Operators
+
+| Operator | Example | Equivalent To |
+|----------|---------|---------------|
+| `=` | `x = 5` | `x = 5` |
+| `+=` | `x += 3` | `x = x + 3` |
+| `-=` | `x -= 3` | `x = x - 3` |
+| `*=` | `x *= 3` | `x = x * 3` |
+| `/=` | `x /= 3` | `x = x / 3` |
+| `%=` | `x %= 3` | `x = x % 3` |
+| `**=` | `x **= 3` | `x = x ** 3` |
+
+```javascript
+let score = 10;
+score += 5;            // 15
+score -= 3;            // 12
+score *= 2;            // 24
+score /= 4;            // 6
+score %= 4;            // 2
+```
+
+---
+
+## Comparison Operators
+
+| Operator | Name | Example |
+|----------|------|---------|
+| `===` | Strict equality | `5 === 5` → `true` |
+| `!==` | Strict inequality | `5 !== "5"` → `true` |
+| `>` | Greater than | `5 > 3` → `true` |
+| `>=` | Greater than or equal | `5 >= 5` → `true` |
+| `<` | Less than | `5 < 3` → `false` |
+| `<=` | Less than or equal | `5 <= 5` → `true` |
+
+---
+
+## Comma Operator
+
+Evaluates both operands and returns the second:
+
+```javascript
+let x = (1, 2, 3);     // x = 3 (evaluates all, returns last)
+for (let i = 0, j = 10; i <= j; i++, j--) { }
+```
+
+## Operator Precedence (Full Table)
+
+| Precedence | Operators | Associates |
+|------------|-----------|------------|
+| 1 | Grouping `()` | N/A |
+| 2 | Member access `.`, `[]`, `?.` | Left |
+| 3 | Function call `()` | Left |
+| 4 | `!`, `~`, `+x`, `-x`, `typeof`, `void`, `delete` | Right |
+| 5 | `**` | Right |
+| 6 | `*`, `/`, `%` | Left |
+| 7 | `+`, `-` | Left |
+| 8 | `<`, `>`, `<=`, `>=`, `in`, `instanceof` | Left |
+| 9 | `===`, `!==`, `==`, `!=` | Left |
+| 10 | `&&` | Left |
+| 11 | `\|\|` | Left |
+| 12 | `??` | Left |
+| 13 | Ternary `? :` | Right |
+| 14 | Assignment `=`, `+=`, etc. | Right |
+| 15 | Comma `,` | Left |
+
 ## Reverse Engineering: Arithmetic
 
+# JavaScript Numbers & Operators Interview Cheat Sheet
+
 | Question | Answer |
-|---|---|
-| What is `0.1 + 0.2`? | `0.30000000000000004` — floating-point precision issue |
-| How do I avoid money errors? | Work in cents (integers), not dollars (floats) |
-| How do I get a random number 1-10? | `Math.floor(Math.random() * 10) + 1` |
-| What does `a++` do vs `++a`? | `a++` returns old value then increments; `++a` increments first |
-| How do I round to 2 decimals? | `num.toFixed(2)` returns a string; wrap with `Number()` for a number |
+|-----------|--------|
+| **Why is `0.1 + 0.2 !== 0.3`?** | JavaScript uses **IEEE 754 double-precision floating-point** numbers. `0.1` and `0.2` cannot be represented exactly in binary, so the result is `0.30000000000000004`. |
+| **How do I avoid money calculation errors?** | Store money as **integers** (smallest unit, e.g., cents) instead of floating-point values. Convert back to dollars only for display. |
+| **How do I get a random integer from 1 to 10?** | `Math.floor(Math.random() * 10) + 1` |
+| **What is the difference between `a++` and `++a`?** | `a++` (post-increment) returns the current value, then increments. `++a` (pre-increment) increments first, then returns the new value. |
+| **How do I round to 2 decimal places?** | `num.toFixed(2)` returns a **string**. Use `Number(num.toFixed(2))` if you need a number. |
+| **What is operator precedence?** | Operator precedence determines the order in which expressions are evaluated. Use parentheses when in doubt. |
+| **What does the comma operator return?** | It evaluates each operand from left to right and returns the **value of the last operand**. Example: `(1, 2, 3)` returns `3`. |
+| **What is compound assignment?** | Operators like `+=`, `-=`, `*=`, `/=`, and `%=` combine an operation with assignment. Example: `x += 5` is equivalent to `x = x + 5`. |
+| **What happens when dividing by zero?** | `1 / 0` → `Infinity`, `-1 / 0` → `-Infinity`, and `0 / 0` → `NaN`. JavaScript follows the IEEE 754 standard instead of throwing an error. |
+| **How do I check if a value is `NaN`?** | Use `Number.isNaN(value)`. Avoid the global `isNaN()` unless you intentionally want type coercion. |
+| **What is the difference between `==` and `===`?** | `==` performs **type coercion** before comparing values. `===` compares both **type and value** without coercion. Prefer `===`. |
+| **Why is `typeof null` equal to `"object"`?** | It is a historical bug in JavaScript that remains for backward compatibility. |
+| **How do I convert a string to a number?** | Use `Number(str)`, `parseInt(str, 10)`, or `parseFloat(str)` depending on your needs. |
+| **How do I convert a number to a string?** | Use `String(num)` or `num.toString()`. |
+| **What are falsy values?** | `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined`, and `NaN`. Everything else is truthy. |
+| **What is `Object.is()`?** | Similar to `===`, but `Object.is(NaN, NaN)` returns `true`, and it distinguishes `+0` from `-0`. |
+| **How do I compare floating-point numbers safely?** | Compare using a tolerance instead of `===`: `Math.abs(a - b) < Number.EPSILON`. |
+
+---
+
+# Top JavaScript Interview Questions
+
+| # | Topic | Key Point |
+|---|-------|-----------|
+| 1 | `0.1 + 0.2 !== 0.3` | Floating-point precision (IEEE 754) |
+| 2 | `==` vs `===` | Type coercion vs strict equality |
+| 3 | `a++` vs `++a` | Post-increment vs pre-increment |
+| 4 | Truthy vs Falsy | Know all falsy values |
+| 5 | `NaN` | Use `Number.isNaN()` |
+| 6 | `typeof null` | Historical JavaScript bug |
+| 7 | `Math.random()` | Generate random integers correctly |
+| 8 | `Infinity` vs `NaN` | Special numeric values |
+| 9 | Rounding | `toFixed()` returns a string |
+| 10 | Operator precedence | Use parentheses when unsure |
 ## Next Steps
 
-[Back to Chapter 6](06-hoisting-and-tdz.md): Hoisting and the Temporal Dead Zone
+[Back to Module 2 Chapter 4](../02-core-concepts/04-hoisting-and-tdz.md): Hoisting and the Temporal Dead Zone
 [Proceed to Chapter 8](08-comparison-operators.md): Comparison Operators to learn about comparison operators.

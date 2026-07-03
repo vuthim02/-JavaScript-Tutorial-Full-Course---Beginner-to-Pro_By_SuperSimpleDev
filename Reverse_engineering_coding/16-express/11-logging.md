@@ -1,7 +1,4 @@
-# Chapter 12 — Structured Logging
-
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
+# Chapter 11 — Structured Logging
 
 ## Winston Logger
 
@@ -128,4 +125,4 @@ app.use(requestLogger);
 ## Next Steps
 
 [Back to Chapter 10](10-cors-file-uploads.md): Chapter 10 — CORS
-[Proceed to Chapter 12](12-caching-rate-limiting-compression.md): Chapter 13 — Response Caching to learn about chapter 13 — response caching.
+[Proceed to Chapter 12](12-caching-rate-limiting-compression.md): Chapter 12 — Response Caching to learn about chapter 12 — response caching.

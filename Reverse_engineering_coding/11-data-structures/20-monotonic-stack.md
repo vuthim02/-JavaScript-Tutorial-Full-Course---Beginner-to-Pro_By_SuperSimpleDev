@@ -1,8 +1,5 @@
 # Monotonic Stack
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Next Greater Element
 
 A monotonic stack maintains elements in increasing or decreasing order. Each element is pushed and popped at most once, giving O(n) time — a significant improvement over the O(n²) brute force.

@@ -1,8 +1,5 @@
 # Objects: Internal Structure
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is an Object?
 
 An **object** is a collection of key-value pairs (properties in ECMAScript terminology). Keys are strings or Symbols. Values can be any type.

@@ -1,8 +1,5 @@
 # Advanced Types: keyof, typeof, Indexed Access, Mapped Types, Conditional Types
 
-<img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## `keyof`
 
 Returns a union of the property names (keys) of a type:

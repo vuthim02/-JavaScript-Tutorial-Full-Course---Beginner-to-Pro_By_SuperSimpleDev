@@ -1,8 +1,5 @@
 # Data Types and the typeof Operator
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The 7 Data Types
 
 JavaScript has 7 primitive types and 1 reference type (object):

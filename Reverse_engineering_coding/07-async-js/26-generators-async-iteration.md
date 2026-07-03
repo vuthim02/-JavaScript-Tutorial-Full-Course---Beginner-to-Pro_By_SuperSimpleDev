@@ -1,8 +1,5 @@
 # Generators & Async Iteration
 
-<img src="https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is a Generator?
 
 A function that can pause (`yield`) and resume. Returns a **Generator** object.

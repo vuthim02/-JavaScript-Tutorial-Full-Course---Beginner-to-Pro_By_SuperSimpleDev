@@ -1,8 +1,5 @@
 # 20 — Meta-programming
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Programs That Manipulate Programs
 
 Meta-programming is code that writes, modifies, or inspects other code (or itself).

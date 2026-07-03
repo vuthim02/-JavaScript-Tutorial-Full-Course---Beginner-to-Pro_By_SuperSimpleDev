@@ -1,8 +1,5 @@
 # 15 — Redis: In-Memory Data Store
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Why Redis is Fast
 
 | Reason | Detail |

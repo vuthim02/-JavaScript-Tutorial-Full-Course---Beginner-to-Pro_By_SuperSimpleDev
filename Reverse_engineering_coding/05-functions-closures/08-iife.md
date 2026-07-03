@@ -1,8 +1,5 @@
 # IIFE — Immediately Invoked Function Expression
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Syntax Patterns
 
 ```javascript
@@ -85,12 +82,14 @@ for (var i = 0; i < 3; i++) {
 }
 // Logs: 0, 1, 2
 
-// ✅ Modern fix: use let (block-scoped)
+// ✅ Modern fix: use let (block-scoped — creates new binding per iteration)
 for (let i = 0; i < 3; i++) {
     setTimeout(() => console.log(i), 100);
 }
 // Logs: 0, 1, 2
 ```
+
+**Why does `let` work?** The ECMAScript spec says that `let` in a `for` loop creates a **new lexical declaration** for each iteration — every iteration gets its own `i` with the current value. This is baked into the language since ES6. `const` in `for...of`/`for...in` behaves the same way. `var` does not — it shares one binding across all iterations, which is why the IIFE was needed before ES6.
 
 ## Reverse Engineering Checklist
 

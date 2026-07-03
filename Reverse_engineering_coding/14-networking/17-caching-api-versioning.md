@@ -1,8 +1,5 @@
 # 17. Caching Strategies and API Versioning
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Why Cache
 
 ```

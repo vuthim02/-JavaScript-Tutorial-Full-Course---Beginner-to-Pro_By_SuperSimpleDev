@@ -1,8 +1,5 @@
 # 04 — TurboFan JIT Compiler
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is JIT?
 
 **JIT** = **Just-In-Time Compilation**. The engine compiles code during execution, not ahead of time. This allows the compiler to use **runtime type information** to generate highly optimized machine code.

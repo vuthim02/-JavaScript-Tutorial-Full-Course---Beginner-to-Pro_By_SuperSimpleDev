@@ -155,5 +155,5 @@ user.name = "Alice";  // ✅ OK — object mutation is allowed
 | Why does `let` fix the loop bug? | Each iteration gets its own binding of the variable |
 ## Next Steps
 
-[Back to Chapter 2](02-scope.md): Scope
+[Back to Module 5 Chapter 9](../05-functions-closures/09-scope-chain-and-tdz.md): Scope Chain and TDZ
 [Proceed to Chapter 4](04-hoisting-and-tdz.md): Hoisting and the Temporal Dead Zone to learn about hoisting and the temporal dead zone.

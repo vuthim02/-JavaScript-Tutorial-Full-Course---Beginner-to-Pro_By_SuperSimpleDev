@@ -1,8 +1,5 @@
 # Part 17 — Testing, Quality Assurance, and CI/CD
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split chapter files from the main document. Each file covers a focused subtopic (100-200 lines).
 
 | # | File | Topic |
@@ -21,8 +18,18 @@ Split chapter files from the main document. Each file covers a focused subtopic 
 | 12 | [12-coverage-thresholds.md](12-coverage-thresholds.md) | Line/branch/function coverage, Jest & Vitest thresholds |
 | 13 | [13-mocking-strategies.md](13-mocking-strategies.md) | Mocking network, axios, database, Date.now, Math.random, partial mocks |
 | 14 | [14-complete-project-setup.md](14-complete-project-setup.md) | Full project structure, package.json scripts, CI workflow, common gotchas |
+| 15 | [15-test-quality-mutation.md](15-test-quality-mutation.md) | Test trophy model, F.I.R.S.T. principles, mutation testing with Stryker, test ratios |
+| 16 | [16-modern-testing-tools.md](16-modern-testing-tools.md) | MSW (Mock Service Worker), property-based testing (fast-check), test data factories (Faker, Fishery) |
 
 Source: `part17-testing-quality-assurance-ci-cd.md` (2232 lines)
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/17-testing.js
+```
 
 ## Next Steps
 

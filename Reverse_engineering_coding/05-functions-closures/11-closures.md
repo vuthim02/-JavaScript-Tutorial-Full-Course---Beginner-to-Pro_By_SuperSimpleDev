@@ -1,8 +1,5 @@
 # Closures
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Core Idea
 
 A **closure** is a function bundled together with its **lexical environment** — the set of variables that were in scope when the function was defined. The closure keeps those variables alive even after the outer function has returned.
@@ -188,6 +185,30 @@ function createProcessor(bigData) {
     };
 }
 ```
+
+## ⚠️ Classic Trap: Closure in Loops with `var`
+
+The classic interview puzzle: all callbacks see the final loop value:
+
+```javascript
+for (var i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 100);
+}
+// Logs: 3, 3, 3 — not 0, 1, 2!
+```
+
+**Why?** `var` is function-scoped, not block-scoped. All three closures reference the **same** `i` variable, which ends at `3`.
+
+**Fix with `let`:** `let` creates a **new** binding for each loop iteration:
+
+```javascript
+for (let i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 100);
+}
+// Logs: 0, 1, 2 — each closure gets its own `i`
+```
+
+See [Chapter 8 — The Classic Loop Problem](08-iife.md#3-the-classic-loop-problem-var--closure) for the historical IIFE workaround.
 
 ## Reverse Engineering Checklist
 

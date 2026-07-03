@@ -1,8 +1,5 @@
 # Node.js Architecture — V8 + libuv + Node APIs
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Overview
 
 JavaScript originally lived in browsers. With Node.js, it became capable of building web servers, APIs, databases, CLIs, dev tools, build tools, desktop apps, AI systems, streaming platforms, and microservices.

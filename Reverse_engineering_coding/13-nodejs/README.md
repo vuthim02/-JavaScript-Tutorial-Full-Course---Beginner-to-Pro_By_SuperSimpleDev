@@ -1,8 +1,5 @@
 # Part 13 — Node.js Ecosystem, Runtime Internals, Streams, Buffers, Processes, Networking, and Server Engineering
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split into focused subtopic files for easier reference.
 
 ## Chapters
@@ -25,10 +22,20 @@ Split into focused subtopic files for easier reference.
 | 14 | [14-memory-stdio-signals.md](14-memory-stdio-signals.md) | V8 memory, STDIO streams, Unix signals |
 | 15 | [15-package-management.md](15-package-management.md) | npm/yarn/pnpm, package.json, semver, env vars |
 | 16 | [16-reverse-engineering-tactics.md](16-reverse-engineering-tactics.md) | Tactics checklist, projects |
+| 17 | [17-production-observability.md](17-production-observability.md) | Structured logging (Pino/Winston), OpenTelemetry tracing, metrics, AsyncLocalStorage |
+| 18 | [18-docker-containers.md](18-docker-containers.md) | Docker & containerization, Dockerfile best practices, multi-stage builds, docker-compose, health checks, graceful shutdown |
 
 ## Usage
 
 Each file is self-contained (100-200 lines) with code examples and Q&A tables.
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/13-nodejs.js
+```
 
 ## Next Steps
 

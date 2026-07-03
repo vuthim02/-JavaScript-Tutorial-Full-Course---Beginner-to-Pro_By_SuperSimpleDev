@@ -1,6 +1,5 @@
 # Queue
 
-<img src="https://media.licdn.com/dms/image/v2/D5622AQG2KlVjS5v_SQ/feedshare-shrink_1280/B56ZcMy0DhHUAk-/0/1748266340488?e=2147483647&v=beta&t=LkOcLT81sIiwzgNaaDot-mBeBF2OfiyHMnR4bq-S3Ek" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## FIFO — First In, First Out

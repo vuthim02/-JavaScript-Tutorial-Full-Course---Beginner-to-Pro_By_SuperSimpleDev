@@ -1,0 +1,20 @@
+{
+  "name": "grpc-server",
+  "version": "1.0.0",
+  "description": "gRPC API server with auth, streaming, database",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:s1": "node src/server.js",
+    "start:s2": "PORT=50052 node src/server.js",
+    "start:s3": "PORT=50053 node src/server.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.0",
+    "@grpc/proto-loader": "^0.7.10",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.6.1",
+    "jsonwebtoken": "^9.0.2",
+    "sql.js": "^1.9.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "load-balancer",
+  "version": "1.0.0",
+  "description": "Reverse proxy / load balancer for the API architecture",
+  "main": "proxy.js",
+  "scripts": {
+    "start": "node proxy.js",
+    "start:servers": "node ../server/src/index.js & PORT=3002 node ../server/src/index.js & PORT=3003 node ../server/src/index.js",
+    "start:all": "node ../server/src/index.js & PORT=3002 node ../server/src/index.js & PORT=3003 node ../server/src/index.js & sleep 2 && node proxy.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "http-proxy": "^1.18.1",
+    "morgan": "^1.10.0"
+  }
+}

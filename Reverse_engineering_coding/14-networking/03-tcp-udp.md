@@ -1,8 +1,5 @@
 # 3. Transmission Control Protocol (TCP) and UDP
 
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Characteristics
 
 | Property | TCP | UDP |

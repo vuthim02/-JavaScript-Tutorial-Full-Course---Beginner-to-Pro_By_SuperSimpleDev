@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOAP Lab — Learn SOAP by Doing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>SOAP Lab</h1>
+    <p>Learn SOAP theory by building and sending real XML messages</p>
+  </header>
+
+  <nav>
+    <button class="tab active" data-tab="learn">Learn</button>
+    <button class="tab" data-tab="build">Build</button>
+    <button class="tab" data-tab="demo">Demo</button>
+  </nav>
+
+  <main>
+    <!-- ─── LEARN ─── -->
+    <section id="tab-learn" class="tab-content active">
+      <h2>SOAP Message Structure</h2>
+      <p class="subtitle">Every SOAP message is an <strong>XML document</strong> with a fixed structure:</p>
+
+      <div class="envelope">
+        <div class="label">&lt;soap:Envelope&gt;</div>
+        <div class="header-box">
+          <div class="label">&lt;soap:Header&gt; <span class="dim">(optional)</span></div>
+          <div class="inner">Security tokens<br>Routing info<br>Transaction IDs</div>
+          <div class="label dim">&lt;/soap:Header&gt;</div>
+        </div>
+        <div class="body-box">
+          <div class="label">&lt;soap:Body&gt;</div>
+          <div class="inner">Request / Response payload</div>
+          <div class="fault-box">
+            <div class="label">&lt;soap:Fault&gt; <span class="dim">(on error)</span></div>
+            <div class="inner">Error code &amp; details</div>
+            <div class="label dim">&lt;/soap:Fault&gt;</div>
+          </div>
+          <div class="label dim">&lt;/soap:Body&gt;</div>
+        </div>
+        <div class="label dim">&lt;/soap:Envelope&gt;</div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Envelope</h3>
+          <p>Root element — wraps the entire message. Declares XML namespaces.</p>
+        </div>
+        <div class="card">
+          <h3>Header</h3>
+          <p>Optional — carries metadata like authentication tokens, routing, transaction IDs.</p>
+        </div>
+        <div class="card">
+          <h3>Body</h3>
+          <p>Required — contains the actual request (method call) or response data.</p>
+        </div>
+        <div class="card">
+          <h3>Fault</h3>
+          <p>Optional error container inside Body. Includes fault codes, strings, and details.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── BUILD ─── -->
+    <section id="tab-build" class="tab-content">
+      <h2>Build a SOAP Message</h2>
+      <p>Fill in the fields and watch the SOAP XML update live.</p>
+
+      <div class="build-layout">
+        <form id="soap-form">
+          <label>Operation</label>
+          <select id="operation">
+            <option value="Add">Add</option>
+            <option value="Subtract">Subtract</option>
+            <option value="Multiply">Multiply</option>
+            <option value="Divide">Divide</option>
+          </select>
+
+          <label>Number A</label>
+          <input type="number" id="numA" value="10">
+
+          <label>Number B</label>
+          <input type="number" id="numB" value="5">
+
+          <label>Auth Token <span class="dim">(Header)</span></label>
+          <input type="text" id="auth-token" placeholder="abc123" value="demo-token">
+
+          <button type="button" id="send-btn">Send SOAP Request</button>
+        </form>
+
+        <div class="xml-preview">
+          <h3>Generated SOAP XML</h3>
+          <pre id="xml-output"></pre>
+          <div id="status"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DEMO ─── -->
+    <section id="tab-demo" class="tab-content">
+      <h2>SOAP in Action — Calculator Service</h2>
+      <p>Uses a real public SOAP service <span class="dim">(dneonline.com/calculator.asmx)</span></p>
+
+      <div class="demo-layout">
+        <div class="call-chain">
+          <div class="chain-step">
+            <span class="arrow">➜</span>
+            <strong>Client</strong> builds SOAP Envelope XML
+          </div>
+          <div class="chain-step">
+            <span class="arrow">➜</span>
+            <strong>POST</strong> to http://www.dneonline.com/calculator.asmx
+          </div>
+          <div class="chain-step">
+            <span class="arrow">➜</span>
+            <strong>Server</strong> parses Body, runs operation
+          </div>
+          <div class="chain-step">
+            <span class="arrow">➜</span>
+            <strong>Server</strong> returns SOAP Envelope with result
+          </div>
+          <div class="chain-step">
+            <span class="arrow">➜</span>
+            <strong>Client</strong> parses response XML, extracts result
+          </div>
+        </div>
+
+        <div id="history">
+          <h3>Request / Response Log</h3>
+          <div id="log-list">
+            <p class="dim">Send a request above to see the log.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>SOAP Lab — Beginner Project for Learning SOAP Theory</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

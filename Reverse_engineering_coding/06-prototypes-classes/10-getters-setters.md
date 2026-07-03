@@ -1,8 +1,5 @@
 # Getters & Setters in Plain Objects
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Are Accessor Properties?
 
 Properties backed by functions that execute on get/set, rather than storing a value directly.
@@ -191,5 +188,5 @@ Accessor descriptors have `get`/`set` instead of `value`/`writable`.
 | Are getters/setters inherited? | Yes — through prototype chain like any property |
 ## Next Steps
 
-[Back to Chapter 9](09-destructuring-spread.md): Object Destructuring & Spread Operator
+[Back to Module 4 Chapter 13](../04-arrays-objects/13-destructuring.md): Object & Array Destructuring
 [Proceed to Chapter 11](11-object-equality.md): Object Equality & Comparison to learn about object equality & comparison.

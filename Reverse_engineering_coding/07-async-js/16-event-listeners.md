@@ -1,8 +1,5 @@
 # Event Listeners
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## How Events Work
 
 When a user interacts with the page (click, keydown, scroll), an event is generated and placed in the **macrotask queue**.

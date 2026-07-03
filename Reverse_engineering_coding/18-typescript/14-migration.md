@@ -1,8 +1,5 @@
 # Migration Strategy: Adding TypeScript to an Existing JS Project
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Step 1: Initial Setup
 
 ```bash

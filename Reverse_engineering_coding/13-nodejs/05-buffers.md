@@ -1,8 +1,5 @@
 # Buffers — Binary Data Handling
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is a Buffer?
 
 `Buffer` is a Node.js global for handling raw binary data. It represents a fixed-size chunk of memory allocated outside the V8 heap.

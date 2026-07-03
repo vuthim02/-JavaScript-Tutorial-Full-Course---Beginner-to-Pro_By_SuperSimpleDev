@@ -1,8 +1,5 @@
 # 07 — B-Trees and Hash Indexes
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## B-Trees: The Most Important Data Structure in Databases
 
 A B-tree is a self-balancing tree data structure that maintains sorted data and allows searches, insertions, and deletions in O(log n).

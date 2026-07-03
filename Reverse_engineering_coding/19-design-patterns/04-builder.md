@@ -1,8 +1,5 @@
 # Builder Pattern
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 Some objects require many configuration steps. A constructor with 15 parameters is unreadable and error-prone. The Builder separates construction from representation.

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full API Architecture - Client</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Full REST API Architecture</h1>
+    <p>Client ← → Reverse Proxy ← → API Server ← → Database</p>
+  </header>
+
+  <main>
+    <section id="auth-section">
+      <h2>Authentication</h2>
+      <div class="card" id="login-form">
+        <h3>Login</h3>
+        <input type="text" id="login-username" placeholder="Username" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+        <p id="login-status"></p>
+      </div>
+      <div class="card" id="register-form">
+        <h3>Register</h3>
+        <input type="text" id="register-username" placeholder="Username" />
+        <input type="password" id="register-password" placeholder="Password" />
+        <button onclick="register()">Register</button>
+        <p id="register-status"></p>
+      </div>
+    </section>
+
+    <section id="books-section" style="display:none">
+      <h2>Books <button class="small" onclick="logout()">Logout</button></h2>
+
+      <div class="card" id="add-book-form">
+        <h3>Add Book</h3>
+        <input type="text" id="book-title" placeholder="Title" />
+        <input type="text" id="book-author" placeholder="Author" />
+        <input type="number" id="book-year" placeholder="Year" />
+        <button onclick="createBook()">Add Book</button>
+        <p id="book-status"></p>
+      </div>
+
+      <div class="card" id="filter-section">
+        <h3>Filter</h3>
+        <input type="text" id="filter-author" placeholder="Author" />
+        <input type="number" id="filter-year" placeholder="Year" />
+        <button onclick="loadBooks()">Apply</button>
+        <button class="secondary" onclick="clearFilters()">Clear</button>
+      </div>
+
+      <div id="books-list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

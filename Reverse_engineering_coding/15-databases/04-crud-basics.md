@@ -1,8 +1,5 @@
 # 04 — SQL CRUD Basics
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## CREATE (INSERT)
 
 ```sql

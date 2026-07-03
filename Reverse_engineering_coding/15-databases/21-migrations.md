@@ -1,8 +1,5 @@
 # 21 — Migrations: Evolving the Schema
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Why Migrations
 
 ```sql

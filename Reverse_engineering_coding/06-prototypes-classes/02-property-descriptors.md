@@ -1,8 +1,5 @@
 # Property Descriptors & Object.defineProperty
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Property Descriptors
 
 Every property has a descriptor that controls its behavior.
@@ -264,4 +261,4 @@ state.count = 5; // "count changed to 5"
 ## Next Steps
 
 [Back to Chapter 1](01-object-internals.md): Object Internals: Hidden Classes, Properties, Methods & References
-[Proceed to Chapter 3](03-this-binding.md): The `this` Keyword: Binding Rules & call/apply/bind to learn about the `this` keyword: binding rules & call/apply/bind.
+[Proceed to Module 5 Chapter 14](../05-functions-closures/14-this-keyword.md): The `this` Keyword — Rules, Pitfalls & Methods to learn about `this` binding.

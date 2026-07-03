@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "myweb",
+        "supportEmail": "vuthimham95@gmail.com"
+      }
+    }
+  }
+}

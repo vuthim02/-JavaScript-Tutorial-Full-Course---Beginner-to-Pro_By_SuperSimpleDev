@@ -1,8 +1,5 @@
 # Generator Functions & `yield`
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is a Generator?
 
 A **generator function** is a function that can be **paused and resumed**. It uses the `function*` syntax and the `yield` keyword to produce a sequence of values on demand.

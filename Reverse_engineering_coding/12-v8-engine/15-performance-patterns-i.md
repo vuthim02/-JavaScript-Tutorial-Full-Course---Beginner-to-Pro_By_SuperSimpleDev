@@ -1,8 +1,5 @@
 # 15 — Performance Patterns I: Loops, Memoization & Lazy Evaluation
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Avoid Nested Loops
 
 **Problem:** Quadratic iteration over two arrays.

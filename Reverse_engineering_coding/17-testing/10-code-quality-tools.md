@@ -1,8 +1,5 @@
 # Chapter 10 — Code Quality Tools
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## ESLint
 
 Static analysis for finding and fixing problems:

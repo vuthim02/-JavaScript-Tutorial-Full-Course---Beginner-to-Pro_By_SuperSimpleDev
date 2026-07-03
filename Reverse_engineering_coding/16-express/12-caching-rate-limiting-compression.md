@@ -1,7 +1,4 @@
-# Chapter 13 — Response Caching
-
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
+# Chapter 12 — Response Caching
 
 ## In-Memory Cache Middleware
 
@@ -180,5 +177,5 @@ app.use(compression({
 | Is compression enabled? | Check for `compression()` middleware |
 ## Next Steps
 
-[Back to Chapter 11](11-logging.md): Chapter 12 — Structured Logging
-[Proceed to Chapter 13](13-security-configuration.md): Chapter 16 — Security Headers (Helmet) to learn about chapter 16 — security headers (helmet).
+[Back to Chapter 11](11-logging.md): Chapter 11 — Structured Logging
+[Proceed to Chapter 13](13-security-configuration.md): Chapter 13 — Security Headers (Helmet) to learn about chapter 13 — security headers (helmet).

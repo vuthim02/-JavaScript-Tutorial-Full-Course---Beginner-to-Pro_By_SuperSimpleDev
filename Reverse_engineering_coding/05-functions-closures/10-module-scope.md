@@ -1,8 +1,5 @@
 # Module Scope
 
-<img src="https://media.giphy.com/media/f4ztZcdm9Fi90vL4Zd/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is Module Scope?
 
 When a JavaScript file is loaded as an **ES Module** (with `type="module"` in HTML or `.mjs` extension or in Node with `"type": "module"`), each file gets its own **isolated scope**. Variables declared at the top level are **not** global — they are module-scoped.

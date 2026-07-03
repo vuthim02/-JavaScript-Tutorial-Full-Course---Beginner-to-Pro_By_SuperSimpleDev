@@ -1,6 +1,5 @@
 # Comparison Operators
 
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHBsZ3FyZjlyaDc1YWFpNXpnMmE1Z3YzaG92MjN2eWEwZmhhNWFoYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VE4M22BIdBSkkqj6KY/giphy.webp" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## Comparison Operators

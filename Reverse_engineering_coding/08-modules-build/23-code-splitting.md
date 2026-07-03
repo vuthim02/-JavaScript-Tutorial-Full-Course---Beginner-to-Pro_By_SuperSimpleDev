@@ -1,8 +1,5 @@
 # 23 — Code Splitting
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Loading Only What's Needed
 
 Instead of one large 1MB bundle for the entire app, split into chunks:

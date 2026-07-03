@@ -1,8 +1,5 @@
 # Chapter 10 — CORS
 
-<img src="https://media.giphy.com/media/NSzHiAwAcazs7dcDr9/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## CORS Middleware
 
 ```javascript
@@ -189,4 +186,4 @@ const upload = multer({
 ## Next Steps
 
 [Back to Chapter 9](09-authorization.md): Chapter 9 — Authorization
-[Proceed to Chapter 11](11-logging.md): Chapter 12 — Structured Logging to learn about chapter 12 — structured logging.
+[Proceed to Chapter 11](11-logging.md): Chapter 11 — Structured Logging to learn about chapter 11 — structured logging.

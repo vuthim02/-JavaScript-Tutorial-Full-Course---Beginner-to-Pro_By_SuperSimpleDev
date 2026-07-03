@@ -1,8 +1,5 @@
 # DOM Performance Optimization
 
-<img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Why DOM Operations Are Slow
 
 Every DOM change can trigger layout, paint, or composite — expensive browser operations.
@@ -192,4 +189,4 @@ element.addEventListener("animationend", () => {
 ## Next Steps
 
 [Back to Chapter 42](42-postmessage.md): Cross-Window Communication (postMessage)
-[Proceed to Module 10](../10-advanced-js/README.md): Advanced JavaScript to learn about advanced JavaScript features and metaprogramming.
+[Proceed to Chapter 44](44-web-vitals.md): 44 — Web Performance & Core Web Vitals to learn about Core Web Vitals and performance optimization.

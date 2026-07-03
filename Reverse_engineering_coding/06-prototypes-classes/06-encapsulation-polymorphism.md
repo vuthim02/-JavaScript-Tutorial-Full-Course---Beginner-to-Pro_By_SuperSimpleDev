@@ -1,8 +1,5 @@
 # Encapsulation, Polymorphism & Composition
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Encapsulation
 
 Hides internal implementation details, exposing only a controlled public interface.

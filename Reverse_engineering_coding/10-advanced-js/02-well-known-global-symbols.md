@@ -1,8 +1,5 @@
 # 02 — Well-Known Symbols & Global Symbols
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Well-Known Symbols
 
 JavaScript has built-in symbols that customize behavior:

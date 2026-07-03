@@ -1,8 +1,5 @@
 # 08 — ACID: Database Transaction Guarantees
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is ACID?
 
 | Letter | Property | Meaning |

@@ -1,8 +1,5 @@
 # Binary Search Tree
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Tree Structure
 
 ```

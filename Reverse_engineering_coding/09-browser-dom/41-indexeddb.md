@@ -1,8 +1,5 @@
 # IndexedDB
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Client-Side Database
 
 IndexedDB is a full NoSQL database in the browser — supports structured data, indexes, and large storage.

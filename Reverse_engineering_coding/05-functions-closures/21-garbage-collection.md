@@ -1,8 +1,5 @@
 # Garbage Collection
 
-<img src="https://media.giphy.com/media/NSzHiAwAcazs7dcDr9/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Core Concept: Reachability
 
 The GC doesn't ask "Is this still needed?" It asks "**Is this still reachable?**"
@@ -82,4 +79,4 @@ fn = null; // now `alive` is also GC eligible
 ## Next Steps
 
 [Back to Chapter 20](20-generators-advanced.md): Generators — Advanced Topics
-[Proceed to Chapter 22](22-memory-leaks.md): Memory Leaks to learn about memory leaks.
+[Proceed to Module 12 Chapter 9](../12-v8-engine/09-memory-leaks-globals-timers-dom.md): Memory Leaks — Globals, Timers & DOM to learn about memory leaks.

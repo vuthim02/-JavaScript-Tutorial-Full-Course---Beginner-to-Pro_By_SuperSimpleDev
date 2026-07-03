@@ -1,8 +1,7 @@
 # JavaScript Engines
 
 ## What Is a JavaScript Engine?
-<img
-  src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXhxdG42dWNjOXFqYmw1OWM3Njh3bWttZmpmbDI1enMwMnhnN3poayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Npdl9kOaKFJHuRCBGx/giphy.webp" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*f0yt4IiBglqC7Rh7Q9VRXw.png">
 
 Your computer's CPU can only understand **machine code** — raw binary instructions (0s and 1s). It has no idea what `let x = 10` means.
 
@@ -29,27 +28,10 @@ Think of it like this: you write a recipe in English, but the chef only speaks F
 
 Here's the journey your code takes:
 
-```
-Your JavaScript Code (human-readable text)
-             ↓
-         [ Parser ]
-             ↓
-  AST — Abstract Syntax Tree (a tree structure)
-             ↓
-    [ Interpreter — "Ignition" in V8 ]
-             ↓
-         Bytecode (intermediate)
-             ↓
-    [ Compiler — "TurboFan" in V8 ]
-             ↓
-       Optimized Machine Code
-             ↓
-            CPU
-             ↓
-         Result! ✅
-```
 
 ---
+<img
+  src="https://miro.medium.com/1*lwJbwPn-GFJQw1PFvFSmAQ.gif" alt="Animated GIF" style="width:700px; height:500px;">
 
 ### Step 1 — The Parser
 

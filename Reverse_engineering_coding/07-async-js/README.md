@@ -1,8 +1,5 @@
 # Part 7 — Asynchronous JavaScript
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split from the main `part7-asynchronous-javascript.md` into focused subtopic files.
 
 ## Files
@@ -28,18 +25,25 @@ Split from the main `part7-asynchronous-javascript.md` into focused subtopic fil
 | 17 | [17-error-handling.md](17-error-handling.md) | Async error handling, try/catch, global handlers |
 | 18 | [18-concurrency-patterns.md](18-concurrency-patterns.md) | Sequential vs parallel execution, mixed patterns |
 | 19 | [19-debounce-throttle.md](19-debounce-throttle.md) | Debouncing and throttling implementations |
-| 20 | [20-memory-leaks.md](20-memory-leaks.md) | Memory leaks in async code, prevention |
-| 21 | [21-review-checklist.md](21-review-checklist.md) | Senior reverse engineering checklist + summary |
-| 22 | [22-projects.md](22-projects.md) | Project examples: timer, API client, retry, search |
-| 23 | [23-set-interval.md](23-set-interval.md) | `setInterval` & `clearInterval`, drift, recursive setTimeout vs setInterval |
-| 24 | [24-request-animation-frame.md](24-request-animation-frame.md) | `requestAnimationFrame`, FPS control, delta-time animation |
-| 25 | [25-web-workers.md](25-web-workers.md) | Web Workers, message passing, transferable objects, worker types |
-| 26 | [26-generators-async-iteration.md](26-generators-async-iteration.md) | Generators, `yield`, `yield*`, `async function*`, `for await...of` |
+| 20 | [21-review-checklist.md](21-review-checklist.md) | Senior reverse engineering checklist + summary |
+| 21 | [22-projects.md](22-projects.md) | Project examples: timer, API client, retry, search |
+| 22 | [23-set-interval.md](23-set-interval.md) | `setInterval` & `clearInterval`, drift, recursive setTimeout vs setInterval |
+| 23 | [24-request-animation-frame.md](24-request-animation-frame.md) | `requestAnimationFrame`, FPS control, delta-time animation |
+| 24 | [25-web-workers.md](25-web-workers.md) | Web Workers, message passing, transferable objects, worker types |
+| 25 | [26-generators-async-iteration.md](26-generators-async-iteration.md) | Generators, `yield`, `yield*`, `async function*`, `for await...of` |
 
 ## Usage
 
 Each file is self-contained (100-200 lines) with code examples and Q&A tables.
 Read in order for a complete course, or jump to specific topics as needed.
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/07-async-js.js
+```
 
 ## Next Steps
 

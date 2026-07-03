@@ -1,0 +1,20 @@
+{
+  "name": "google-store",
+  "version": "2.0.0",
+  "description": "Google Store - Full Stack E-Commerce",
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "node server/index.js",
+    "scrape": "node scrape_images.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.6.0",
+    "puppeteer-core": "^25.3.0",
+    "qrcode": "^1.5.4",
+    "stripe": "^17.3.0",
+    "uuid": "^10.0.0"
+  }
+}

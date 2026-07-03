@@ -1,8 +1,5 @@
 # 10 — WeakMap & WeakSet
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## WeakMap: Memory-Aware Key-Value Store
 
 Keys must be objects. Values can be anything.
@@ -193,4 +190,4 @@ for (let v of ws) {} // TypeError
 ## Next Steps
 
 [Back to Chapter 9](09-set.md): 09 — Set
-[Proceed to Chapter 11](11-property-descriptors.md): 11 — Property Descriptors to learn about 11 — property descriptors.
+[Proceed to Module 6 Chapter 2](../06-prototypes-classes/02-property-descriptors.md): Property Descriptors, Freeze & Seal to learn about property descriptors.

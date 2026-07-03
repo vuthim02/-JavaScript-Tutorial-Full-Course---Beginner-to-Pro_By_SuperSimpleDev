@@ -1,8 +1,5 @@
 # Project: Full TypeScript API with Type-Safe Patterns
 
-<img src="https://media.giphy.com/media/wcgn5fVDjvR7pdvz4C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ```typescript
 import express, { Request, Response, NextFunction } from "express";
 import { readFile, writeFile } from "fs/promises";

@@ -1,6 +1,6 @@
 # Senior Engineer Reverse Engineering Checklist
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://media1.tenor.com/m/e6gf3Da-UW4AAAAd/ishowspeed-speed.gif" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## Purpose

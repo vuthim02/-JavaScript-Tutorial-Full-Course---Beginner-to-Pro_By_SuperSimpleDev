@@ -1,8 +1,5 @@
 # Hoisting and the Temporal Dead Zone
 
-<img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is Hoisting?
 
 **Hoisting** is what JavaScript does **before** it runs your code.

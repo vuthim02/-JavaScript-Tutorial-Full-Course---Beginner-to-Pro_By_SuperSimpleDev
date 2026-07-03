@@ -1,7 +1,4 @@
-# Chapter 16 — Security Headers (Helmet)
-
-<img src="https://media.giphy.com/media/NSzHiAwAcazs7dcDr9/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
+# Chapter 13 — Security Headers (Helmet)
 
 ```javascript
 const helmet = require('helmet');
@@ -138,5 +135,5 @@ const secret = require('./config').jwt.secret;
 | Is config validated? | Check for required env vars at startup |
 ## Next Steps
 
-[Back to Chapter 12](12-caching-rate-limiting-compression.md): Chapter 13 — Response Caching
-[Proceed to Chapter 14](14-api-design-pagination-versioning.md): Chapter 18 — Consistent API Responses to learn about chapter 18 — consistent api responses.
+[Back to Chapter 12](12-caching-rate-limiting-compression.md): Chapter 12 — Response Caching
+[Proceed to Chapter 14](14-api-design-pagination-versioning.md): Chapter 14 — Consistent API Responses to learn about chapter 14 — consistent api responses.

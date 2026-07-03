@@ -1,8 +1,5 @@
 # Algorithmic Thinking — Problem Solving with Code
 
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Problem-Solving Template
 
 When faced with any coding problem, follow this structured approach:

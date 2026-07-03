@@ -1,8 +1,5 @@
 # Chapter 7 — Input Validation
 
-<img src="https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Why Validate
 
 ```javascript

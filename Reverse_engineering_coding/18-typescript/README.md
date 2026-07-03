@@ -1,8 +1,5 @@
 # Part 18 — TypeScript Deep Dive
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 TypeScript is **JavaScript with types** — a static analysis layer that catches bugs at compile time and is erased at runtime.
 
 ## Files
@@ -34,6 +31,14 @@ TypeScript is **JavaScript with types** — a static analysis layer that catches
 - Prefer `unknown` over `any`.
 - Use discriminated unions to model states explicitly.
 - Generics preserve type information across reusable code.
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/18-typescript.js
+```
 
 ## Next Steps
 

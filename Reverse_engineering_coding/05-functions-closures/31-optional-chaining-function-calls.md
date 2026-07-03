@@ -1,8 +1,5 @@
 # Optional Chaining & Nullish Coalescing with Functions
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Optional Chaining with Function Calls `?.()`
 
 ### Syntax
@@ -206,5 +203,5 @@ console.log(getRole("unknown")); // "guest"
 | Can `??` be used with `&&` or `||`?   | Syntax error — use parentheses: `(a ?? b) && c`     |
 ## Next Steps
 
-[Back to Chapter 30](30-error-handling-function-patterns.md): Error Handling Patterns in Functions
+[Back to Module 3 Chapter 6](../03-control-flow/06-error-handling.md): Error Handling — try/catch, finally & Custom Errors
 [Proceed to Module 6](../06-prototypes-classes/README.md): Objects, Prototypes, Classes, Constructors, `this` to learn about prototypal inheritance and object-oriented JavaScript.

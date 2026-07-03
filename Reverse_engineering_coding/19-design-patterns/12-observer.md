@@ -1,8 +1,5 @@
 # Observer Pattern
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 When one object (the *subject*) changes state, many other objects (the *observers*) need to be notified automatically. Polling is inefficient — the observer pattern pushes updates.

@@ -1,8 +1,5 @@
 # 22 — Minification
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Code Compression
 
 Transforms:

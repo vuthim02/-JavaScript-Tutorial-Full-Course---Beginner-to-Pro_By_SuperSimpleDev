@@ -1,8 +1,5 @@
 # Chapter 2 — The Middleware Stack
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is Middleware?
 
 Middleware functions have access to the request object (`req`), the response object (`res`), and the `next` function.

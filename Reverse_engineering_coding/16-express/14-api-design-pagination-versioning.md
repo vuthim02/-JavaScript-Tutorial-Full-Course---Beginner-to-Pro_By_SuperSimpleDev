@@ -1,7 +1,4 @@
-# Chapter 18 — Consistent API Responses
-
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
+# Chapter 14 — Consistent API Responses
 
 ## Standard Response Format
 
@@ -162,5 +159,5 @@ class UserController {
 | Is the API versioned? | Check for `/v1/`, `/v2/` in URL paths |
 ## Next Steps
 
-[Back to Chapter 13](13-security-configuration.md): Chapter 16 — Security Headers (Helmet)
-[Proceed to Chapter 15](15-testing-documentation.md): Chapter 21 — Testing Express Applications to learn about chapter 21 — testing express applications.
+[Back to Chapter 13](13-security-configuration.md): Chapter 13 — Security Headers (Helmet)
+[Proceed to Chapter 15](15-testing-documentation.md): Chapter 15 — Testing Express Applications to learn about chapter 15 — testing express applications.

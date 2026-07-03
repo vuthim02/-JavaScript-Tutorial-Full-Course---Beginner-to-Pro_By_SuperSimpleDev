@@ -1,8 +1,5 @@
 # Object Static Methods: keys, values, entries, assign, is & More
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Object.keys() — Get Own Enumerable Property Names
 
 Returns an array of the object's own enumerable property names (keys).
@@ -146,6 +143,80 @@ console.log(Object.keys(obj));
 | String keys | Insertion order |
 | Symbol keys | Insertion order |
 
+## Object.freeze() — Make Object Immutable (Shallow)
+
+`Object.freeze(obj)` prevents adding, removing, or changing properties. Nested objects are NOT frozen.
+
+```javascript
+const user = { name: "Alice", address: { city: "Boston" } };
+Object.freeze(user);
+user.name = "Bob";          // ❌ silently fails (TypeError in strict mode)
+user.address.city = "NYC";  // ✅ works — shallow freeze!
+
+// Check
+Object.isFrozen(user);           // true
+Object.isFrozen(user.address);   // false
+```
+
+### Deep Freeze Helper
+
+```javascript
+function deepFreeze(obj) {
+    const props = Object.getOwnPropertyNames(obj);
+    for (const prop of props) {
+        const value = obj[prop];
+        if (value && typeof value === "object") deepFreeze(value);
+    }
+    return Object.freeze(obj);
+}
+```
+
+## Object.seal() — Prevent Add/Delete, Allow Changes
+
+```javascript
+const user = { name: "Alice", age: 25 };
+Object.seal(user);
+user.name = "Bob";     // ✅ allowed
+delete user.name;      // ❌ cannot delete
+Object.isSealed(user); // true
+```
+
+### freeze vs seal vs preventExtensions
+
+| Method | Add | Delete | Change |
+|--------|-----|--------|--------|
+| `preventExtensions()` | ❌ | ✅ | ✅ |
+| `Object.seal()` | ❌ | ❌ | ✅ |
+| `Object.freeze()` | ❌ | ❌ | ❌ |
+
+## Property Checking
+
+### `in` Operator — Checks Own AND Inherited
+
+```javascript
+const obj = { own: "yes" };
+console.log("own" in obj);        // true
+console.log("toString" in obj);   // true — inherited from prototype
+```
+
+### `hasOwnProperty()` — Own Properties Only
+
+```javascript
+obj.hasOwnProperty("own");       // true
+obj.hasOwnProperty("toString");  // false — inherited
+```
+
+### `Object.hasOwn()` (ES2022) — Safe Version
+
+Works even on objects with no prototype (unlike `.hasOwnProperty()`):
+
+```javascript
+const obj = Object.create(null); // no prototype!
+obj.own = "yes";
+obj.hasOwnProperty("own");      // ❌ TypeError — method doesn't exist
+Object.hasOwn(obj, "own");      // ✅ true — static method, always safe
+```
+
 ## Reverse Engineering Questions
 
 | Question | Answer |
@@ -158,7 +229,12 @@ console.log(Object.keys(obj));
 | Is this a shallow or deep copy? | `Object.assign` and spread are shallow |
 | Are NaN and NaN equal with Object.is? | Yes. Unlike `===` |
 | What order do properties appear? | Integer keys sorted, then insertion order for strings |
+| Is the object frozen? | `Object.isFrozen(obj)` |
+| Is the object sealed? | `Object.isSealed(obj)` |
+| Does `in` check inherited properties? | Yes |
+| Does `hasOwnProperty` check inherited? | No — own only |
+| Why use `Object.hasOwn()`? | Works with `Object.create(null)` objects (ES2022) |
 ## Next Steps
 
 [Back to Chapter 7](07-project.md): Projects
-[Proceed to Chapter 9](09-destructuring-spread.md): Object Destructuring & Spread Operator to learn about object destructuring & spread operator.
+[Proceed to Module 4 Chapter 13](../04-arrays-objects/13-destructuring.md): Object & Array Destructuring to learn about destructuring.

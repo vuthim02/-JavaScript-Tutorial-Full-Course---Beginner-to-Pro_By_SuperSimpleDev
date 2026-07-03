@@ -1,8 +1,5 @@
 # Practical Patterns
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Pattern 1: Builder Pattern with Generics
 
 ```typescript

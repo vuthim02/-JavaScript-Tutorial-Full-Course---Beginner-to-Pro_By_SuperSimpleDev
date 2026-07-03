@@ -1,8 +1,5 @@
 # Array Internals: Memory Structure and Properties
 
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is an Array?
 
 An **array** is an ordered, integer-indexed collection of values. Under the hood, arrays are **objects** with special behavior.
@@ -139,6 +136,52 @@ const args = Array.from(arguments);
 const divsArr = [...divs];
 ```
 
+## Performance Characteristics
+
+| Operation | Complexity | Note |
+|-----------|-----------|------|
+| `push` / `pop` (end) | O(1) | Fast — use for stacks |
+| `shift` / `unshift` (start) | O(n) | Slow for large arrays — reindexes all elements |
+| `splice` (middle) | O(n) | Reindexes elements after the insertion/removal point |
+| `sort` | O(n log n) | TimSort algorithm (varies by engine) |
+| Access by index `arr[i]` | O(1) | Fast — direct property lookup |
+| `indexOf` / `includes` | O(n) | Linear scan |
+| `map` / `filter` / `reduce` | O(n) | Creates new array (except reduce) |
+
+## V8 Elements Kinds
+
+V8 tracks an internal "elements kind" tag on every array for optimization:
+
+| Tag | Description | Speed |
+|-----|-------------|-------|
+| `PACKED_SMI_ELEMENTS` | All integers | Fastest |
+| `PACKED_DOUBLE_ELEMENTS` | All numbers (includes floats) | Fast |
+| `PACKED_ELEMENTS` | Mixed types | Normal |
+| `HOLEY_*` | Any of above with gaps | Slower — hole checks needed |
+
+```javascript
+const a = [1, 2, 3];       // PACKED_SMI_ELEMENTS
+a.push(4.5);                // downgrades to PACKED_DOUBLE_ELEMENTS
+a.push("x");                // downgrades to PACKED_ELEMENTS
+a[100] = 5;                 // downgrades to HOLEY_ELEMENTS
+```
+
+Each downgrade is permanent and irreversible — maintain homogeneous, dense arrays for best performance.
+
+## `delete` vs `splice`
+
+```javascript
+const a = [1, 2, 3, 4];
+delete a[1];                // [1, empty, 3, 4] — leaves a hole, length unchanged
+console.log(a.length);      // 4
+
+const b = [1, 2, 3, 4];
+b.splice(1, 1);             // [1, 3, 4] — removes element, reindexes, length decremented
+console.log(b.length);      // 3
+```
+
+Use `splice` for removal, not `delete`.
+
 ## Array as Stack / Queue
 
 ```javascript
@@ -154,6 +197,8 @@ queue.push(1);        // [1]
 queue.push(2);        // [1, 2]
 queue.shift();        // returns 1, queue→[2]
 ```
+
+**Performance note:** For queues with many elements, `shift` is O(n). Use an index-based queue or a proper deque for large-scale FIFO operations.
 
 ## Creating Arrays with `Array.from()` and `Array.of()`
 
@@ -197,6 +242,9 @@ Array.of(3);     // [3] — one element with value 3
 | What is the length?                   | `arr.length` — may be larger than element count if sparse. |
 | Is the array homogeneous?             | All same type? Or mixed (valid but unusual).        |
 | Is the array being mutated?           | Check methods: push, pop, splice, sort — all mutate. |
+| What is the time complexity of `shift`? | O(n) — reindexes all remaining elements |
+| What V8 elements kind is this array?   | Determined by homogeneity and density |
+| Is `delete` or `splice` correct here? | `splice` for removal; `delete` leaves gaps |
 ## Next Steps
 
 [Back to Module Overview](README.md)

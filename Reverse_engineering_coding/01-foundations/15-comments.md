@@ -1,6 +1,6 @@
 # Comments in JavaScript
 
-<img src="https://media.giphy.com/media/Q61LJj43H48z1FIK4X/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://media.tenor.com/IzWeYVhewBsAAAAM/the-simpsons-homer.gif" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## What Are Comments?

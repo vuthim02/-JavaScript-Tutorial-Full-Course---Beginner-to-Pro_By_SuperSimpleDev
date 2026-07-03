@@ -1,8 +1,5 @@
 # Promise.all()
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Running Tasks Concurrently
 
 Waits for **all** promises to fulfill. Rejects immediately if **any** rejects.

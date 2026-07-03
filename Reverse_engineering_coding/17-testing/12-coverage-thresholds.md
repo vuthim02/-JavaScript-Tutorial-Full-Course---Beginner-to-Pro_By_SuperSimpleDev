@@ -1,8 +1,5 @@
 # Chapter 12 — Coverage Thresholds
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is Coverage?
 
 Measures how much of your code is executed during tests:

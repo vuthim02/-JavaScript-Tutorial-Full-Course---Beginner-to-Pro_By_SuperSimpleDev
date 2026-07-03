@@ -1,6 +1,6 @@
 # 06 — Error Handling: `try`/`catch`/`finally`, Custom Errors, Defensive Programming
 
-<img src="https://media.giphy.com/media/NSzHiAwAcazs7dcDr9/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20250915122545914329/error_handling.webp" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## The Problem
@@ -339,6 +339,60 @@ function process(data) {
 function process(data) {
     if (!data?.items?.length) return [];
     // main logic
+}
+```
+
+## Error Handling in Async Patterns
+
+### Async Retry with try/catch
+
+```javascript
+async function fetchWithRetry(url, retries = 3) {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return await response.json();
+        } catch (err) {
+            console.log(`Attempt ${attempt} failed: ${err.message}`);
+            if (attempt === retries) throw err; // re-throw on last attempt
+        }
+    }
+}
+
+try {
+    const data = await fetchWithRetry("/api/data");
+} catch (err) {
+    console.error("All retries exhausted:", err.message);
+}
+```
+
+## Error Handling in Function Composition
+
+When composing functions with `pipe`, wrap errors with context to trace where the pipeline failed:
+
+```javascript
+const pipe = (...fns) => async (input) => {
+    let value = input;
+    for (const fn of fns) {
+        try {
+            value = await fn(value);
+        } catch (err) {
+            throw new Error(`Pipeline failed at ${fn.name || "anonymous"}: ${err.message}`);
+        }
+    }
+    return value;
+};
+
+const parse = (data) => JSON.parse(data);
+const validate = (user) => { if (!user.name) throw new Error("Invalid user"); return user; };
+const save = async (user) => { /* db save */ };
+
+const processUser = pipe(parse, validate, save);
+try {
+    await processUser('{"name":"Alice"}');
+} catch (err) {
+    console.error(err.message); // "Pipeline failed at validate: Invalid user"
 }
 ```
 

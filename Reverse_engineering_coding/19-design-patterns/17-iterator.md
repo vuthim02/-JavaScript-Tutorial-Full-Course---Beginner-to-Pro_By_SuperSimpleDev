@@ -1,8 +1,5 @@
 # Iterator Pattern
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 Different data structures (arrays, trees, maps) need a uniform way to traverse their elements without exposing their internal structure.

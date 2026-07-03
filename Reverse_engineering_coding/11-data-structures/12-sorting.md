@@ -1,8 +1,5 @@
 # Sorting
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Bubble Sort — O(n²)
 
 Repeated swaps, largest bubbles to the end.

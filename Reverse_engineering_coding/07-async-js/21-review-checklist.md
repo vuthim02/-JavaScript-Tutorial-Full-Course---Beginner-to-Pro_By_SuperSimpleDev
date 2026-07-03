@@ -1,8 +1,5 @@
 # Senior Reverse Engineering Checklist
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Whenever reading asynchronous code, ask these questions:
 
 ## Is operation synchronous or asynchronous?
@@ -103,5 +100,5 @@ Unawaited promise calls lead to unhandled rejections and unexpected execution or
 | Memory Leaks | Forgotten timers, listeners, closures |
 ## Next Steps
 
-[Back to Chapter 20](20-memory-leaks.md): Memory Leaks in Async Code
+[Back to Module 12 Chapter 9](../12-v8-engine/09-memory-leaks-globals-timers-dom.md): Memory Leaks — Globals, Timers & DOM
 [Proceed to Chapter 22](22-projects.md): Projects to learn about projects.

@@ -1,8 +1,5 @@
 # Method Shorthand, Computed Properties, Getters & Setters
 
-<img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Method Shorthand Syntax (ES2015)
 
 ### Syntax
@@ -293,4 +290,4 @@ console.log(obj._data); // [1, 2, 3]
 ## Next Steps
 
 [Back to Chapter 28](28-mastery-map-and-next.md): Complete Function Mastery Map
-[Proceed to Chapter 30](30-error-handling-function-patterns.md): Error Handling Patterns in Functions to learn about error handling patterns in functions.
+[Proceed to Module 3 Chapter 6](../03-control-flow/06-error-handling.md): Error Handling — try/catch, finally & Custom Errors to learn about error handling.

@@ -1,8 +1,5 @@
 # 10 — npm (Node Package Manager)
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 The default package manager for Node.js. Downloads and manages dependencies.
 
 ## Commands

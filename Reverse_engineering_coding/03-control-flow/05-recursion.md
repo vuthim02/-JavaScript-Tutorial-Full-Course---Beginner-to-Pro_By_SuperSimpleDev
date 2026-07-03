@@ -1,9 +1,8 @@
 # 05 — Recursion, Call Stack & Stack Overflow
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
 
 ## What Is Recursion?
+<img src="https://miro.medium.com/v2/resize:fit:860/1*EXuU9kvP9WG9Iw4DpJ2_Nw.gif" alt="Animated GIF" style="width:400px; height:300px;">
 
 A function that calls itself is **recursive**.
 
@@ -66,6 +65,7 @@ factorial(5)
 Maximum stack depth: 5 frames.
 
 ### Fibonacci
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Fibonacci_call_tree_5.gif" alt="Animated GIF" style="width:400px; height:300px;">
 
 ```javascript
 function fibonacci(n) {

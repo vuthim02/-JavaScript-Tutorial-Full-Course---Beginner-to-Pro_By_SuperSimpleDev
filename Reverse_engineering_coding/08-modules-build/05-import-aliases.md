@@ -1,8 +1,5 @@
 # 05 — Import Aliases
 
-<img src="https://media.giphy.com/media/f4ztZcdm9Fi90vL4Zd/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Renaming on Import
 
 ```javascript

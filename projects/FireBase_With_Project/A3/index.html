@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firebase Image Gallery - A3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- LOGIN -->
+    <div id="auth-section">
+      <h2>📸 Image Gallery</h2>
+      <p class="subtitle">Login to upload & share images</p>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button id="login-btn">Login</button>
+      <button id="google-btn" class="google-btn">Sign in with Google</button>
+      <p id="auth-error" class="error-message"></p>
+      <p class="toggle">Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signup-section" class="hidden">
+      <h2>Create Account</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" />
+      <input type="email" id="signup-email" placeholder="Email" />
+      <input type="password" id="signup-password" placeholder="Password (6+ chars)" />
+      <button id="signup-btn">Sign Up</button>
+      <p id="signup-error" class="error-message"></p>
+      <p class="toggle">Already have an account? <a href="#" id="show-login">Login</a></p>
+    </div>
+
+    <!-- GALLERY -->
+    <div id="gallery-section" class="hidden">
+      <div class="header">
+        <div>
+          <h2>📸 Gallery</h2>
+          <p class="user-info">Logged in as <span id="user-display"></span></p>
+        </div>
+        <button id="logout-btn" class="small-btn">Logout</button>
+      </div>
+
+      <!-- Upload -->
+      <div class="upload-area" id="upload-area">
+        <p class="upload-icon">📁</p>
+        <p class="upload-text">Click or drop an image here</p>
+        <p class="upload-hint">Max 5MB · JPG, PNG, GIF</p>
+        <input type="file" id="file-input" accept="image/*" hidden />
+        <div id="upload-progress" class="hidden">
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+          <p id="progress-text">0%</p>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div id="gallery-grid"></div>
+      <p id="empty-state" class="hidden">No images yet. Upload your first one!</p>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

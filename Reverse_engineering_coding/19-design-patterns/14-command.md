@@ -1,8 +1,5 @@
 # Command Pattern
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 You need to parameterize objects with operations, queue operations, support undo/redo, or log changes. The Command pattern turns a request into a standalone object.

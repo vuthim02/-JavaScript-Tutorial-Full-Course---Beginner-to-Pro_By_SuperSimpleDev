@@ -1,8 +1,5 @@
 # 09 — Browser DOM, BOM, Events, Forms, Storage, Rendering Pipeline
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split from `part9-browser-internals-dom-bom-rendering.md`. Each file covers one focused subtopic (100–200 lines).
 
 ## Files
@@ -52,10 +49,19 @@ Split from `part9-browser-internals-dom-bom-rendering.md`. Each file covers one 
 | 41 | [41-indexeddb.md](41-indexeddb.md) | IndexedDB: client-side NoSQL database, CRUD, indexes |
 | 42 | [42-postmessage.md](42-postmessage.md) | postMessage: cross-window communication, BroadcastChannel |
 | 43 | [43-dom-performance.md](43-dom-performance.md) | DOM performance: DocumentFragment, layout thrashing, virtual scroll |
+| 44 | [44-web-vitals.md](44-web-vitals.md) | Core Web Vitals (LCP, INP, CLS), Lighthouse, performance budgets, RAIL model, optimization strategies |
 
 ## Source
 
 Original: `part9-browser-internals-dom-bom-rendering.md` (3440 lines)
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/09-browser-dom.js
+```
 
 ## Next Steps
 

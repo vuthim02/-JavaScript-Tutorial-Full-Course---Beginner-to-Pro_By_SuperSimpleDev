@@ -1,8 +1,5 @@
 # 12. WebSockets — Full-Duplex Real-Time Communication
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## HTTP vs WebSocket
 
 ```

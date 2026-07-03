@@ -1,8 +1,5 @@
 # Reflow vs Repaint
 
-<img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Reflow (Layout)
 
 Changes that affect **geometry**:

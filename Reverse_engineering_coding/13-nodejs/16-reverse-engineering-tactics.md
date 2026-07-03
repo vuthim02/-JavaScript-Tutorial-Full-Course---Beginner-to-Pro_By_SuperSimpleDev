@@ -1,8 +1,5 @@
 # Reverse Engineering Tactics & Projects
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Tactics for Reading Backend Code
 
 ### Which module is imported?
@@ -166,4 +163,4 @@ Ask:
 ## Next Steps
 
 [Back to Chapter 15](15-package-management.md): Package Management — npm, package.json, Semver, Environment
-[Proceed to Module 14](../14-networking/README.md): Networking, HTTP, REST APIs, WebSockets, GraphQL, Security to learn about networking and API development.
+[Proceed to Chapter 17](17-production-observability.md): Production Observability — Logging, Tracing & Metrics to learn about production observability.

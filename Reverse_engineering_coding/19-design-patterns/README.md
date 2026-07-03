@@ -1,8 +1,5 @@
 # Part 19 — Design Patterns in JavaScript
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Split chapter files derived from the original `part19-design-patterns.md` (2781 lines).
 
 ## Files
@@ -40,6 +37,14 @@ Each file includes:
 - Code examples in idiomatic JavaScript
 - Real-world use cases
 - Reverse Engineering Q&A tables
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/19-design-patterns.js
+```
 
 ## Next Steps
 

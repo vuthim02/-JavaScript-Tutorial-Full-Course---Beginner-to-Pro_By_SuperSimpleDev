@@ -1,8 +1,5 @@
 # Chapter 1 — Express Internals
 
-<img src="https://media.giphy.com/media/KGhpQ5NMoWKQurlHwI/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Express Is
 
 Express is a **routing and middleware web framework**. It wraps Node's `http` module and adds a middleware pipeline.

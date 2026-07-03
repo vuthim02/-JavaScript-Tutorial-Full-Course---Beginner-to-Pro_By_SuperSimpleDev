@@ -1,8 +1,5 @@
 # async / await
 
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is an async Function?
 
 A function declared with the `async` keyword. It **always returns a promise**.
@@ -119,6 +116,27 @@ async function processItems(items) {
 }
 ```
 
+### ⚠️ TRAP: `forEach` with `await`
+
+`Array.prototype.forEach` does **not** respect `await` — it passes your callback to the next iteration immediately:
+
+```javascript
+async function processItems(items) {
+    items.forEach(async (item) => {
+        await process(item); // BUG: all run in parallel, not sequential
+        // Also: this promise is silently discarded — errors are unhandled!
+    });
+    console.log("Done"); // Runs BEFORE any await completes!
+}
+```
+
+**Why?** `forEach` takes a callback and calls it synchronously for each element. If the callback returns a Promise (which `async` functions always do), `forEach` ignores it. The result: all iterations run in parallel, and any rejection becomes an **unhandled promise rejection**.
+
+| Intent | Correct Pattern |
+|--------|----------------|
+| Sequential | `for (const x of items) { await fn(x); }` |
+| Parallel | `await Promise.all(items.map(x => fn(x)))` |
+
 ## await Needs an async Function
 
 ```javascript
@@ -140,6 +158,10 @@ Top-level await is allowed in **ES modules** (not scripts):
 const data = await fetch("/data").then(r => r.json());
 export default data;
 ```
+
+### ⚠️ TRAP: Top-level await delays module execution
+
+When a module uses top-level `await`, all modules that `import` from it are **blocked** until the await resolves. This can create a waterfall where one slow network call delays your entire app's initialization. Use top-level await sparingly — prefer loading data in an explicit `init()` function if startup time matters.
 
 ## Common Mistake: Forgetting await
 

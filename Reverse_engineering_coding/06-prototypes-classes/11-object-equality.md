@@ -1,8 +1,5 @@
 # Object Equality & Comparison
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Reference Equality (===)
 
 Objects are compared by **reference** (memory address), not by value.

@@ -1,8 +1,5 @@
 # Classes
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## classList API
 
 The modern way to manage CSS classes.

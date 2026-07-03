@@ -1,8 +1,5 @@
 # Part 4 — Arrays, Objects, Memory Model, Built-in Methods
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Files (Study Order)
 
 | #  | File                          | Topic                                              |
@@ -30,8 +27,7 @@
 | 21 | [21-projects-part2.md](21-projects-part2.md) | Projects 4-5: Statistics Calculator, Immutable Todo |
 | 22 | [22-array-methods-extra.md](22-array-methods-extra.md) | `forEach()`, `flat()`, `flatMap()`, `at()`           |
 | 23 | [23-es2023-immutable-methods.md](23-es2023-immutable-methods.md) | `toSorted()`, `toSpliced()`, `toReversed()`, `with()` |
-| 24 | [24-object-extra-methods.md](24-object-extra-methods.md) | `Object.freeze()`, `Object.seal()`, `Object.fromEntries()`, `hasOwn` |
-| 25 | [25-for-loops-iteration.md](25-for-loops-iteration.md) | `for...of`, `for...in`, `for` loop iteration patterns |
+| 24 | [25-for-loops-iteration.md](25-for-loops-iteration.md) | `for...of`, `for...in`, `for` loop iteration patterns |
 
 ## Topics Covered
 
@@ -43,6 +39,14 @@
 - **Extra array methods:** `forEach()`, `flat()`, `flatMap()`, `at()` (ES2022 relative indexing)
 - **Iteration patterns:** `for...of`, `for...in`, classic `for` loop, choosing the right loop
 - **Chaining and performance:** intermediate array allocation, readability vs performance, time/space complexity
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/04-arrays-objects.js
+```
 
 ## Next Steps
 

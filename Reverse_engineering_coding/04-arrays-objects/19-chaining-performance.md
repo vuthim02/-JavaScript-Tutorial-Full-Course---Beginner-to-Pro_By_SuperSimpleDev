@@ -1,8 +1,5 @@
 # Chaining Methods
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is Chaining?
 
 Method chaining calls multiple methods on the same object/array in sequence, where each method returns a value that the next method is called on.

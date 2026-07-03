@@ -1,8 +1,5 @@
 # `WeakRef` & `FinalizationRegistry`
 
-<img src="https://media.giphy.com/media/NSzHiAwAcazs7dcDr9/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Problem They Solve
 
 Sometimes you want to **hold a reference** to an object **without preventing GC**. This is exactly what `WeakRef` and `FinalizationRegistry` enable.
@@ -184,5 +181,5 @@ function processOnce(obj) {
 | Can you iterate a `WeakMap`? | No — because entries can vanish at any time |
 ## Next Steps
 
-[Back to Chapter 22](22-memory-leaks.md): Memory Leaks
+[Back to Module 12 Chapter 9](../12-v8-engine/09-memory-leaks-globals-timers-dom.md): Memory Leaks — Globals, Timers & DOM
 [Proceed to Chapter 24](24-composition-and-pure-functions.md): Function Composition to learn about function composition.

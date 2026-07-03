@@ -1,8 +1,5 @@
 # 7. HTTP Cookies and Server-Side Sessions
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## HTTP Cookies
 
 ### What Cookies Do

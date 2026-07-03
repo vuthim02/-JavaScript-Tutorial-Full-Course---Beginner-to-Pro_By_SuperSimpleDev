@@ -1,8 +1,5 @@
 # Chain of Responsibility Pattern
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 A request should be processed by one of several handlers, but the sender should not know which handler. The handlers are chained, and each decides whether to process the request or pass it to the next.

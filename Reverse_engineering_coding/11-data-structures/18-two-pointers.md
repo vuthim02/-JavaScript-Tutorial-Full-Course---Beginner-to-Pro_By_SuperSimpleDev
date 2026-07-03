@@ -1,8 +1,5 @@
 # Two Pointers
 
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Efficient Pair Problems
 
 Two pointers use left and right indices moving toward each other. This eliminates nested loops, reducing O(n²) to O(n).

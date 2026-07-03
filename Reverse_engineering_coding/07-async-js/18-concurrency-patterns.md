@@ -1,8 +1,5 @@
 # Concurrency Patterns
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Sequential Execution — One at a Time
 
 ```javascript

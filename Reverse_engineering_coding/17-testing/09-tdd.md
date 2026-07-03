@@ -1,8 +1,5 @@
 # Chapter 9 — Test-Driven Development (TDD)
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Testing is not an afterthought. TDD makes it the starting point.
 
 The core idea: write the test before the implementation. This guarantees your code is testable from the start and that every line of code has a reason to exist.

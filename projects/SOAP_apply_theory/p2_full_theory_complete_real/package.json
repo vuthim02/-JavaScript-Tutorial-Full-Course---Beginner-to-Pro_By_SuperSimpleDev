@@ -1,0 +1,42 @@
+{
+    "name": "soap-full-lab",
+    "version": "2.1.0",
+    "description": "Complete real-world SOAP project with server, client, and interactive UI — responsive & production-ready",
+    "author": "SuperSimpleDev",
+    "license": "MIT",
+    "main": "server.js",
+    "keywords": [
+        "soap",
+        "web-services",
+        "wsdl",
+        "express",
+        "rest-api",
+        "xml",
+        "bookstore",
+        "tutorial"
+    ],
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js --watch",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write \"**/*.{js,css,html,md,json}\"",
+        "format:check": "prettier --check \"**/*.{js,css,html,md,json}\"",
+        "test": "echo \"Tests not implemented yet\" && exit 0"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "dependencies": {
+        "dotenv": "^16.6.1",
+        "express": "^4.18.2",
+        "soap": "^1.0.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.50.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.28.1",
+        "nodemon": "^3.0.1",
+        "prettier": "^3.0.3"
+    }
+}

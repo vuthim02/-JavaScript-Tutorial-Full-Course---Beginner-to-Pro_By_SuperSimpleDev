@@ -1,8 +1,5 @@
 # Design Patterns in JavaScript
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Design patterns are reusable, battle-tested solutions to recurring software design problems. Every production codebase — from Express middleware to React internals to Node.js core — is built on top of these patterns.
 
 ## Mission

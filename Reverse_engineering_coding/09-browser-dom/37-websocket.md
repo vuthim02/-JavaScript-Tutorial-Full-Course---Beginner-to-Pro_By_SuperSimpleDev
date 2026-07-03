@@ -1,8 +1,5 @@
 # WebSocket
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Real-Time, Bidirectional Communication
 
 WebSocket provides a persistent connection between client and server for real-time data exchange.

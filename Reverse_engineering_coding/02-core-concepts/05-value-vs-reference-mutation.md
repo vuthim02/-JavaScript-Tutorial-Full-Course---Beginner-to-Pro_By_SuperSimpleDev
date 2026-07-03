@@ -1,8 +1,5 @@
 # Value vs Reference and Mutation
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The Most Important Concept for Beginners
 
 JavaScript has two kinds of values:
@@ -195,9 +192,16 @@ const deep2 = JSON.parse(JSON.stringify(original));
 
 ```javascript
 // Predict: primitive → independent copy, reference → shared
-let x = 5; let y = x; y = 10; console.log(x);   // ? → 5
-let arr = [1, 2, 3]; let c = arr; c.push(4); console.log(arr);  // ? → [1,2,3,4]
-let obj = { n: 1 }; let ref = obj; ref = { n: 999 }; console.log(obj.n);  // ? → 1
+let x = 5; 
+let y = x; y = 10; 
+console.log(x);   // ? → 5
+let arr = [1, 2, 3];
+let c = arr; c.push(4); 
+console.log(arr);  // ? → [1,2,3,4]
+let obj = { n: 1 }; 
+let ref = obj;
+ref = { n: 999 };
+console.log(obj.n);  // ? → 1
 ```
 ## Next Steps
 

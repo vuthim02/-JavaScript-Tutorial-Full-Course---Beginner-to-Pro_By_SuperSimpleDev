@@ -1,8 +1,5 @@
 # 03 — Ignition Interpreter & Bytecode
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Ignition (V8's Interpreter)
 
 After parsing produces the AST, V8's **Ignition** interpreter converts the AST into **bytecode**.

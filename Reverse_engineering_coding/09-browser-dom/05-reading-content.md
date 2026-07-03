@@ -1,8 +1,5 @@
 # Reading Content
 
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## textContent
 
 Gets or sets the **text** content of an element (ignores HTML tags).

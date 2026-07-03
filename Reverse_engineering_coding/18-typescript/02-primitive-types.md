@@ -1,8 +1,5 @@
 # Primitive Types
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 TypeScript's primitive types match JavaScript's runtime types.
 
 ## The Building Blocks

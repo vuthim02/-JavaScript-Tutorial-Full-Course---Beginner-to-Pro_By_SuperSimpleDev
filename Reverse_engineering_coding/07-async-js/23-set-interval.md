@@ -1,8 +1,5 @@
 # setInterval & clearInterval
 
-<img src="https://media.giphy.com/media/3oEjI9xj49ehuAGLQY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is setInterval?
 
 Repeatedly executes a callback at a fixed interval (in milliseconds).

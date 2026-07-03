@@ -1,8 +1,5 @@
 # Generics
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Why Generics?
 
 Generics allow you to write functions, classes, and types that work with **any type** while preserving type information:

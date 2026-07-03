@@ -1,7 +1,101 @@
 # Scope Chain
 
-<img src="https://media.giphy.com/media/Npdl9kOaKFJHuRCBGx/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
+## What Is Scope?
 
+**Scope** answers: **"Where can I see this variable from?"**
+
+Think of it like rooms in a house:
+- Variables in the **kitchen** are only visible in the kitchen
+- Variables in the **living room** are only visible in the living room
+- Variables **in the hallway** (global) are visible everywhere
+- A child in the kitchen can see the hallway, but NOT into the living room
+
+```
+     🌐 Global Scope (hallway — visible everywhere)
+         ↓ contains:
+    📦 Function Scope (a room — visible only inside)
+         ↓ contains:
+     🧊 Block Scope (a corner — visible only in that block)
+```
+
+### Global Scope — Visible Everywhere
+
+Variables outside any function or block are **global**, accessible from anywhere:
+
+```javascript
+let userName = "Tim";
+function showScore() {
+    console.log(userName + " scored 100");  // ✅ can access globals
+}
+```
+
+```
+┌────────────────────────────────────────────┐
+│               🌐 GLOBAL MEMORY             │
+│  userName ─────  "Tim"                     │
+│  showScore ────  [Function]                │
+└────────────────────────────────────────────┘
+```
+
+**Danger:** Any code can accidentally overwrite globals, and they live until the page closes:
+
+```javascript
+let total = 0;
+function addPoints(n) { total += n; }    // hidden side effect
+function resetGame() { total = 0; }     // modifies same global
+```
+
+### Function Scope — Visible Only Inside a Function
+
+Variables inside a function live and die with it:
+
+```javascript
+function makeGreeting() {
+    let greeting = "Hello!";
+    let punctuation = "!!!";
+    console.log(greeting + punctuation);
+}
+makeGreeting();
+console.log(greeting);  // ❌ ReferenceError
+```
+
+```
+DURING makeGreeting():
+┌───────────────────┐     ┌────────────────────────────┐
+│  🌐 GLOBAL        │     │  📦 makeGreeting() MEMORY  │
+│  makeGreeting ──  │     │  greeting → "Hello!"       │
+│  [Function]       │     │  punctuation → "!!!!"      │
+└───────────────────┘     └────────────────────────────┘
+AFTER makeGreeting() returns → its memory is DESTROYED
+```
+
+### Scope Tracing Exercise
+
+```javascript
+let color = "blue";          // global
+
+function paintWall() {
+    let color = "red";       // shadows global
+    let brushSize = "large";
+
+    function applyPaint() {
+        console.log(color);      // "red"
+        console.log(brushSize);  // "large"
+        console.log(texture);    // ❌ ReferenceError
+    }
+    applyPaint();
+}
+paintWall();
+```
+
+### RE: Scope Resolution
+
+| Question | Answer |
+|----------|--------|
+| Where is the variable declared? | Trace outward through scopes |
+| Is it global or local? | Top level = global; inside function/block = local |
+| What if not found? | `ReferenceError` |
+| Which scope wins? | The closest (innermost) — inner shadows outer |
 
 ## Lexical Scope
 

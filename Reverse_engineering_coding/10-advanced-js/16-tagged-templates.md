@@ -1,8 +1,5 @@
 # 16 — Tagged Template Literals
 
-<img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Template Literals
 
 ```javascript

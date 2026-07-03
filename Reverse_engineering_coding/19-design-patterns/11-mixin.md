@@ -1,8 +1,5 @@
 # Mixin Pattern
 
-<img src="https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 JavaScript classes support single inheritance. When you need to share behavior across unrelated classes, *mixins* allow composing behaviors horizontally.

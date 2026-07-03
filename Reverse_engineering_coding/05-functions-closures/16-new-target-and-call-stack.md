@@ -1,8 +1,5 @@
 # `new.target`
 
-<img src="https://media.giphy.com/media/l0HlwKpPGceLgQC9W/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is `new.target`?
 
 `new.target` is a meta-property available inside functions and constructors. It tells you **whether** the function was called with `new`, and **which** constructor was called.

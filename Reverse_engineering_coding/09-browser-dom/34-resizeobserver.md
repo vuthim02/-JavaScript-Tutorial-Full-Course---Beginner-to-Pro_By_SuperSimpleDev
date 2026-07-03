@@ -1,8 +1,5 @@
 # ResizeObserver
 
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Watching Element Size Changes
 
 Fires when an element's dimensions change.

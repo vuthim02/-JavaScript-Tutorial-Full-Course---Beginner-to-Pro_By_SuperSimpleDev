@@ -1,8 +1,5 @@
 # Projects: Foundational Data Structures
 
-<img src="https://media.giphy.com/media/wcgn5fVDjvR7pdvz4C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Stack Calculator (RPN)
 
 Evaluate postfix expressions using a stack:

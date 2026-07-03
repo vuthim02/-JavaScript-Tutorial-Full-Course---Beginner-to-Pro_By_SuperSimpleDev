@@ -1,8 +1,5 @@
 # Type Coercion and Explicit Conversion
 
-<img src="https://media.giphy.com/media/Lny6Rw04nsOOc/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Implicit Coercion — JavaScript Doing It For You
 
 JavaScript automatically converts types when you use operators or functions with mismatched types.
@@ -173,4 +170,4 @@ Boolean({});           // true  (empty object IS truthy)
 ## Next Steps
 
 [Back to Chapter 6](06-data-types-and-typeof.md): Data Types and the typeof Operator
-[Proceed to Chapter 8](08-operators.md): Operators Deep Dive to learn about operators deep dive.
+[Proceed to Module 2 Chapter 7](../02-core-concepts/09-optional-chaining-nullish-coalescing.md): Arithmetic Operators to learn about arithmetic and other operators.

@@ -1,6 +1,5 @@
 # Null, Undefined, Symbol, BigInt, and typeof
 
-<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTFwN3dmaHJpdGphMGR1d2s5b2Vlem00czhwbDRpM21sa3BkNHFscSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Y4mytnzylezr6sGXR4/200.webp" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## Primitive Type 4: Undefined

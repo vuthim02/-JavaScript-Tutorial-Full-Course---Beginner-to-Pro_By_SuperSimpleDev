@@ -1,8 +1,5 @@
 # Service Workers
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Network Proxy for Your App
 
 A Service Worker is a programmable network proxy that runs in the background, separate from the web page.

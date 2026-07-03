@@ -1,6 +1,6 @@
 # If-Else Statements and Control Flow
 
-<img src="" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://i.redd.it/7aldy8k21z281.jpg" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## What Is Control Flow?

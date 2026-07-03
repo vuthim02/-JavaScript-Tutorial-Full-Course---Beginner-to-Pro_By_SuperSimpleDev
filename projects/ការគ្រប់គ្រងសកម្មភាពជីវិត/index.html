@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Activity Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ការគ្រប់គ្រងសកម្មភាពជីវិត</h1>
+      <p class="subtitle">Life Activity Manager</p>
+      <p class="date" id="currentDate"></p>
+    </header>
+
+    <form id="activityForm">
+      <div class="input-group">
+        <input type="text" id="activityInput" placeholder="Add a new activity..." required>
+        <select id="categorySelect">
+          <option value="morning">🌅 Morning</option>
+          <option value="afternoon">☀️ Afternoon</option>
+          <option value="evening">🌙 Evening</option>
+        </select>
+        <button type="submit">Add</button>
+      </div>
+    </form>
+
+    <div class="stats">
+      <span id="totalCount">Total: 0</span>
+      <span id="completedCount">Completed: 0</span>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="morning">🌅 Morning</button>
+      <button class="filter-btn" data-filter="afternoon">☀️ Afternoon</button>
+      <button class="filter-btn" data-filter="evening">🌙 Evening</button>
+    </div>
+
+    <div id="activitiesList"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

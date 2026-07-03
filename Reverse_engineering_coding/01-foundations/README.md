@@ -1,8 +1,5 @@
 # 01 Foundations — JavaScript Language Foundations
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 This directory contains the split chapters from **Part 1: Foundations + Reverse Engineering Tactics**. Each file focuses on one concept and can be studied independently.
 
 ## Chapter Files
@@ -14,13 +11,11 @@ This directory contains the split chapters from **Part 1: Foundations + Reverse 
 | 03 | [03-values-primitives.md](03-values-primitives.md) | Values, primitives overview: Number, String, Boolean |
 | 04 | [04-null-undefined-symbol-bigint.md](04-null-undefined-symbol-bigint.md) | Null, Undefined, Symbol, BigInt, and the `typeof` operator |
 | 05 | [05-variables.md](05-variables.md) | Variable declarations: `let`, `const`, `var`, naming rules, scope, semicolons |
-| 06 | [06-hoisting-and-tdz.md](06-hoisting-and-tdz.md) | Hoisting behavior and the Temporal Dead Zone |
-| 07 | [07-arithmetic-operators.md](07-arithmetic-operators.md) | Arithmetic operators, pre/post increment, operator precedence, Math object, money calculations |
-| 08 | [08-comparison-operators.md](08-comparison-operators.md) | Comparison operators, `==` vs `===` |
-| 09 | [09-logical-operators.md](09-logical-operators.md) | Logical operators, short-circuit evaluation, nullish coalescing, truth tables |
-| 10 | [10-assignment-operators.md](10-assignment-operators.md) | Assignment operators including logical assignment (ES2021) |
-| 11 | [11-type-conversion.md](11-type-conversion.md) | Implicit and explicit type conversion, truthy/falsy values |
-| 12 | [12-input-and-output.md](12-input-and-output.md) | Statements, comments, console.log, prompt, alert, confirm, Node.js input |
+| 06 | [07-arithmetic-operators.md](07-arithmetic-operators.md) | Arithmetic operators, pre/post increment, operator precedence, Math object, money calculations |
+| 07 | [08-comparison-operators.md](08-comparison-operators.md) | Comparison operators, `==` vs `===` |
+| 08 | [09-logical-operators.md](09-logical-operators.md) | Logical operators, short-circuit evaluation, nullish coalescing, truth tables |
+| 09 | [10-assignment-operators.md](10-assignment-operators.md) | Assignment operators including logical assignment (ES2021) |
+| 10 | [12-input-and-output.md](12-input-and-output.md) | Statements, comments, console.log, prompt, alert, confirm, Node.js input |
 | 13 | [13-beginner-projects.md](13-beginner-projects.md) | 8 beginner projects: temp converter, circle area, age calculator, calculator, swap, even/odd, FizzBuzz, RPS logic |
 | 14 | [14-reverse-engineering-tactics.md](14-reverse-engineering-tactics.md) | RE techniques: 3-level questions, 5 Whys, workflow, pattern recognition |
 | 15 | [15-comments.md](15-comments.md) | Single-line, multi-line, JSDoc comments, best practices |
@@ -30,7 +25,15 @@ This directory contains the split chapters from **Part 1: Foundations + Reverse 
 
 ## Study Order
 
-Start from `01` and work through to `18`. Each chapter builds on the previous ones. The projects in chapter `13` apply everything from `01` through `12`. Chapter `14` gives you the mental framework to analyze any code you encounter. Chapters `15`–`18` fill in essential topics from the full course that belong at the foundations level.
+Start from `01` and work through sequentially. Each chapter builds on the previous ones. The projects chapter applies everything from the earlier chapters. The reverse engineering tactics chapter gives you the mental framework to analyze any code you encounter. The remaining chapters fill in essential topics from the full course that belong at the foundations level.
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/01-foundations.js
+```
 
 ## Next Steps
 

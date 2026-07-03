@@ -1,8 +1,5 @@
 # Part 3 — Control Flow, Iteration, Recursion & Error Handling
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## File Index
 
 | File | Topic | Source Chapters |
@@ -23,6 +20,14 @@ The following files provide practice projects, algorithm templates, and reverse 
 | 07 | [07-algorithmic-thinking.md](07-algorithmic-thinking.md) | Problem-solving template, find max, contains duplicate, palindrome, two sum, FizzBuzz, prime checker |
 | 08 | [08-reverse-engineering-checklist.md](08-reverse-engineering-checklist.md) | Senior engineer checklist: entry point, flow control, functions, data, errors, performance, security |
 | 09 | [09-projects.md](09-projects.md) | Projects: multiplication table, guess the number, recursive factorial, calculator, prime checker |
+
+## Practice
+
+Test your understanding with coding exercises:
+
+```bash
+node ../exercises/03-control-flow.js
+```
 
 ## Next Steps
 

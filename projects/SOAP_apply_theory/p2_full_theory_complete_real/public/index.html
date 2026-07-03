@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Complete real-world SOAP project with responsive UI, bookstore service, security, and live XML inspection."
+    />
+    <meta name="theme-color" content="#0b1120" />
+    <title>SOAP Full Lab — Real-World SOAP Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @media (max-width: 767px) {
+        .sidebar {
+          position: fixed;
+          left: 0;
+          top: 0;
+          height: 100vh;
+          width: 100%;
+          max-width: 250px;
+          z-index: 1000;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .sidebar.open {
+          transform: translateX(0);
+        }
+
+        .sidebar-overlay {
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+        }
+
+        .sidebar.open ~ .sidebar-overlay {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-layout">
+      <!-- ─── Sidebar ─── -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h1>SOAP Lab</h1>
+          <span class="badge">v2.1</span>
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-btn active" data-section="dashboard">
+            <span class="nav-icon">&#9654;</span> Dashboard
+          </button>
+          <button class="nav-btn" data-section="bookstore">
+            <span class="nav-icon">&#128218;</span> Bookstore
+          </button>
+          <button class="nav-btn" data-section="calculator">
+            <span class="nav-icon">&#128200;</span> Calculator
+          </button>
+          <button class="nav-btn" data-section="security">
+            <span class="nav-icon">&#128274;</span> Security
+          </button>
+          <button class="nav-btn" data-section="inspector">
+            <span class="nav-icon">&#128269;</span> Inspector
+          </button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="status-dot" id="server-status"></div>
+          <span id="status-text">Connected</span>
+        </div>
+      </aside>
+
+      <!-- ─── Mobile Overlay ─── -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- ─── Main Content ─── -->
+      <main class="main-content">
+        <!-- ═══ DASHBOARD ═══ -->
+        <section id="section-dashboard" class="section active">
+          <h2>SOAP Real-World Lab</h2>
+          <p class="subtitle">A complete SOAP server + client demonstrating all core concepts</p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value" id="stat-operations">6</div>
+              <div class="stat-label">SOAP Operations</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="stat-books">4</div>
+              <div class="stat-label">Seed Books</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">REST</div>
+              <div class="stat-label">Also Available</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">WSDL</div>
+              <div class="stat-label">Auto-Generated</div>
+            </div>
+          </div>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <h3>What's Here</h3>
+              <ul>
+                <li>
+                  <strong>Bookstore SOAP Service</strong> — full CRUD (add, get, list, update,
+                  delete, search)
+                </li>
+                <li><strong>WSDL</strong> — auto-generated at <code>/bookstore?wsdl</code></li>
+                <li><strong>Calculator Proxy</strong> — calls a real public SOAP service</li>
+                <li><strong>WS-Security</strong> — username token authentication demo</li>
+                <li>
+                  <strong>REST API</strong> — same operations available as JSON for comparison
+                </li>
+                <li><strong>Live XML Inspector</strong> — every SOAP message is captured</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Quick Links</h3>
+              <div class="quick-links">
+                <a href="/bookstore?wsdl" target="_blank" class="link-btn">View WSDL</a>
+                <a href="/api/books" target="_blank" class="link-btn">REST API</a>
+                <button class="link-btn" onclick="switchSection('bookstore')">Try Bookstore</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="soap-structure">
+            <h3>SOAP Message Flow</h3>
+            <div class="flow-diagram">
+              <div class="flow-step">
+                <div class="flow-box client">Client<br /><small>builds XML Envelope</small></div>
+                <div class="flow-arrow">&#8594;</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-box transport">
+                  HTTP POST<br /><small>Content-Type: text/xml</small>
+                </div>
+                <div class="flow-arrow">&#8594;</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-box server">
+                  SOAP Server<br /><small>parses Envelope &rarr; Body</small>
+                </div>
+                <div class="flow-arrow">&#8594;</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-box service">
+                  Service Logic<br /><small>executes operation</small>
+                </div>
+                <div class="flow-arrow">&#8594;</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-box response">
+                  SOAP Response<br /><small>XML Envelope with result</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ BOOKSTORE ═══ -->
+        <section id="section-bookstore" class="section">
+          <h2>Bookstore SOAP Service</h2>
+          <p class="subtitle">Full CRUD via SOAP — each call sends/receives real XML</p>
+
+          <div class="toolbar">
+            <button class="btn primary" data-op="listBooks">List All Books</button>
+            <button class="btn" id="show-add-form">Add Book</button>
+            <div class="search-box">
+              <input type="text" id="search-query" placeholder="Search books..." />
+              <button class="btn" id="search-btn">Search</button>
+            </div>
+          </div>
+
+          <div id="add-form" class="card hidden">
+            <h3>Add New Book</h3>
+            <div class="form-row">
+              <input type="text" id="add-title" placeholder="Title" />
+              <input type="text" id="add-author" placeholder="Author" />
+              <input type="number" id="add-year" placeholder="Year" />
+              <button class="btn primary" id="add-btn">Add via SOAP</button>
+            </div>
+          </div>
+
+          <div id="book-list" class="book-grid">
+            <p class="dim">Click "List All Books" to load.</p>
+          </div>
+
+          <div id="book-detail" class="card hidden">
+            <h3>Book Detail</h3>
+            <div id="detail-content"></div>
+          </div>
+        </section>
+
+        <!-- ═══ CALCULATOR ═══ -->
+        <section id="section-calculator" class="section">
+          <h2>Calculator SOAP Service</h2>
+          <p class="subtitle">Calls a real public SOAP service via our proxy</p>
+
+          <div class="calc-form">
+            <div class="calc-row">
+              <input type="number" id="calc-a" value="10" />
+              <select id="calc-op">
+                <option value="Add">+ Add</option>
+                <option value="Subtract">− Subtract</option>
+                <option value="Multiply">× Multiply</option>
+                <option value="Divide">÷ Divide</option>
+              </select>
+              <input type="number" id="calc-b" value="5" />
+              <button class="btn primary" id="calc-btn">= Calculate</button>
+            </div>
+            <div class="calc-result" id="calc-result">Result: —</div>
+          </div>
+
+          <div class="xml-dual">
+            <div class="xml-pane">
+              <h4>SOAP Request</h4>
+              <pre id="calc-request-xml" class="code-block">
+Click calculate to see request XML.</pre
+              >
+            </div>
+            <div class="xml-pane">
+              <h4>SOAP Response</h4>
+              <pre id="calc-response-xml" class="code-block">
+Click calculate to see response XML.</pre
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ SECURITY ═══ -->
+        <section id="section-security" class="section">
+          <h2>WS-Security Lab</h2>
+          <p class="subtitle">SOAP messages with UsernameToken authentication</p>
+
+          <div class="security-layout">
+            <div class="card">
+              <h3>Username Token</h3>
+              <p>
+                The <code>UsernameToken</code> is placed in the SOAP Header to authenticate the
+                client.
+              </p>
+
+              <div class="form-row">
+                <input type="text" id="sec-username" placeholder="Username" value="admin" />
+                <input type="password" id="sec-password" placeholder="Password" value="secret123" />
+              </div>
+
+              <pre id="sec-header-xml" class="code-block small">
+// UsernameToken XML will appear here</pre
+              >
+
+              <button class="btn primary" id="sec-add-btn">Add Book with Security</button>
+              <div id="sec-status" class="status-msg"></div>
+            </div>
+
+            <div class="card">
+              <h3>How It Works</h3>
+              <ol>
+                <li>Client builds <code>UsernameToken</code> in the SOAP Header</li>
+                <li>Server validates the token before processing the Body</li>
+                <li>If invalid, a SOAP Fault is returned</li>
+              </ol>
+              <p class="dim" style="margin-top: 0.8rem">
+                Try wrong credentials to see the SOAP Fault response.
+              </p>
+              <pre id="sec-fault-xml" class="code-block small hidden"></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ INSPECTOR ═══ -->
+        <section id="section-inspector" class="section">
+          <h2>SOAP Message Inspector</h2>
+          <p class="subtitle">Every SOAP exchange is captured here</p>
+
+          <div class="inspector-controls">
+            <button class="btn" id="clear-log">Clear Log</button>
+            <label class="filter-toggle">
+              <input type="checkbox" id="auto-scroll" checked /> Auto-scroll
+            </label>
+          </div>
+
+          <div id="inspector-log"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

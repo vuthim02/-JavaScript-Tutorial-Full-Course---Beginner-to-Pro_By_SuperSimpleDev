@@ -1,8 +1,5 @@
 # Chapter 11 — CI/CD with GitHub Actions
 
-<img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What is CI/CD?
 
 - **CI (Continuous Integration)**: Automatically test every commit

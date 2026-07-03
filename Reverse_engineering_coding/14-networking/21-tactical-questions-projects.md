@@ -1,8 +1,5 @@
 # 21. Reverse Engineering Tactical Questions and Projects
 
-<img src="https://media.giphy.com/media/wcgn5fVDjvR7pdvz4C/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Tactical Questions
 
 Whenever reading backend networking code ask:
@@ -127,4 +124,4 @@ Databases and Data Engineering: SQL, PostgreSQL, MySQL, SQLite, NoSQL, MongoDB, 
 ## Next Steps
 
 [Back to Chapter 20](20-load-balancing-webhooks.md): 20. Load Balancing and Webhooks
-[Proceed to Module 15](../15-databases/README.md): Databases and Data Engineering to learn about databases and data engineering.
+[Proceed to Chapter 22](22-owasp-top-10.md): 22. OWASP Top 10 Security Risks to learn about the OWASP Top 10 security risks.

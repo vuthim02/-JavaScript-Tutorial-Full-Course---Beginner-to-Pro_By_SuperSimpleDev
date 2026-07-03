@@ -1,6 +1,6 @@
 # Ternary Operator and Special Operators
 
-<img src="" alt="Animated GIF" style="width:400px; height:300px;">
+<img src="https://i.imgflip.com/5cqcf5.jpg" alt="Animated GIF" style="width:400px; height:300px;">
 
 
 ## The Ternary Operator

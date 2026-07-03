@@ -1,8 +1,5 @@
 # Chapter 1 — Why Testing Matters
 
-<img src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 Most developers learn to write code.
 
 Senior engineers learn to write code that does not break.

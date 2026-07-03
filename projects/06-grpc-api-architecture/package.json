@@ -1,0 +1,16 @@
+{
+  "name": "grpc-api-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:s1": "cd server && node src/server.js",
+    "start:s2": "cd server && PORT=50052 node src/server.js",
+    "start:s3": "cd server && PORT=50053 node src/server.js",
+    "start:lb": "cd proxy && node proxy.js",
+    "start:client": "cd client && node client.js",
+    "start:client:lb": "cd client && TARGET=localhost:50050 node client.js",
+    "start": "npm run start:s1 & npm run start:s2 & npm run start:s3 & sleep 3 && npm run start:lb",
+    "demo": "npm start & sleep 5 && npm run start:client:lb",
+    "stop": "killall -9 node 2>/dev/null; echo 'stopped'"
+  }
+}

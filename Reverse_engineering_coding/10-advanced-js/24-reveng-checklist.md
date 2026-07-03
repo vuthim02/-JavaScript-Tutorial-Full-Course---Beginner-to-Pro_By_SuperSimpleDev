@@ -1,8 +1,5 @@
 # 24 — Senior Reverse Engineering Checklist & Part 10 Summary
 
-<img src="https://media.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Senior Reverse Engineering Checklist
 
 Whenever reading advanced JavaScript ask:

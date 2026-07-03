@@ -1,8 +1,5 @@
 # Promise.race(), Promise.allSettled(), Promise.any()
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Promise.race() — First Settled Wins
 
 Returns a promise that settles with the first promise to settle (fulfill or reject).

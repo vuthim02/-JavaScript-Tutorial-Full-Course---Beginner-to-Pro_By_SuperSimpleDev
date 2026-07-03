@@ -1,8 +1,5 @@
 # 03 — Control Flow: `if`/`else`, `switch`, Ternary
 
-<img src="https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## The `if` Statement
 
 ```javascript

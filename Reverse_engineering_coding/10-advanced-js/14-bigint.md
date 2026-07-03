@@ -1,8 +1,5 @@
 # 14 — BigInt
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Handling Large Integers
 
 Normal number limits:
@@ -143,5 +140,5 @@ const restored = BigInt(parsed.value); // 100n
 | When to use BigInt? | When dealing with integers larger than 2^53 - 1 (e.g., timestamps, IDs, cryptographic values). |
 ## Next Steps
 
-[Back to Chapter 13](13-optional-chaining-nullish.md): 13 — Optional Chaining & Nullish Coalescing
+[Back to Module 2 Chapter 9](../02-core-concepts/09-optional-chaining-nullish-coalescing.md): Optional Chaining (?.) and Nullish Coalescing (??)
 [Proceed to Chapter 15](15-regexp.md): 15 — Regular Expressions to learn about 15 — regular expressions.

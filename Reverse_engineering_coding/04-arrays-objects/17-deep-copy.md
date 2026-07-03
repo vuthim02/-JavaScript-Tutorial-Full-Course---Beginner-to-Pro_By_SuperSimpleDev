@@ -1,8 +1,5 @@
 # Deep Copy
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Is a Deep Copy?
 
 A **deep copy** creates a completely independent clone. No references are shared between original and copy at any level — everything is recursively duplicated.

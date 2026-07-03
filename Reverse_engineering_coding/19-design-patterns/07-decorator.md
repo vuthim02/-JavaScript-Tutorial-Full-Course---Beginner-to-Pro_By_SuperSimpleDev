@@ -1,8 +1,5 @@
 # Decorator Pattern
 
-<img src="https://media.giphy.com/media/DX1cytoIQvnmgqBlQ3/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## What Problem It Solves
 
 You need to add behavior to individual objects without modifying the class. Subclassing every combination leads to class explosion. Decorators wrap an object with new behavior.

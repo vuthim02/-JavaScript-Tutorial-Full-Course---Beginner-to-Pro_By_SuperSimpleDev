@@ -1,8 +1,5 @@
 # Comparison Tables & Reverse Engineering Questions
 
-<img src="https://media.giphy.com/media/QpVUMRUJGokfqXyfa1/giphy.gif" alt="Animated GIF" style="width:400px; height:300px;">
-
-
 ## Classification Comparison Table
 
 | Category     | Pattern                | Intent                                          | When to Use                                        |
@@ -96,7 +93,8 @@
 
 ---
 
-*Continue to Part 20 — State Management: Redux, Zustand, Jotai, and Beyond*
 ## Next Steps
 
 [Back to Chapter 18](18-chain-of-responsibility.md): Chain of Responsibility Pattern
+
+If this were a 20th module, Part 20 would cover **State Management: Redux, Zustand, Jotai, and Beyond**.

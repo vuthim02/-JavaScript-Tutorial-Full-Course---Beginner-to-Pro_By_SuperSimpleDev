@@ -10,6 +10,11 @@ if(isset($_POST['login'])){
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $message = "Invalid email format";
+        $messageClass = "auth-message is-error";
+    }else{
+
     $user = auth_find_user_by_email($email);
 
     if($user !== null){
@@ -19,11 +24,22 @@ if(isset($_POST['login'])){
             $user['password']
         )){
 
+            if(empty($user['email_verified'])){
+                $token = $user['email_verification_token'] ?? '';
+                $message = "Email not verified.";
+                $messageClass = "auth-message is-error";
+                if($token){
+                    $message .= ' <a href="verify_email.php?token=' . urlencode($token) . '">Verify now</a>';
+                }
+            }else{
+
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
 
             header("Location: dashboard.php");
             exit();
+
+            }
 
         }else{
             $message = "Wrong password";
@@ -33,6 +49,7 @@ if(isset($_POST['login'])){
     }else{
         $message = "User not found";
         $messageClass = "auth-message is-error";
+    }
     }
 }
 
@@ -78,6 +95,12 @@ Login
 
 <a class="auth-link" href="register.php">
 Create Account
+</a>
+
+&middot;
+
+<a class="auth-link" href="forgot_password.php">
+Forgot Password?
 </a>
 
 </div>

@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "username": "vuthim",
+        "email": "vuthimham404@gmail.com",
+        "password": "$argon2id$v=19$m=65536,t=4,p=1$zI0Pird3yz7PRD+uJ1FdiQ$iimnb+8MYgQNiaNqCMYVrM0WNlWOGW1X8bWHf5kuQ+c",
+        "created_at": "2026-07-09T05:28:15+00:00",
+        "mfa_secret": null,
+        "mfa_enabled": false,
+        "webauthn_credentials": [],
+        "last_login_at": "2026-07-09T05:28:46+00:00",
+        "last_login_ip": "::1",
+        "known_ips": [
+            "::1"
+        ],
+        "known_devices": [
+            "b40a4a6f7c1b851275ffb6e929a8b4b9146ecd4b89e246d838760dc5cb95830f"
+        ],
+        "failed_attempts": 0,
+        "locked_until": null,
+        "password_changed_at": "2026-07-09T05:28:15+00:00",
+        "roles": [
+            "user"
+        ],
+        "email_verified": true
+    }
+]

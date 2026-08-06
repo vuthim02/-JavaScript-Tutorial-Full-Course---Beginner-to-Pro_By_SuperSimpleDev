@@ -1,68 +1,143 @@
-let entries = JSON.parse(localStorage.getItem('entries')) || [];
+// ============================================
+// CLASS / OOP: Encapsulate data + behavior
+// ============================================
 
-const form = document.getElementById('form');
-const description = document.getElementById('description');
-const amount = document.getElementById('amount');
-const balanceEl = document.getElementById('balance');
-const incomeEl = document.getElementById('income');
-const expenseEl = document.getElementById('expense');
-const entriesEl = document.getElementById('entries');
+class Entry {
+  #description;
+  #amount;
+  #id;
 
-function save() {
-  localStorage.setItem('entries', JSON.stringify(entries));
+  static #nextId = Date.now();
+
+  constructor(description, amount) {
+    this.#id = Entry.#nextId++;
+    this.#description = description;
+    this.#amount = amount;
+  }
+
+  get id()        { return this.#id; }
+  get description() { return this.#description; }
+  get amount()    { return this.#amount; }
+  get isIncome()  { return this.#amount > 0; }
+  get isExpense() { return this.#amount < 0; }
+
+  get formattedAmount() {
+    const sign = this.#amount >= 0 ? '+' : '-';
+    return `${sign}$${Math.abs(this.#amount).toFixed(2)}`;
+  }
+
+  toObject() {
+    return { id: this.#id, description: this.#description, amount: this.#amount };
+  }
+
+  static fromObject(obj) {
+    return new Entry(obj.description, obj.amount);
+  }
 }
 
-function updateUI() {
-  let totalIncome = 0;
-  let totalExpense = 0;
+class ExpenseTracker {
+  #entries = [];
+  #storageKey;
 
-  entries.forEach(entry => {
-    if (entry.amount > 0) {
-      totalIncome += entry.amount;
-    } else {
-      totalExpense += Math.abs(entry.amount);
+  constructor(storageKey = 'entries') {
+    this.#storageKey = storageKey;
+    this.#load();
+  }
+
+  #load() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(this.#storageKey)) || [];
+      this.#entries = raw.map(Entry.fromObject);
+    } catch {
+      this.#entries = [];
     }
-  });
+  }
 
-  const balance = totalIncome - totalExpense;
+  #save() {
+    localStorage.setItem(
+      this.#storageKey,
+      JSON.stringify(this.#entries.map(e => e.toObject()))
+    );
+  }
 
-  balanceEl.textContent = `$${balance.toFixed(2)}`;
-  incomeEl.textContent = `$${totalIncome.toFixed(2)}`;
-  expenseEl.textContent = `$${totalExpense.toFixed(2)}`;
+  addEntry(description, amount) {
+    const entry = new Entry(description, amount);
+    this.#entries.push(entry);
+    this.#save();
+    return entry;
+  }
 
-  entriesEl.innerHTML = '';
-  entries.forEach((entry, i) => {
-    const li = document.createElement('li');
-    li.className = `entry${entry.amount < 0 ? ' expense' : ''}`;
-    li.innerHTML = `
-      <span class="desc">${entry.description}</span>
-      <span class="amt ${entry.amount >= 0 ? 'positive' : 'negative'}">${entry.amount >= 0 ? '+' : '-'}$${Math.abs(entry.amount).toFixed(2)}</span>
-      <button class="delete-btn" data-index="${i}">&times;</button>
-    `;
-    entriesEl.appendChild(li);
-  });
+  removeEntry(id) {
+    this.#entries = this.#entries.filter(e => e.id !== id);
+    this.#save();
+  }
 
-  document.querySelectorAll('.delete-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const idx = Number(btn.dataset.index);
-      entries.splice(idx, 1);
-      save();
-      updateUI();
-    });
-  });
+  getEntries()     { return [...this.#entries]; }
+  getBalance()     { return this.getIncome() - this.getExpense(); }
+  getIncome()      { return this.#entries.filter(e => e.isIncome).reduce((s, e) => s + e.amount, 0); }
+  getExpense()     { return this.#entries.filter(e => e.isExpense).reduce((s, e) => s + Math.abs(e.amount), 0); }
+  getEntryCount()  { return this.#entries.length; }
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const desc = description.value.trim();
-  const amt = parseFloat(amount.value);
+// --- UI Controller ---
+class TrackerUI {
+  #tracker;
+  #form;
+  #els;
 
-  if (!desc || isNaN(amt)) return;
+  constructor(tracker) {
+    this.#tracker = tracker;
+    this.#form = document.getElementById('form');
+    this.#els = {
+      description: document.getElementById('description'),
+      amount:      document.getElementById('amount'),
+      balance:     document.getElementById('balance'),
+      income:      document.getElementById('income'),
+      expense:     document.getElementById('expense'),
+      entries:     document.getElementById('entries'),
+    };
 
-  entries.push({ description: desc, amount: amt });
-  save();
-  updateUI();
-  form.reset();
-});
+    this.#form.addEventListener('submit', (e) => this.#handleSubmit(e));
+    this.#render();
+  }
 
-updateUI();
+  #handleSubmit(e) {
+    e.preventDefault();
+    const desc = this.#els.description.value.trim();
+    const amt  = parseFloat(this.#els.amount.value);
+    if (!desc || isNaN(amt)) return;
+
+    this.#tracker.addEntry(desc, amt);
+    this.#form.reset();
+    this.#render();
+  }
+
+  #render() {
+    this.#els.balance.textContent = `$${this.#tracker.getBalance().toFixed(2)}`;
+    this.#els.income.textContent  = `$${this.#tracker.getIncome().toFixed(2)}`;
+    this.#els.expense.textContent = `$${this.#tracker.getExpense().toFixed(2)}`;
+
+    this.#els.entries.innerHTML = '';
+    this.#tracker.getEntries().forEach((entry) => {
+      const li = document.createElement('li');
+      li.className = `entry${entry.isExpense ? ' expense' : ''}`;
+      li.innerHTML = `
+        <span class="desc">${entry.description}</span>
+        <span class="amt ${entry.isIncome ? 'positive' : 'negative'}">${entry.formattedAmount}</span>
+        <button class="delete-btn" data-id="${entry.id}">&times;</button>
+      `;
+      this.#els.entries.appendChild(li);
+    });
+
+    this.#els.entries.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.#tracker.removeEntry(Number(btn.dataset.id));
+        this.#render();
+      });
+    });
+  }
+}
+
+// --- Init ---
+const tracker = new ExpenseTracker();
+const ui = new TrackerUI(tracker);

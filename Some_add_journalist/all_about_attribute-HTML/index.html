@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Attributes - Complete Guide</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; line-height: 1.6; color: #222; max-width: 900px; margin: 0 auto; padding: 2rem; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 2px solid #eee; }
+    h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+    p, li { margin-bottom: 0.5rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    code { background: #f4f4f4; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+    pre { background: #1e1e2e; color: #cdd6f4; padding: 1rem; border-radius: 6px; overflow-x: auto; margin: 0.75rem 0; font-size: 0.9rem; }
+    .tag { color: #89b4fa; }
+    .attr { color: #f9e2af; }
+    .val { color: #a6e3a1; }
+    table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; }
+    th, td { border: 1px solid #ddd; padding: 0.5rem 0.75rem; text-align: left; }
+    th { background: #f4f4f4; }
+    .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 4px; }
+    .tip { background: #d1e7dd; border-left: 4px solid #198754; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<h1>HTML Attributes — The Complete Guide</h1>
+<p>An <strong>attribute</strong> is extra information you add inside an HTML opening tag. It always follows this pattern:</p>
+
+<pre><span class="tag">&lt;tagname</span> <span class="attr">attribute</span>=<span class="val">"value"</span><span class="tag">&gt;</span>content<span class="tag">&lt;/tagname&gt;</span></pre>
+
+<hr style="margin: 1.5rem 0;">
+
+<h2>1. Global Attributes (work on any element)</h2>
+
+<table>
+  <tr><th>Attribute</th><th>What it does</th><th>Example</th></tr>
+  <tr><td><code>id</code></td><td>Unique identifier (only ONE per page)</td><td><code>&lt;div id="header"&gt;</code></td></tr>
+  <tr><td><code>class</code></td><td>CSS class selector (can reuse)</td><td><code>&lt;button class="btn primary"&gt;</code></td></tr>
+  <tr><td><code>style</code></td><td>Inline CSS</td><td><code>&lt;p style="color:red"&gt;</code></td></tr>
+  <tr><td><code>title</code></td><td>Tooltip on hover</td><td><code>&lt;abbr title="World Health Org"&gt;WHO&lt;/abbr&gt;</code></td></tr>
+  <tr><td><code>hidden</code></td><td>Hides the element (boolean)</td><td><code>&lt;div hidden&gt;secret&lt;/div&gt;</code></td></tr>
+  <tr><td><code>tabindex</code></td><td>Tab order for keyboard nav</td><td><code>&lt;input tabindex="1"&gt;</code></td></tr>
+  <tr><td><code>lang</code></td><td>Language of the element</td><td><code>&lt;p lang="fr"&gt;Bonjour&lt;/p&gt;</code></td></tr>
+  <tr><td><code>dir</code></td><td>Text direction (ltr / rtl)</td><td><code>&lt;p dir="rtl"&gt;سلام&lt;/p&gt;</code></td></tr>
+  <tr><td><code>contenteditable</code></td><td>Let user edit the text</td><td><code>&lt;div contenteditable&gt;edit me&lt;/div&gt;</code></td></tr>
+  <tr><td><code>draggable</code></td><td>Allow drag-and-drop</td><td><code>&lt;img draggable="false"&gt;</code></td></tr>
+  <tr><td><code>spellcheck</code></td><td>Enable/disable spell check</td><td><code>&lt;textarea spellcheck="true"&gt;</code></td></tr>
+  <tr><td><code>data-*</code></td><td>Custom data (any name after "data-")</td><td><code>&lt;button data-user-id="42"&gt;</code></td></tr>
+</table>
+
+<div class="tip">
+  <strong>Tip:</strong> <code>id</code> must be unique. Never use the same <code>id</code> twice on a page. Use <code>class</code> for repeated styling.
+</div>
+
+<h2>2. The <code>data-*</code> Attribute (deep dive)</h2>
+
+<p><code>data-</code> is special because you invent the rest of the name yourself:</p>
+
+<pre><span class="tag">&lt;button</span>
+  <span class="attr">data-choice</span>=<span class="val">"rock"</span>
+  <span class="attr">data-player</span>=<span class="val">"1"</span>
+  <span class="attr">data-score</span>=<span class="val">"10"</span>
+<span class="tag">&gt;</span>Rock<span class="tag">&lt;/button&gt;</span></pre>
+
+<h3>How JavaScript reads it:</h3>
+<pre>// HTML  →  JS (dataset)
+data-choice  →  element.dataset.choice     // "rock"
+data-player  →  element.dataset.player     // "1"
+data-score   →  element.dataset.score      // "10"
+
+// Hyphens become camelCase:
+data-user-id  →  element.dataset.userId
+data-game-mode → element.dataset.gameMode</pre>
+
+<div class="note">
+  <strong>CSS can read it too:</strong><br>
+  <code>button[data-choice="rock"] { background: gray; }</code><br>
+  <code>button::after { content: attr(data-score); }</code>
+</div>
+
+<h3>Why use data-* instead of id/class?</h3>
+<ul>
+  <li><code>id</code> is unique — can't have 3 buttons with <code>id="rock"</code></li>
+  <li><code>class</code> is for styling/selectors, not storing values</li>
+  <li><code>data-*</code> keeps data right on the element — no separate lookup needed</li>
+</ul>
+
+<h2>3. Form Attributes</h2>
+
+<table>
+  <tr><th>Attribute</th><th>Where</th><th>What it does</th></tr>
+  <tr><td><code>type</code></td><td>input</td><td>text, password, email, number, checkbox, radio, submit, etc.</td></tr>
+  <tr><td><code>name</code></td><td>input, select, textarea</td><td>Key sent to server on form submit</td></tr>
+  <tr><td><code>value</code></td><td>input, button, option</td><td>The value sent/submitted</td></tr>
+  <tr><td><code>placeholder</code></td><td>input, textarea</td><td>Hint text (disappears on typing)</td></tr>
+  <tr><td><code>required</code></td><td>input, select, textarea</td><td>Must fill before submit (boolean)</td></tr>
+  <tr><td><code>disabled</code></td><td>input, button, select</td><td>Can't interact — grayed out (boolean)</td></tr>
+  <tr><td><code>readonly</code></td><td>input, textarea</td><td>Can see but can't edit (boolean)</td></tr>
+  <tr><td><code>checked</code></td><td>input[type=checkbox/radio]</td><td>Pre-selected (boolean)</td></tr>
+  <tr><td><code>selected</code></td><td>option</td><td>Pre-selected in dropdown (boolean)</td></tr>
+  <tr><td><code>min</code> / <code>max</code></td><td>input[type=number/range/date]</td><td>Allowed range</td></tr>
+  <tr><td><code>step</code></td><td>input[type=number/range]</td><td>Increment step (e.g. 0.5)</td></tr>
+  <tr><td><code>maxlength</code></td><td>input, textarea</td><td>Max characters allowed</td></tr>
+  <tr><td><code>autocomplete</code></td><td>input, form</td><td>on / off — browser auto-fill</td></tr>
+  <tr><td><code>autofocus</code></td><td>input, textarea, select</td><td>Auto-focus on page load (boolean)</td></tr>
+  <tr><td><code>action</code></td><td>form</td><td>URL where form data is sent</td></tr>
+  <tr><td><code>method</code></td><td>form</td><td>GET / POST</td></tr>
+</table>
+
+<div class="tip">
+  <strong>Boolean attributes</strong> work two ways:<br>
+  ✅ <code>&lt;input disabled&gt;</code> (HTML5 style)<br>
+  ✅ <code>&lt;input disabled=""&gt;</code> or <code>&lt;input disabled="disabled"&gt;</code><br>
+  ❌ <code>&lt;input disabled="false"&gt;</code> — this does NOT enable it! The attribute just being present = true.
+</div>
+
+<h2>4. Link &amp; Media Attributes</h2>
+
+<table>
+  <tr><th>Attribute</th><th>Where</th><th>What it does</th></tr>
+  <tr><td><code>href</code></td><td>a, link</td><td>URL the link points to</td></tr>
+  <tr><td><code>src</code></td><td>img, script, iframe, video, audio</td><td>Source URL (where content loads from)</td></tr>
+  <tr><td><code>alt</code></td><td>img</td><td>Alternative text for screen readers / broken images</td></tr>
+  <tr><td><code>width</code> / <code>height</code></td><td>img, video, canvas, iframe</td><td>Dimensions in pixels (no unit needed)</td></tr>
+  <tr><td><code>target</code></td><td>a, form</td><td><code>_self</code> (same tab), <code>_blank</code> (new tab)</td></tr>
+  <tr><td><code>rel</code></td><td>a, link</td><td>Relationship: noopener, noreferrer, nofollow, stylesheet</td></tr>
+  <tr><td><code>download</code></td><td>a</td><td>Makes link download a file instead of navigating</td></tr>
+  <tr><td><code>loading</code></td><td>img, iframe</td><td><code>lazy</code> (defer load) or <code>eager</code> (load immediately)</td></tr>
+  <tr><td><code>controls</code></td><td>video, audio</td><td>Show play/pause/volume controls (boolean)</td></tr>
+  <tr><td><code>autoplay</code></td><td>video, audio</td><td>Start playing automatically (boolean)</td></tr>
+  <tr><td><code>loop</code></td><td>video, audio</td><td>Repeat infinitely (boolean)</td></tr>
+  <tr><td><code>muted</code></td><td>video, audio</td><td>Start muted (boolean)</td></tr>
+  <tr><td><code>poster</code></td><td>video</td><td>Thumbnail image before video plays</td></tr>
+</table>
+
+<h2>5. Event Handler Attributes (old way)</h2>
+
+<p>You CAN put JavaScript directly in HTML, but modern code uses <code>addEventListener</code> instead:</p>
+
+<pre><span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="val">"alert('clicked')"</span><span class="tag">&gt;</span>Click<span class="tag">&lt;/button&gt;</span></pre>
+
+<table>
+  <tr><th>Attribute</th><th>Fires when...</th></tr>
+  <tr><td><code>onclick</code></td><td>Element is clicked</td></tr>
+  <tr><td><code>ondblclick</code></td><td>Double-clicked</td></tr>
+  <tr><td><code>onmouseover</code></td><td>Mouse enters the element</td></tr>
+  <tr><td><code>onmouseout</code></td><td>Mouse leaves the element</td></tr>
+  <tr><td><code>onchange</code></td><td>Input value changes (after blur)</td></tr>
+  <tr><td><code>oninput</code></td><td>Input value changes (every keystroke)</td></tr>
+  <tr><td><code>onsubmit</code></td><td>Form is submitted</td></tr>
+  <tr><td><code>onkeydown</code></td><td>Key is pressed</td></tr>
+  <tr><td><code>onload</code></td><td>Page / image finishes loading</td></tr>
+</table>
+
+<div class="note">
+  <strong>Modern best practice:</strong> Keep HTML clean, add events in JS:<br>
+  <code>document.querySelector('button').addEventListener('click', () => {...});</code>
+</div>
+
+<h2>6. ARIA (Accessibility) Attributes</h2>
+
+<p>These help screen readers understand your page:</p>
+
+<table>
+  <tr><th>Attribute</th><th>What it does</th></tr>
+  <tr><td><code>role</code></td><td>Defines element purpose: button, navigation, dialog, alert, etc.</td></tr>
+  <tr><td><code>aria-label</code></td><td>Invisible label (for icons, buttons with no text)</td></tr>
+  <tr><td><code>aria-labelledby</code></td><td>Points to another element's id as the label</td></tr>
+  <tr><td><code>aria-describedby</code></td><td>Points to an element with a longer description</td></tr>
+  <tr><td><code>aria-hidden</code></td><td>Hides from screen readers (but still visible)</td></tr>
+  <tr><td><code>aria-expanded</code></td><td>Menu/dropdown open (true) or closed (false)</td></tr>
+  <tr><td><code>aria-checked</code></td><td>Custom checkbox/switch state</td></tr>
+  <tr><td><code>aria-required</code></td><td>Tells screen reader the field is required</td></tr>
+  <tr><td><code>aria-live</code></td><td>Dynamic region: polite / assertive (announce changes)</td></tr>
+</table>
+
+<h2>7. Meta / Head / SEO Attributes</h2>
+
+<table>
+  <tr><th>Attribute</th><th>Where</th><th>What it does</th></tr>
+  <tr><td><code>charset</code></td><td>meta</td><td>Character encoding (usually UTF-8)</td></tr>
+  <tr><td><code>name</code></td><td>meta</td><td>description, keywords, viewport, author</td></tr>
+  <tr><td><code>content</code></td><td>meta</td><td>Value paired with <code>name</code></td></tr>
+  <tr><td><code>property</code></td><td>meta</td><td>OG (Open Graph) for social sharing</td></tr>
+  <tr><td><code>http-equiv</code></td><td>meta</td><td>refresh (auto-reload), content-type, X-UA-Compatible</td></tr>
+  <tr><td><code>defer</code></td><td>script</td><td>Load script after HTML parsed (boolean)</td></tr>
+  <tr><td><code>async</code></td><td>script</td><td>Load script asynchronously (boolean)</td></tr>
+</table>
+
+<h2>8. Quick Reference — Common Boolean Attributes</h2>
+
+<p>These are <strong>true</strong> when present, <strong>false</strong> when absent. The value doesn't matter:</p>
+
+<pre><span class="tag">&lt;input</span> <span class="attr">disabled</span><span class="tag">&gt;</span>                <span class="tag">&lt;!-- disabled=true --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">disabled</span>=<span class="val">""</span><span class="tag">&gt;</span>              <span class="tag">&lt;!-- also true --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">disabled</span>=<span class="val">"false"</span><span class="tag">&gt;</span>         <span class="tag">&lt;!-- STILL true! --&gt;</span>
+<span class="tag">&lt;input&gt;</span>                              <span class="tag">&lt;!-- disabled=false --&gt;</span></pre>
+
+<table>
+  <tr><td>disabled</td><td>checked</td><td>required</td><td>readonly</td></tr>
+  <tr><td>hidden</td><td>autoplay</td><td>loop</td><td>controls</td></tr>
+  <tr><td>muted</td><td>defer</td><td>async</td><td>autofocus</td></tr>
+  <tr><td>selected</td><td>multiple</td><td>novalidate</td><td>draggable</td></tr>
+</table>
+
+<h2>9. Putting It All Together — Real Example</h2>
+
+<pre><span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="val">"/signup"</span> <span class="attr">method</span>=<span class="val">"POST"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"email"</span><span class="tag">&gt;</span>Email<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span>
+    <span class="attr">id</span>=<span class="val">"email"</span>
+    <span class="attr">name</span>=<span class="val">"email"</span>
+    <span class="attr">type</span>=<span class="val">"email"</span>
+    <span class="attr">placeholder</span>=<span class="val">"you@example.com"</span>
+    <span class="attr">required</span>
+    <span class="attr">autocomplete</span>=<span class="val">"email"</span>
+  <span class="tag">&gt;</span>
+
+  <span class="tag">&lt;button</span>
+    <span class="attr">type</span>=<span class="val">"submit"</span>
+    <span class="attr">class</span>=<span class="val">"btn btn-primary"</span>
+    <span class="attr">data-loading</span>=<span class="val">"false"</span>
+    <span class="attr">aria-label</span>=<span class="val">"Sign up for newsletter"</span>
+  <span class="tag">&gt;</span>
+    Sign Up
+  <span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+
+<h2>10. Summary</h2>
+
+<ul>
+  <li><strong>Global:</strong> id, class, style, title, hidden, lang, dir, data-*</li>
+  <li><strong>Form:</strong> type, name, value, placeholder, required, disabled, checked, min, max, step</li>
+  <li><strong>Link/Media:</strong> href, src, alt, width, height, target, rel, controls, autoplay, loop</li>
+  <li><strong>Boolean:</strong> Just being present = true, absent = false</li>
+  <li><strong>data-*:</strong> Custom attributes — JS reads via <code>element.dataset.name</code></li>
+  <li><strong>ARIA:</strong> role, aria-label, aria-hidden, aria-expanded (for accessibility)</li>
+  <li><strong>Events:</strong> onclick, onchange, etc. — but use addEventListener in JS instead</li>
+</ul>
+
+<p style="margin-top: 2rem; color: #666; font-size: 0.9rem;">Made for learning HTML attributes. Open in browser to view with syntax highlighting.</p>
+
+</body>
+</html>

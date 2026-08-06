@@ -28,7 +28,7 @@ function rollDice() {
     setTimeout(() => {
         result.textContent = `You rolled a ${value}!`;
         rollBtn.disabled = false;
-    }, 600);
+    }, 1000);
 }
 
 rollBtn.addEventListener('click', rollDice);

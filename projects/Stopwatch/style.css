@@ -19,7 +19,7 @@ body {
   padding: 40px 50px;
   border-radius: 20px;
   box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
-  width: 400px;
+  width: 450px;
 }
 
 h1 {
@@ -29,11 +29,27 @@ h1 {
 }
 
 .display {
-  font-size: 3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
-  letter-spacing: 3px;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-info {
+  font-size: 0.8rem;
+  color: #00d4ff;
   margin-bottom: 24px;
+  opacity: 0.7;
+}
+
+.display-light {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f39c12;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
   font-variant-numeric: tabular-nums;
 }
 
@@ -59,9 +75,19 @@ h1 {
 }
 
 #startBtn { background: #2ecc71; color: #fff; }
-#pauseBtn { background: #e67e22; color: #fff; }
+#stopBtn  { background: #e67e22; color: #fff; }
 #resetBtn { background: #e74c3c; color: #fff; }
 #lapBtn   { background: #3498db; color: #fff; }
+
+.status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.status.running { color: #2ecc71; }
+.status.stopped { color: #e74c3c; }
 
 .laps {
   list-style: none;

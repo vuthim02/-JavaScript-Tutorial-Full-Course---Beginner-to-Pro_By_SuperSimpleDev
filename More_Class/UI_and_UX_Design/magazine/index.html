@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX/UI Comparison — Stripe vs Craigslist vs Apple</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 50px;
+        }
+
+        /* CARD GRID */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #444;
+        }
+
+        .card-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-great {
+            background: #1a3a1a;
+            color: #4ade80;
+        }
+
+        .badge-bad {
+            background: #3a1a1a;
+            color: #f87171;
+        }
+
+        .badge-premium {
+            background: #1a1a3a;
+            color: #60a5fa;
+        }
+
+        .card-header {
+            padding: 30px 24px 20px;
+        }
+
+        .card-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .card-header .type {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .card-score {
+            padding: 0 24px 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .score-item {
+            background: #222;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .score-item .label {
+            color: #888;
+        }
+
+        .score-item .value {
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        .card-body {
+            padding: 0 24px 24px;
+        }
+
+        .card-body ul {
+            list-style: none;
+        }
+
+        .card-body ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-body ul li:last-child {
+            border-bottom: none;
+        }
+
+        .icon-good {
+            color: #4ade80;
+        }
+
+        .icon-bad {
+            color: #f87171;
+        }
+
+        .icon-ok {
+            color: #fbbf24;
+        }
+
+        .card-link {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            background: #222;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .card-link:hover {
+            background: #333;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison {
+            margin-bottom: 60px;
+        }
+
+        .comparison h2 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        thead th {
+            background: #222;
+            padding: 16px 20px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            border-bottom: 2px solid #333;
+        }
+
+        thead th:not(:first-child) {
+            text-align: center;
+        }
+
+        tbody td {
+            padding: 14px 20px;
+            font-size: 14px;
+            border-bottom: 1px solid #222;
+        }
+
+        tbody td:not(:first-child) {
+            text-align: center;
+        }
+
+        tbody tr:hover td {
+            background: #222;
+        }
+
+        .good {
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        .ok {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .bad {
+            color: #f87171;
+            font-weight: 600;
+        }
+
+        /* LESSONS */
+        .lessons {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .lessons h2 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .lesson-item {
+            background: #222;
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .lesson-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lesson-item p {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>3 Websites, 3 Design Philosophies</h1>
+        <p class="subtitle">Open each site, study the code, compare the approaches</p>
+
+        <!-- CARDS -->
+        <div class="cards">
+
+            <!-- STRIPE -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-badge badge-great">Clean SaaS</span>
+                    <h2>Stripe</h2>
+                    <p class="type">Fintech / SaaS — Modern, professional</p>
+                </div>
+                <div class="card-score">
+                    <div class="score-item"><span class="label">Visual</span><span class="value good">9/10</span></div>
+                    <div class="score-item"><span class="label">UX</span><span class="value good">9/10</span></div>
+                    <div class="score-item"><span class="label">Mobile</span><span class="value good">10/10</span></div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="icon-good">✓</span> Strong visual hierarchy</li>
+                        <li><span class="icon-good">✓</span> Generous white space (8px grid)</li>
+                        <li><span class="icon-good">✓</span> Limited color palette (purple accent)</li>
+                        <li><span class="icon-good">✓</span> Clear CTAs — one per section</li>
+                        <li><span class="icon-good">✓</span> Smooth hover animations</li>
+                        <li><span class="icon-good">✓</span> Fully responsive layout</li>
+                        <li><span class="icon-good">✓</span> 2 fonts max, consistent weights</li>
+                    </ul>
+                </div>
+                <a href="stripe-practice.html" class="card-link">Open Stripe Practice →</a>
+            </div>
+
+            <!-- CRAIGSLIST -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-badge badge-bad">Dense Minimal</span>
+                    <h2>Craigslist</h2>
+                    <p class="type">Classifieds — Deliberately ugly, highly functional</p>
+                </div>
+                <div class="card-score">
+                    <div class="score-item"><span class="label">Visual</span><span class="value bad">2/10</span></div>
+                    <div class="score-item"><span class="label">UX</span><span class="value ok">5/10</span></div>
+                    <div class="score-item"><span class="label">Mobile</span><span class="value bad">3/10</span></div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="icon-bad">✗</span> No visual hierarchy at all</li>
+                        <li><span class="icon-bad">✗</span> Zero white space, cramped layout</li>
+                        <li><span class="icon-bad">✗</span> Default browser fonts, no branding</li>
+                        <li><span class="icon-bad">✗</span> Hundreds of blue links, overwhelming</li>
+                        <li><span class="icon-bad">✗</span> No images, no cards, no structure</li>
+                        <li><span class="icon-ok">~</span> Loads extremely fast (no bloat)</li>
+                        <li><span class="icon-ok">~</span> Power users love the density</li>
+                    </ul>
+                </div>
+                <a href="craigslist-practice.html" class="card-link">Open Craigslist Practice →</a>
+            </div>
+
+            <!-- APPLE -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-badge badge-premium">Premium Product</span>
+                    <h2>Apple</h2>
+                    <p class="type">Consumer Electronics — Aspirational, minimal</p>
+                </div>
+                <div class="card-score">
+                    <div class="score-item"><span class="label">Visual</span><span class="value good">10/10</span></div>
+                    <div class="score-item"><span class="label">UX</span><span class="value good">9/10</span></div>
+                    <div class="score-item"><span class="label">Mobile</span><span class="value good">10/10</span></div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="icon-good">✓</span> Extreme white space (full-screen sections)</li>
+                        <li><span class="icon-good">✓</span> Massive typography (80px+ headlines)</li>
+                        <li><span class="icon-good">✓</span> Product is the hero (huge images)</li>
+                        <li><span class="icon-good">✓</span> Minimal color — black, white, accent only</li>
+                        <li><span class="icon-good">✓</span> Subtle scroll animations</li>
+                        <li><span class="icon-good">✓</span> One product per screen</li>
+                        <li><span class="icon-good">✓</span> "Buy" and "Learn more" only — nothing else</li>
+                    </ul>
+                </div>
+                <a href="apple-practice.html" class="card-link">Open Apple Practice →</a>
+            </div>
+
+        </div>
+
+        <!-- COMPARISON TABLE -->
+        <div class="comparison">
+            <h2>Side-by-Side Comparison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>Stripe</th>
+                        <th>Craigslist</th>
+                        <th>Apple</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fonts</strong></td>
+                        <td class="good">2 clean sans-serif</td>
+                        <td class="bad">1 default (Arial)</td>
+                        <td class="good">1 custom (SF Pro)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Colors</strong></td>
+                        <td class="good">White + Purple accent</td>
+                        <td class="bad">Blue links only</td>
+                        <td class="good">Black + White + Blue</td>
+                    </tr>
+                    <tr>
+                        <td><strong>White Space</strong></td>
+                        <td class="good">Generous</td>
+                        <td class="bad">Almost none</td>
+                        <td class="good">Extreme</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Typography Scale</strong></td>
+                        <td class="good">64px → 14px</td>
+                        <td class="bad">14px only</td>
+                        <td class="good">80px → 14px</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Images</strong></td>
+                        <td class="ok">Icons + illustrations</td>
+                        <td class="bad">Almost none</td>
+                        <td class="good">Full-bleed hero</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Navigation</strong></td>
+                        <td class="good">Simple top bar + CTA</td>
+                        <td class="bad">Massive link grid</td>
+                        <td class="good">Simple top bar</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hover Effects</strong></td>
+                        <td class="good">Smooth transitions</td>
+                        <td class="bad">None</td>
+                        <td class="good">Subtle scale + color</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile</strong></td>
+                        <td class="good">Fully responsive</td>
+                        <td class="bad">Barely works</td>
+                        <td class="good">Pixel perfect</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trust</strong></td>
+                        <td class="good">"I trust this"</td>
+                        <td class="bad">"I don't trust this"</td>
+                        <td class="good">"I want this"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Speed</strong></td>
+                        <td class="good">Fast</td>
+                        <td class="good">Very fast</td>
+                        <td class="good">Fast</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- KEY LESSONS -->
+        <div class="lessons">
+            <h2>Key Lessons From Each</h2>
+            <div class="lesson-grid">
+                <div class="lesson-item">
+                    <h3>🔷 From Stripe</h3>
+                    <p>Professional SaaS needs <strong>trust</strong>. Use clean typography, generous spacing, and one accent color. Every section should have ONE clear action. Hierarchy guides the eye naturally.</p>
+                </div>
+                <div class="lesson-item">
+                    <h3>🟠 From Craigslist</h3>
+                    <p>Ugly can be <strong>functional</strong>. Power users want density and speed. But for 99% of products, this design kills conversion. Study it to understand what NOT to do for modern products.</p>
+                </div>
+                <div class="lesson-item">
+                    <h3>🔵 From Apple</h3>
+                    <p><strong>Less is more.</strong> One product per screen. Huge text. Massive images. Minimal color. Let the product speak. The absence of clutter IS the design. Premium = restraint.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Practice files for UX/UI learning — Built with HTML & CSS only
+    </footer>
+
+</body>
+</html>

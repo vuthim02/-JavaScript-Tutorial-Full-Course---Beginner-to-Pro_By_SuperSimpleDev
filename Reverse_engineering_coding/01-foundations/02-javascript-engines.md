@@ -75,6 +75,8 @@ The interpreter walks through the AST and starts **executing your code immediate
 The engine tracks which code runs **over and over again** (called "hot paths"). For those hot paths, the compiler kicks in and converts them into highly **optimized machine code**.
 
 This is called **JIT — Just-In-Time compilation** (compiling during execution, not before).
+<img
+  src="https://miro.medium.com/v2/resize:fit:1400/1*wIXdkHiLg7Ot9TmKgzvluA.gif" alt="Animated GIF" style="width:700px; height:500px;">
 
 **Deoptimization:** If the compiler assumed a variable is always a number, but it suddenly becomes a string, the engine throws away the optimized code and falls back to the interpreter.
 

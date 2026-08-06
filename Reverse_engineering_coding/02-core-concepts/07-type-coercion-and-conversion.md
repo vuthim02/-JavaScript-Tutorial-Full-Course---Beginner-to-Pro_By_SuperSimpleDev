@@ -170,4 +170,4 @@ Boolean({});           // true  (empty object IS truthy)
 ## Next Steps
 
 [Back to Chapter 6](06-data-types-and-typeof.md): Data Types and the typeof Operator
-[Proceed to Module 2 Chapter 7](../02-core-concepts/09-optional-chaining-nullish-coalescing.md): Arithmetic Operators to learn about arithmetic and other operators.
+[Proceed to Chapter 8](08-truthy-falsy.md): Optional Chaining and Nullish Coalescing to learn about safe property access patterns.

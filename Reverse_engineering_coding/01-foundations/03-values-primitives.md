@@ -2,7 +2,6 @@
 
 <img src="https://imgs.search.brave.com/JoNe1Ro3lu0bqaO35JrDfN1dQzKF1F_aPP0jcc9QKsc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTAuZ2lwaHkuY29t/L21lZGlhL3YxLlky/bGtQVGM1TUdJM05q/RXhZelpzWTJsc05U/aHNheko1ZG5jNE1U/TnlPVzh6WW10NU9E/TTRaamR2WW1jemFY/Sm9ORFJwYVNabGNE/MTJNVjluYVdaelgz/TmxZWEpqYUNaamRE/MW4vNDJISjI2Uzdi/dmJtVmhjYVIyLzIw/MC5naWY.gif" alt="Animated GIF" style="width:400px; height:300px;">
 
-
 ## Everything Is a Value
 
 In JavaScript, **a value is any piece of data** you can work with.

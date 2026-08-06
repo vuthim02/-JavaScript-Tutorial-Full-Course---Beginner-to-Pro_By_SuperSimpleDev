@@ -12,5 +12,13 @@
         "email": "vuthimham76@gmail.com",
         "password": "$2y$12$u4Mg2JPArX8LKDzDI0G3M.IeC0hLtysWzUKKBXyZ9qC548yHdLh9.",
         "created_at": "2026-06-26T16:20:35+00:00"
+    },
+    {
+        "id": 3,
+        "username": "tu",
+        "email": "vusf@gmail.com",
+        "password": "$2y$12$cXNBGUgim3gzkLSD9GgLRubbc.BoI8abe1qZGZx1OQsua8NS.9uKq",
+        "created_at": "2026-07-21T07:37:09+00:00",
+        "email_verified": true
     }
 ]

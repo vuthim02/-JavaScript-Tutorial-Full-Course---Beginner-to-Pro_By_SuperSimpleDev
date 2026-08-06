@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpine.js + Express Backend</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+  <div x-data="bookApp()">
+    <header>
+      <h1>Alpine.js + Express</h1>
+      <p>Frontend: Alpine.js | Backend: Express API</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Add Book</h2>
+        <form @submit.prevent="addBook()">
+          <input type="text" x-model="newBook.title" placeholder="Title" required />
+          <input type="text" x-model="newBook.author" placeholder="Author" required />
+          <input type="number" x-model="newBook.year" placeholder="Year" />
+          <button type="submit">Add Book</button>
+        </form>
+        <p x-show="message" :style="messageColor === 'green' ? 'color:green' : 'color:red'" x-text="message"></p>
+      </section>
+
+      <section class="card">
+        <h2>Filter</h2>
+        <div class="filter-row">
+          <input type="text" x-model="filter.author" placeholder="Author" @input="loadBooks()" />
+          <input type="number" x-model="filter.year" placeholder="Year" @input="loadBooks()" />
+          <button class="secondary" @click="clearFilters()">Clear</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Books (<span x-text="books.length"></span>)</h2>
+
+        <template x-if="books.length === 0">
+          <p class="empty">No books found.</p>
+        </template>
+
+        <template x-for="book in books" :key="book.id">
+          <div class="book-item">
+            <div class="book-info" x-show="editingId !== book.id">
+              <h4 x-text="book.title"></h4>
+              <p><span x-text="book.author"></span> (<span x-text="book.year"></span>)</p>
+            </div>
+
+            <div class="book-edit" x-show="editingId === book.id">
+              <input type="text" x-model="editForm.title" placeholder="Title" />
+              <input type="text" x-model="editForm.author" placeholder="Author" />
+              <input type="number" x-model="editForm.year" placeholder="Year" />
+            </div>
+
+            <div class="book-actions">
+              <template x-if="editingId !== book.id">
+                <button class="edit" @click="startEdit(book)">Edit</button>
+              </template>
+              <template x-if="editingId === book.id">
+                <button class="save" @click="saveEdit(book.id)">Save</button>
+              </template>
+              <template x-if="editingId === book.id">
+                <button class="secondary" @click="editingId = null">Cancel</button>
+              </template>
+              <button class="delete" @click="deleteBook(book.id)">Delete</button>
+            </div>
+          </div>
+        </template>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -53,16 +53,17 @@ In 1995, every website was a static HTML page. If you submitted a form, the enti
 |---|---|
 | What problem does JS solve? | Makes web pages interactive |
 | Why is HTML alone insufficient? | HTML describes structure, not behavior |
-| Why can't CSS do logic? | CSS has no variables, loops, or conditions |
+| Why can't CSS do logic? | CSS cannot perform general-purpose logic like loops, conditionals, or functions (CSS Custom Properties are data-only, not logic) |
 | What makes JS different from Java? | Completely different languages — similar name was a marketing decision |
 | Why was it built in 10 days? | Explains its quirks and historical oddities |
 | Why is it the most used language? | It runs everywhere — browsers, servers, mobile, desktop, IoT |
 ## Next Steps
 
 ## Tip
-- How different between thread vs process vs program
+- 01. How different between thread vs process vs program
 
 <img src="https://media.licdn.com/dms/image/v2/D4D12AQH2WousAWDIdw/article-inline_image-shrink_1500_2232/B4DZZJ4S0_G8AU-/0/1744996232293?e=2147483647&v=beta&t=E4-65iEEcFIRd5uqMpLNdTyu8_r5bpLznZj2tmmayMg" alt="processVSprogramVSthread" width="500px" hieght="1000px">
 
+- 02. Modern JavaScript is both an interpreted and compiled language, specifically using a hybrid approach called **Just-In-Time** (JIT) compilation
 [Back to Module Overview](README.md)
 [Proceed to Chapter 2](02-javascript-engines.md): JavaScript Engines to learn about javascript engines.

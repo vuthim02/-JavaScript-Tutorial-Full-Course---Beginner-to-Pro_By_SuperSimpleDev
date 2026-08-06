@@ -2,45 +2,12 @@
 <html>
 <head>
   <title>TCP + DNS Simulator</title>
-  <style>
-    body {
-      background: black;
-      color: lime;
-      font-family: monospace;
-    }
-    #log {
-      height: 90vh;
-      overflow-y: auto;
-      border: 1px solid lime;
-      padding: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h2>🌐 Live TCP + DNS Network Simulator</h2>
 <div id="log"></div>
-
-<script>
-const log = document.getElementById("log");
-
-     const ws = new WebSocket("ws://localhost:8000/ws");
-
-ws.onmessage = (event) => {
-
-    const line = document.createElement("div");
-
-    line.innerHTML = `
-      [${data.type}] 
-      ${data.step || data.node || data.domain || ""} 
-      ${data.ip || ""} 
-      ${data.status || ""} 
-    `;
-
-    log.appendChild(line);
-    log.scrollTop = log.scrollHeight;
-};
-</script>
-
+<script src="server.js"></script>
 </body>
-</html>  
+</html>

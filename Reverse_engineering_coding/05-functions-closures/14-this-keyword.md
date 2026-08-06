@@ -202,8 +202,3 @@ class Button {
 
 [Back to Chapter 13](13-recursion-and-execution-context.md): Recursion Internals
 [Proceed to Chapter 15](15-call-apply-bind.md): `call()` / `apply()` / `bind()` to learn about `call()` / `apply()` / `bind()`.
-
-## Next Steps
-
-[Back to Chapter 13](13-recursion-and-execution-context.md): Recursion Internals
-[Proceed to Chapter 15](15-call-apply-bind.md): `call()` / `apply()` / `bind()` to learn about `call()` / `apply()` / `bind()`.

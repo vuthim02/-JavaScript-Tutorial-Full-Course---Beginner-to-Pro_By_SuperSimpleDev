@@ -6,7 +6,7 @@
                         
 ```
  1. HTTP_Deep_Dive.md              ─── How browsers & servers talk
- 2. WH5H2_is_Port.md               ─── What ports are and why they matter
+ 2. WHAT_is_Port.md                 ─── What ports are and why they matter
  3. NPM_and_Dependencies.md        ─── package.json, npm commands
  4. Version_Numbers.md             ─── SemVer, ^ vs ~, ranges
  5. Environment_Variables.md       ─── .env, secrets, NODE_ENV
@@ -95,7 +95,7 @@
 | # | File | One Sentence |
 |---|------|-------------|
 | 1 | HTTP_Deep_Dive | Every web interaction is a request + response with a status code and headers. |
-| 2 | WH5H2_is_Port | A port is a door on a machine that identifies which app gets the data. |
+| 2 | WHAT_is_Port | A port is a door on a machine that identifies which app gets the data. |
 | 3 | NPM_and_Dependencies | npm installs packages; package.json tracks them; never commit node_modules. |
 | 4 | Version_Numbers | `^` locks major, `~` locks minor, exact locks everything. |
 | 5 | Environment_Variables | Secrets live in env vars, not code; .env is never committed. |

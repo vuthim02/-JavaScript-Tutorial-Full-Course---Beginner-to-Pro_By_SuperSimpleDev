@@ -188,6 +188,7 @@ This is why `await` never blocks the event loop — it yields control and resume
 | Can microtasks starve macrotasks? | Yes — recursive Promise resolution can block timers/I/O indefinitely |
 | What is `process.nextTick`? | Node.js — runs before other microtasks, interrupts current phase |
 ## Next Steps
+[Can visit in this video](https://youtu.be/eiC58R16hb8?si=598PZUxWg4gGOoHa)
 
 [Back to Chapter 13](13-promise-race-allsettled-any.md): Promise.race(), Promise.allSettled(), Promise.any()
 [Proceed to Chapter 15](15-task-queues.md): Task Queues: Macrotask vs Microtask to learn about task queues: macrotask vs microtask.

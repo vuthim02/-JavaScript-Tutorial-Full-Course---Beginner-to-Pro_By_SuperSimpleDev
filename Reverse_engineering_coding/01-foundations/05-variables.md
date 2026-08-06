@@ -273,4 +273,4 @@ This is one of the strongest practical arguments for preferring `let` over `var`
 ## Next Steps
 
 [Back to Chapter 4](04-null-undefined-symbol-bigint.md): Null, Undefined, Symbol, BigInt, and typeof
-[Proceed to Module 2 Chapter 7](../01-foundations/07-arithmetic-operators.md): Hoisting and the Temporal Dead Zone to learn about hoisting and the temporal dead zone.
+[Proceed to Module 2 Chapter 4](../02-core-concepts/04-hoisting-and-tdz.md): Hoisting and the Temporal Dead Zone to learn about hoisting and the temporal dead zone.

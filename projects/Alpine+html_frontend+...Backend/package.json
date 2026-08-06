@@ -1,0 +1,10 @@
+{
+  "name": "alpine-express-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "install:all": "cd backend && npm install"
+  }
+}

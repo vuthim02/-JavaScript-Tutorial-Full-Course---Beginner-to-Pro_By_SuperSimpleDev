@@ -1,0 +1,221 @@
+/* ============================================================
+   Terminal simulator styles
+   ============================================================ */
+
+:root {
+    --term-bg: #0a0f0a;
+    --term-fg: #4af626;
+    --term-dim: #7ee26a;
+    --term-muted: #3d7a33;
+    --term-error: #ff6b6b;
+    --term-warn: #f2ca5c;
+    --term-cyan: #37e0e0;
+}
+
+.term-window {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--term-bg);
+    border: 1px solid var(--term-muted);
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(74, 246, 38, 0.12);
+    overflow: hidden;
+    font-family: "JetBrains Mono", "Fira Code", "Cascadia Mono", Consolas, monospace;
+}
+
+.term-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    background: #0f1a0f;
+    border-bottom: 1px solid var(--term-muted);
+}
+
+.term-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.term-dot-red {
+    background: #ff5f57;
+}
+
+.term-dot-yellow {
+    background: #febc2e;
+}
+
+.term-dot-green {
+    background: #28c840;
+}
+
+.term-title {
+    margin-left: 0.5rem;
+    color: var(--term-muted);
+    font-size: 0.85rem;
+}
+
+.term-scroll {
+    height: 420px;
+    overflow-y: auto;
+    padding: 1rem 1.1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    pointer-events: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: var(--term-fg) var(--term-bg);
+}
+
+.term-scroll div {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.term-line-in {
+    color: var(--term-fg);
+}
+
+.p-user {
+    color: var(--term-warn);
+}
+
+.p-host {
+    color: var(--term-cyan);
+}
+
+.p-path {
+    color: var(--term-accent, #37e0e0);
+}
+
+.prompt-symbol {
+    color: var(--term-fg);
+}
+
+.t-ok {
+    color: var(--term-fg);
+}
+
+.t-dim {
+    color: var(--term-dim);
+}
+
+.t-muted {
+    color: var(--term-muted);
+}
+
+.t-error {
+    color: var(--term-error);
+}
+
+.t-warn {
+    color: var(--term-warn);
+}
+
+.t-cyan {
+    color: var(--term-cyan);
+}
+
+.t-bold {
+    font-weight: 700;
+}
+
+.dir {
+    color: var(--term-cyan);
+    font-weight: 700;
+}
+
+.file {
+    color: var(--term-fg);
+}
+
+.hidden {
+    color: var(--term-muted);
+}
+
+.term-input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.1rem;
+    border-top: 1px solid var(--term-muted);
+    background: #0a0f0a;
+}
+
+.term-prompt {
+    color: var(--term-fg);
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+#term-input {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: var(--term-fg);
+    caret-color: var(--term-fg);
+    font-family: inherit;
+    font-size: 0.95rem;
+    min-width: 0;
+}
+
+#term-input::placeholder {
+    color: var(--term-muted);
+}
+
+/* Blinking cursor on the prompt line */
+.term-window.is-ready .term-prompt::after {
+    content: "█";
+    color: var(--term-fg);
+    margin-left: 2px;
+    animation: termBlink 1s steps(1) infinite;
+}
+
+@keyframes termBlink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Scanline overlay for retro feel */
+.term-window::after {
+    content: "";
+    display: block;
+    pointer-events: none;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 2px,
+        rgba(0, 0, 0, 0.12) 2px,
+        rgba(0, 0, 0, 0.12) 4px
+    );
+}
+
+.term-window {
+    position: relative;
+}
+
+.term-matrix-fade {
+    color: var(--term-dim);
+    text-shadow: 0 0 6px rgba(74, 246, 38, 0.4);
+}
+
+@keyframes bootLine {
+    from {
+        opacity: 0;
+        transform: translateY(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.boot-line {
+    animation: bootLine 0.3s ease both;
+}

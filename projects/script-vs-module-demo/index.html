@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Script vs Module - Complete Proof</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>🔬 Script vs Module - Complete Proof</h1>
+            <p class="subtitle">Interactive demonstration of the key differences</p>
+
+            <!-- Test 1: Global Scope -->
+            <div class="test-card">
+                <h2>Test 1: Global Scope Pollution</h2>
+                <p>
+                    <span class="badge badge-traditional">Traditional</span>
+                    Variables are added to the global <code>window</code> object<br />
+                    <span class="badge badge-module">Module</span>
+                    Variables stay in module scope (private)
+                </p>
+                <div class="output" id="output1">Loading...</div>
+            </div>
+
+            <!-- Test 2: Import/Export -->
+            <div class="test-card">
+                <h2>Test 2: Import/Export Syntax</h2>
+                <p>
+                    <span class="badge badge-traditional">Traditional</span>
+                    Cannot use <code>import</code>/<code>export</code><br />
+                    <span class="badge badge-module">Module</span>
+                    Full ES6 module support
+                </p>
+                <div class="output" id="output2">Loading...</div>
+            </div>
+
+            <!-- Test 3: Execution Order -->
+            <div class="test-card">
+                <h2>Test 3: Execution Order & DOM Access</h2>
+                <p>
+                    <span class="badge badge-traditional">Traditional</span>
+                    Executes immediately (blocks parsing)<br />
+                    <span class="badge badge-module">Module</span>
+                    Deferred (runs after DOM parsed)
+                </p>
+                <div class="output" id="output3">Loading...</div>
+            </div>
+
+            <!-- Test 4: Top-level Await -->
+            <div class="test-card">
+                <h2>Test 4: Top-level Await</h2>
+                <p>
+                    <span class="badge badge-traditional">Traditional</span>
+                    Not supported at top level<br />
+                    <span class="badge badge-module">Module</span>
+                    Supports top-level await
+                </p>
+                <div class="output" id="output4">Loading...</div>
+            </div>
+
+            <!-- Test 5: Strict Mode -->
+            <div class="test-card">
+                <h2>Test 5: Strict Mode</h2>
+                <p>
+                    <span class="badge badge-traditional">Traditional</span>
+                    Opt-in with <code>"use strict"</code><br />
+                    <span class="badge badge-module">Module</span>
+                    Always in strict mode
+                </p>
+                <div class="output" id="output5">Loading...</div>
+            </div>
+
+            <!-- Test 6: Duplicate Loading -->
+            <div class="test-card">
+                <h2>Test 6: Duplicate Loading</h2>
+                <p>
+                    <span class="badge badge-traditional">Traditional</span>
+                    Executes every time referenced<br />
+                    <span class="badge badge-module">Module</span>
+                    Loaded only once (cached)
+                </p>
+                <div class="output" id="output6">Loading...</div>
+            </div>
+
+            <!-- Summary Table -->
+            <div class="test-card">
+                <h2>📊 Summary Comparison</h2>
+                <div class="comparison">
+                    <div class="comparison-box traditional">
+                        <h3>🔴 Traditional Script</h3>
+                        <ul style="padding-left: 20px; line-height: 2">
+                            <li>Global scope pollution</li>
+                            <li>No import/export</li>
+                            <li>Executes immediately</li>
+                            <li>No top-level await</li>
+                            <li>Strict mode opt-in</li>
+                            <li>Loads multiple times</li>
+                            <li>No CORS restrictions</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-box module">
+                        <h3>🟢 Module Script</h3>
+                        <ul style="padding-left: 20px; line-height: 2">
+                            <li>Private module scope</li>
+                            <li>Full import/export</li>
+                            <li>Deferred execution</li>
+                            <li>Top-level await</li>
+                            <li>Always strict mode</li>
+                            <li>Loaded once (cached)</li>
+                            <li>CORS required</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Traditional Script - Global Scope Test -->
+        <script src="traditional-global.js"></script>
+
+        <!-- Module Script - Global Scope Test -->
+        <script type="module" src="module-global.js"></script>
+
+        <!-- Check Global Scope Results -->
+        <script>
+            setTimeout(() => {
+                const output1 = document.getElementById('output1');
+                output1.innerHTML = `
+<span class="info">📦 Checking global scope...</span>
+
+<span class="success">✓ Traditional script:</span>
+  window.traditionalVar = "${window.traditionalVar}"
+  <span class="console-log">// Variable is in global scope</span>
+
+<span class="error">✗ Module script:</span>
+  window.moduleVar = ${window.moduleVar}
+  <span class="console-log">// undefined - NOT in global scope</span>
+
+<span class="warning">⚠️  Result:</span>
+  Traditional scripts pollute global namespace.
+  Module scripts keep variables private.
+`;
+            }, 200);
+        </script>
+
+        <!-- Module Script - Import/Export Test -->
+        <script type="module" src="module-import.js"></script>
+
+        <!-- Traditional Script - Import/Export Test -->
+        <script src="traditional-import.js"></script>
+
+        <!-- Execution Order Test -->
+        <div id="test-element" style="display: none">Test Element</div>
+
+        <script src="traditional-execution.js"></script>
+
+        <script type="module" src="module-execution.js"></script>
+
+        <!-- Top-level Await Test -->
+        <script type="module" src="module-await.js"></script>
+
+        <script src="traditional-await.js"></script>
+
+        <!-- Strict Mode Test -->
+        <script src="traditional-strict.js"></script>
+
+        <script type="module" src="module-strict.js"></script>
+
+        <!-- Duplicate Loading Test -->
+        <script src="counter.js"></script>
+        <script src="counter.js"></script>
+        <script src="counter.js"></script>
+
+        <script type="module" src="module-counter.js"></script>
+        <script type="module" src="module-counter.js"></script>
+        <script type="module" src="module-counter.js"></script>
+
+        <script>
+            setTimeout(() => {
+                const output6 = document.getElementById('output6');
+                output6.innerHTML = `
+<span class="info">📦 Loading behavior test...</span>
+
+<span class="error">🔴 Traditional script (loaded 3 times):</span>
+  Execution count: ${window.traditionalCounter || 0}
+  <span class="console-log">// Executed 3 times - no caching</span>
+
+<span class="success">🟢 Module script (loaded 3 times):</span>
+  Execution count: ${window.moduleCounter || 0}
+  <span class="console-log">// Executed only 1 time - cached</span>
+
+<span class="warning">⚠️  Result:</span>
+  Modules are cached and executed once.
+  Traditional scripts execute every time.
+`;
+            }, 300);
+        </script>
+    </body>
+</html>

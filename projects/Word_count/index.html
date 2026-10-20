@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words Count</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-section">
+        <h1>Words Count</h1>
+        <p class="description">Please past or typing text into the Box App with count sentent,word etc.</p>
+    </header>
+    <main class="tool-container">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-value" id="wordCount">0</div>
+                <div class="stat-label">Words</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="charCount">0</div>
+                <div class="stat-label">Characters</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="sentenceCount">0</div>
+                <div class="stat-label">Sentences</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="paragraphCount">0</div>
+                <div class="stat-label">Paragraphs</div>
+            </div>
+        </div>
+
+        <!-- textarea -->
+         <textarea name="typing" id="textInput" placeholder="please typing text of what you want!.........."></textarea>
+
+         <div class="controls">
+            <button class="btn-primary" id="copyBtn">Copy</button>
+            <button class="btn-primary" id="clearBtn">Clear</button>
+         </div>
+    </main>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

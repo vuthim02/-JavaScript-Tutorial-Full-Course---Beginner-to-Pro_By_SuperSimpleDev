@@ -1,0 +1,103 @@
+/* Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center the app on the page */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* White box in the middle */
+.counter-container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* Big number in the center */
+.counter-display {
+  font-size: 80px;
+  font-weight: bold;
+  color: #667eea;
+  margin: 20px 0;
+}
+
+/* Red when count is below 0 */
+.counter-display.negative {
+  color: #ff6b6b;
+}
+
+/* Green when count is above 0 */
+.counter-display.positive {
+  color: #51cf66;
+}
+
+/* Row of buttons */
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.decrease {
+  background: #ff6b6b;
+  color: white;
+}
+
+.increase {
+  background: #51cf66;
+  color: white;
+}
+
+.reset {
+  background: #868e96;
+  color: white;
+}
+
+.info {
+  margin-top: 25px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Style for keyboard key hints */
+kbd {
+  background: #f1f3f5;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Live WebSocket room — a real-time feed of visitors, chat and server events for the Linux Lib site."
+        />
+        <title>Live | Linux &amp; Linus Torvalds</title>
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/lab.css" />
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container navbar-inner">
+                <a href="../index.html" class="brand">Linux<span>Lib</span></a>
+                <nav class="nav-links" aria-label="Main navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="history.html">History of Linux</a>
+                    <a href="linus.html">About Linus</a>
+                    <a href="about-me.html">About Me</a>
+                    <a href="terminal.html">Terminal</a>
+                    <a href="api-playground.html">API Lab</a>
+                    <a href="live.html" class="active">Live</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Live — WebSocket Room</h1>
+                    <p>
+                        A real-time room powered by <code>WebSocket</code>. Open this page in
+                        two tabs and watch visitors join/leave instantly.
+                    </p>
+                    <p class="status-line connecting" id="ws-status" style="margin-top: 0.8rem">
+                        <span class="status-dot"></span>
+                        <span id="ws-status-text">connecting…</span>
+                    </p>
+                </div>
+            </section>
+
+            <div class="container">
+                <div class="lab-grid">
+                    <section class="lab-card" aria-labelledby="feed-title">
+                        <h3 id="feed-title">Live event feed</h3>
+                        <div class="live-feed" id="live-feed" aria-live="polite">
+                            <div class="live-event error">⏳ waiting for the server…</div>
+                        </div>
+                    </section>
+
+                    <section class="lab-card" aria-labelledby="chat-title">
+                        <h3 id="chat-title">Broadcast a message</h3>
+                        <p style="color: var(--color-muted);">
+                            Everyone connected to the WebSocket room receives your message.
+                            Submit with <code>{ type: "chat", message }</code>.
+                        </p>
+                        <form id="chat-form" class="lab-row">
+                            <input type="text" id="chat-message" placeholder="Hello from another terminal…" maxlength="500" required />
+                            <button type="submit" class="lab-btn primary">Send (WS)</button>
+                            <button type="button" class="lab-btn" id="btn-ping">Send ping</button>
+                        </form>
+                    </section>
+
+                    <section class="lab-card" aria-labelledby="trace-title">
+                        <h3 id="trace-title">
+                            Latency trace
+                            <span class="lab-methods"><span class="method-chip get">Canvas 2D</span></span>
+                        </h3>
+                        <p style="color: var(--color-muted);">
+                            Every WebSocket event draws a line; pings spike higher. Driven by a
+                            <code>Float32Array</code> ring buffer + <code>requestAnimationFrame</code>.
+                        </p>
+                        <canvas id="trace-canvas" height="120" aria-label="live WebSocket activity trace"></canvas>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© <span class="year"></span> My Personal Linux Library. All rights reserved.</p>
+                <p>Built with the WebSocket API, backoff reconnection &amp; an event bus.</p>
+            </div>
+        </footer>
+
+        <script type="module" src="../assets/js/pages/live.js"></script>
+        <script type="module" src="../assets/js/modules/site.js"></script>
+        <script src="../assets/js/main.js"></script>
+    </body>
+</html>

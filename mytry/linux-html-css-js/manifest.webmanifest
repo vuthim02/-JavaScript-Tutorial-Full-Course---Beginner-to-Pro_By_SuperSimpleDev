@@ -1,0 +1,19 @@
+{
+  "name": "Linux Lib — Personal Linux Library",
+  "short_name": "Linux Lib",
+  "description": "History of Linux & Linus Torvalds — a personal learning site with terminal, API and live WebSocket demos.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f1115",
+  "theme_color": "#f2b705",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Test Linux commands in a simulated terminal, right inside the browser."
+        />
+        <meta name="theme-color" content="#f2b705" />
+        <link rel="manifest" href="../manifest.webmanifest" />
+        <link rel="icon" type="image/svg+xml" href="../assets/images/icon.svg" />
+        <title>Terminal Simulator | Linux & Linus Torvalds</title>
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/terminal.css" />
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container navbar-inner">
+                <a href="../index.html" class="brand">Linux<span>Lib</span></a>
+                <nav class="nav-links" aria-label="Main navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="history.html">History of Linux</a>
+                    <a href="linus.html">About Linus</a>
+                    <a href="about-me.html">About Me</a>
+                    <a href="terminal.html" class="active">Terminal</a>
+                    <a href="api-playground.html">API Lab</a>
+                    <a href="live.html">Live</a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Terminal Simulator</h1>
+                    <p>
+                        A safe place to <em>test Linux commands</em> — nothing here can
+                        actually break anything!
+                    </p>
+                </div>
+            </section>
+
+            <section class="container section">
+                <div class="term-window animate-in" role="application" aria-label="Linux terminal simulator">
+                    <div class="term-titlebar">
+                        <span class="term-dot term-dot-red"></span>
+                        <span class="term-dot term-dot-yellow"></span>
+                        <span class="term-dot term-dot-green"></span>
+                        <span class="term-title">user@linux-lib: ~</span>
+                    </div>
+                    <div class="term-scroll" id="term-body" aria-live="polite"></div>
+                    <form class="term-input-row" id="term-form">
+                        <span class="term-prompt" id="term-prompt"></span>
+                        <input
+                            id="term-input"
+                            type="text"
+                            autocomplete="off"
+                            autocapitalize="off"
+                            spellcheck="false"
+                            aria-label="Terminal input"
+                            placeholder="type 'help' and press Enter"
+                        />
+                    </form>
+                </div>
+                <p class="fact" style="margin-top: 1.5rem;">
+                    Try: <code>ls</code>, <code>cd Documents</code>, <code>cat notes.txt</code>,
+                    <code>whoami</code>, <code>neofetch</code>, <code>help</code>, <code>sudo</code>…
+                    Use <kbd>↑</kbd>/<kbd>↓</kbd> for history and <kbd>Ctrl</kbd> + <kbd>L</kbd> to clear.
+                </p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© <span class="year"></span> My Personal Linux Library. All rights reserved.</p>
+                <p>Built with HTML, CSS &amp; a bit of JavaScript.</p>
+            </div>
+        </footer>
+
+        <script src="../assets/js/terminal.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <div id="toast-box"></div>
+        <script type="module" src="../assets/js/modules/site.js"></script>
+    </body>
+</html>

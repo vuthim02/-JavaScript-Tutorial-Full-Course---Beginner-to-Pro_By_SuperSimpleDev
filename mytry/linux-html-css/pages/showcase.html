@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="A single-page showcase demonstrating a wide range of HTML and CSS features, as part of my web development course."
+        />
+        <meta name="keywords" content="HTML, CSS, showcase, web development, learning" />
+        <meta name="author" content="Tim" />
+        <meta name="theme-color" content="#f2b705" />
+        <meta property="og:title" content="HTML & CSS Showcase" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Max HTML & CSS features in one place." />
+        <title>Showcase | Linux & Linus Torvalds</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐧</text></svg>"
+        />
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/showcase.css" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header class="navbar">
+            <div class="container navbar-inner">
+                <a href="../index.html" class="brand">Linux<span>Lib</span></a>
+                <nav class="nav-links" aria-label="Main navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="history.html">History of Linux</a>
+                    <a href="linus.html">About Linus</a>
+                    <a href="about-me.html">About Me</a>
+                    <a href="showcase.html" class="active">Showcase</a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section class="page-hero">
+                <div class="container">
+                    <h1>HTML &amp; CSS <span>Showcase</span></h1>
+                    <p>A single page demonstrating a wide range of HTML and CSS capabilities.</p>
+                    <p class="grid-supported" style="margin-top: 0.4rem; color: var(--color-muted)"></p>
+                </div>
+            </section>
+
+            <div class="container">
+                <!-- ============ 1. Semantic & Text elements ============ -->
+                <section class="section sc-card" aria-labelledby="semantic-title">
+                    <h2 class="section-title" id="semantic-title">1 · Semantic &amp; Text Elements</h2>
+                    <article class="sc-article">
+                        <h3>Inline typography</h3>
+                        <p>
+                            <b>bold</b>, <strong>strong</strong>, <i>italic</i>,
+                            <em>emphasized</em>, <u>underline</u>, <s>strikethrough</s>,
+                            <small>small</small>, <mark>marked</mark>,
+                            H<sub>2</sub>O, E=mc<sup>2</sup>,
+                            <q>inline quote</q>, <del>deleted</del> <ins>inserted</ins>,
+                            <code>code()</code>, <samp>sample output</samp>, <var>variable</var>,
+                            <dfn title="Linux kernel">kernel</dfn>, <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>,
+                            <abbr title="GNU General Public License">GPL</abbr>,
+                            <span lang="ja">Linux<ruby> リナックス <rp>(</rp><rt>rinakkusu</rt><rp>)</rp></ruby></span>,
+                            &amp; entities: &lt; &gt; &copy; &nbsp; &hearts;
+                        </p>
+                        <p>
+                            Bi-directional text: <bdo dir="rtl">Linux</bdo> (renders right-to-left).
+                            Isolated: 123 <bdi>مرحبا</bdi> 456 keeps numbers sorted correctly.
+                        </p>
+                        <h3>A definition list</h3>
+                        <dl>
+                            <dt>POSIX</dt>
+                            <dd>A family of standards for maintaining compatibility between operating systems.</dd>
+                            <dt>Distro</dt>
+                            <dd>A Linux distribution: the kernel plus a collection of software.</dd>
+                            <dt>BDFL</dt>
+                            <dd>Benevolent Dictator For Life — a title Linus holds for the kernel.</dd>
+                        </dl>
+                        <h3>Address element</h3>
+                        <address>
+                            Written by Tim.<br />
+                            Finland / Helsinki area.<br />
+                            Built for the "SuperSimpleDev" web course.
+                        </address>
+                    </article>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 2. Media & responsive images ============ -->
+                <section class="section sc-card" aria-labelledby="media-title">
+                    <h2 class="section-title" id="media-title">2 · Media &amp; Responsive Images</h2>
+                    <div class="split">
+                        <div>
+                            <h3>&lt;picture&gt; + srcset + type</h3>
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    srcset="../assets/images/linus-200.webp 200w,
+                                            ../assets/images/linus-300.webp 300w,
+                                            ../assets/images/linus-454.webp 454w"
+                                    sizes="(min-width: 800px) 340px, 90vw"
+                                />
+                                <img
+                                    src="../assets/images/linus.webp"
+                                    alt="Linus Torvalds, creator of Linux"
+                                    class="demo-img"
+                                />
+                            </picture>
+                            <figcaption>Resize the window — the browser picks the best width.</figcaption>
+                        </div>
+                        <div>
+                            <h3>&lt;audio&gt; (controls &amp; loop)</h3>
+                            <audio controls loop preload="none">
+                                <source
+                                    src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+                                    type="audio/mpeg"
+                                />
+                                Your browser does not support the audio element.
+                            </audio>
+                            <h3>&lt;video&gt; (controls, poster)</h3>
+                            <video
+                                controls
+                                preload="none"
+                                width="100%"
+                                poster="../assets/images/linus-300.webp"
+                            >
+                                <source
+                                    src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                                    type="video/mp4"
+                                />
+                                Your browser does not support the video element.
+                            </video>
+                            <p>
+                                <small>
+                                    Media courtesy of MDN open samples (CC0). Kept remote to keep this
+                                    page lightweight.
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                    <h3>&lt;canvas&gt; — drawn with JavaScript</h3>
+                    <div class="canvas-wrap">
+                        <canvas id="kernel-chart" width="620" height="220" aria-label="Bar chart of Linux kernel growth">
+                            Your browser does not support the canvas element.
+                        </canvas>
+                    </div>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 3. Embedded content ============ -->
+                <section class="section sc-card" aria-labelledby="embed-title">
+                    <h2 class="section-title" id="embed-title">3 · Embedded Content (&lt;iframe&gt;)</h2>
+                    <p class="fact">An inline review of our own homepage, nested below:</p>
+                    <div class="iframe-holder">
+                        <iframe
+                            src="../index.html"
+                            title="Preview of the homepage"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                    <p class="no-backdrop-note" role="note">
+                        Note: <code>backdrop-filter</code> isn't supported here, so the blur
+                        fallback is used.
+                    </p>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 4. Forms: many input types ============ -->
+                <section class="section sc-card" aria-labelledby="forms-title">
+                    <h2 class="section-title" id="forms-title">4 · Forms — Every Input Type</h2>
+                    <form action="#" method="post" class="form-card" novalidate autocomplete="on">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="t-text">text (required, minlength)</label>
+                                <input type="text" id="t-text" name="t-text" required minlength="3" placeholder="at least 3 characters" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-search">search</label>
+                                <input type="search" id="t-search" name="t-search" placeholder="search…" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-password">password (autocomplete off)</label>
+                                <input type="password" id="t-password" name="t-password" autocomplete="off" minlength="6" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-number">number (min/max/step)</label>
+                                <input type="number" id="t-number" name="t-number" min="0" max="10" step="1" value="5" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-email">email (pattern + title)</label>
+                                <input
+                                    type="email"
+                                    id="t-email"
+                                    name="t-email"
+                                    placeholder="user@example.com"
+                                    pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                                    title="you@example.com"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-url">url</label>
+                                <input type="url" id="t-url" name="t-url" placeholder="https://…" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-tel">tel</label>
+                                <input type="tel" id="t-tel" name="t-tel" pattern="[0-9+ -]{6,}" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-date">date</label>
+                                <input type="date" id="t-date" name="t-date" min="1991-08-25" value="1991-08-25" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-time">time</label>
+                                <input type="time" id="t-time" name="t-time" value="12:00" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-datetime">datetime-local</label>
+                                <input type="datetime-local" id="t-datetime" name="t-datetime" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-month">month</label>
+                                <input type="month" id="t-month" name="t-month" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-week">week</label>
+                                <input type="week" id="t-week" name="t-week" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-color">color</label>
+                                <input type="color" id="t-color" name="t-color" value="#f2b705" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-range">range (0-100)</label>
+                                <input type="range" id="t-range" name="t-range" min="0" max="100" value="42" list="tickmarks" />
+                                <datalist id="tickmarks">
+                                    <option value="0" label="0"></option>
+                                    <option value="50" label="50"></option>
+                                    <option value="100" label="100"></option>
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="t-file">file (accept images)</label>
+                                <input type="file" id="t-file" name="t-file" accept="image/png, image/jpeg" />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-disabled">disabled input</label>
+                                <input type="text" id="t-disabled" value="Can't edit me" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-readonly">readonly input</label>
+                                <input type="text" id="t-readonly" value="Read only" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="t-multi">multiple (select many)</label>
+                                <select id="t-multi" name="t-multi" multiple size="4">
+                                    <option value="ubuntu">Ubuntu</option>
+                                    <option value="fedora">Fedora</option>
+                                    <option value="arch">Arch</option>
+                                    <option value="debian" selected>Debian</option>
+                                    <option value="mint">Linux Mint</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>output (from range)</label>
+                                <output id="t-range-output" for="t-range">42</output>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="survey" value="showcase-demo" />
+
+                        <fieldset>
+                            <legend>Radio group</legend>
+                            <div class="radio-group">
+                                <label><input type="radio" name="t-radio" value="a" checked /> Option A</label>
+                                <label><input type="radio" name="t-radio" value="b" /> Option B</label>
+                                <label><input type="radio" name="t-radio" value="c" disabled /> Option C (disabled)</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Checkbox group</legend>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="t-cb" value="1" checked /> Checked by default</label>
+                                <label><input type="checkbox" name="t-cb" value="2" /> Second box</label>
+                            </div>
+                        </fieldset>
+
+                        <label class="switch-control">
+                            <input type="checkbox" class="theme-switch" />
+                            <span class="switch-track"><span class="switch-thumb"></span></span>
+                            CSS-only dark / light toggle
+                        </label>
+
+                        <div style="margin-top: 1.2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button type="submit" class="btn btn-primary">Submit (with validation)</button>
+                            <button type="button" formnovalidate class="btn btn-outline">Submit ignoring validation</button>
+                            <button type="reset" class="btn btn-outline">Reset</button>
+                        </div>
+                    </form>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 5. Tables: merged cells ============ -->
+                <section class="section sc-card" aria-labelledby="table-title">
+                    <h2 class="section-title" id="table-title">5 · Tables — rowspan &amp; colspan</h2>
+                    <div class="table-wrap">
+                        <table>
+                            <caption>Linux vs. Windows vs. macOS — combined view</caption>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Attribute</th>
+                                    <th colspan="3">Operating System</th>
+                                </tr>
+                                <tr>
+                                    <th>Linux</th>
+                                    <th>Windows</th>
+                                    <th>macOS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Open source</th>
+                                    <td>✅</td>
+                                    <td>❌</td>
+                                    <td>Partial</td>
+                                </tr>
+                                <tr>
+                                    <th>Default shell</th>
+                                    <td>Bash / Zsh</td>
+                                    <td>PowerShell</td>
+                                    <td>Zsh</td>
+                                </tr>
+                                <tr>
+                                    <th>Family</th>
+                                    <td colspan="3" style="text-align: center">All support graphical desktops.</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Data summarized for learning purposes.</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 6. Interactive HTML ============ -->
+                <section class="section sc-card" aria-labelledby="interactive-title">
+                    <h2 class="section-title" id="interactive-title">6 · Interactive HTML</h2>
+
+                    <h3>&lt;dialog&gt; (modal)</h3>
+                    <button type="button" class="btn btn-primary" onclick="showDialog()">Open a dialog</button>
+                    <dialog id="info-dialog" aria-labelledby="dialog-title">
+                        <h3 id="dialog-title">A modal dialog</h3>
+                        <p>This is the HTML <code>&lt;dialog&gt;</code> element opened with JavaScript.</p>
+                        <p>Use <kbd>Esc</kbd> or the button to close it.</p>
+                        <button type="button" class="btn btn-primary" onclick="closeDialog()">Close</button>
+                    </dialog>
+
+                    <h3>The popover API</h3>
+                    <button type="button" class="btn btn-outline" popovertarget="info-pop">Show popover</button>
+                    <div id="info-pop" popover>
+                        <p>Popover content — set with the plain HTML <code>popover</code> attribute.</p>
+                        <button type="button" class="btn btn-outline" popovertarget="info-pop" popovertargetaction="hide">
+                            Hide
+                        </button>
+                    </div>
+
+                    <h3>&lt;details&gt; + &lt;summary&gt; (nested)</h3>
+                    <details open>
+                        <summary>Nested details demo</summary>
+                        <p>Outer details are open by default.</p>
+                        <details>
+                            <summary>Inner details</summary>
+                            <p>You can nest them as deep as you like.</p>
+                        </details>
+                    </details>
+
+                    <h3>&lt;template&gt; + &lt;output&gt; with JavaScript</h3>
+                    <button type="button" class="btn btn-primary" onclick="addTux()">Add a Tux</button>
+                    <output id="tux-list" aria-live="polite"></output>
+                    <template id="tux-template">
+                        <p style="color: var(--color-text); margin: 0.5rem 0">
+                            🐧 <code>template</code> node #<span class="count"></span>
+                        </p>
+                    </template>
+
+                    <h3>contenteditable &amp; tabindex</h3>
+                    <p contenteditable="true" class="editable" lang="en">
+                        Click me and edit this text. (contenteditable)
+                    </p>
+                    <p>
+                        Press <kbd>Tab</kbd> to cycle focus: start with
+                        <a href="#interactive-title" tabindex="1">tabindex 1</a>,
+                        then
+                        <a href="#forms-title" tabindex="2">tabindex 2</a>.
+                    </p>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 7. Lists & counters ============ -->
+                <section class="section sc-card" aria-labelledby="list-title">
+                    <h2 class="section-title" id="list-title">7 · Lists &amp; CSS Counters</h2>
+                    <div class="split">
+                        <div>
+                            <h3>Ordered lists (reversed, start, type)</h3>
+                            <ol reversed>
+                                <li>Three</li>
+                                <li>Two</li>
+                                <li>One</li>
+                            </ol>
+                            <ol type="A" start="3">
+                                <li>C</li>
+                                <li>D</li>
+                                <li>E</li>
+                            </ol>
+                            <h3>Nested unordered list</h3>
+                            <ul>
+                                <li>Fruits
+                                    <ul>
+                                        <li>Apple</li>
+                                        <li>Banana</li>
+                                    </ul>
+                                </li>
+                                <li>Vegetables</li>
+                            </ul>
+                        </div>
+                        <div implicit-checkbox>
+                            <h3>CSS counter (automatic numbering)</h3>
+                            <ol class="counter-ol">
+                                <li>Mount the drive</li>
+                                <li>Edit <code>init</code></li>
+                                <li>Rebuild the kernel</li>
+                                <li>Reboot</li>
+                            </ol>
+                            <p class="fact">Numbering comes from <code>counter()</code> in CSS.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 8. Layout techniques ============ -->
+                <section class="section sc-card" aria-labelledby="layout-title">
+                    <h2 class="section-title" id="layout-title">8 · Layout Techniques</h2>
+
+                    <h3>CSS Grid — named areas</h3>
+                    <div class="grid-terminal">
+                        <div class="term-head">Terminal — named grid areas</div>
+                        <pre class="term-body"><code>$ uname -r
+6.1.0-lib-linux
+$ whoami
+tim
+$ echo "grid-template-areas works!"</code></pre>
+                        <div class="term-foot">status: running <span class="dot"></span></div>
+                    </div>
+
+                    <h3>Classic float layout</h3>
+                    <div class="float-demo">
+                        <img src="../assets/images/linus-200.webp" alt="Linus Torvalds" class="float-left" />
+                        <p>
+                            This paragraph wraps around a floated image. The <code>float</code> property
+                            pushes the image to the left and the following lines flow around it. It was
+                            the main layout tool before Flexbox and Grid existed. After this block we use
+                            <code>clear</code> to stop further wrapping.
+                        </p>
+                        <p class="clearfix-hint">This second paragraph starts below because of <code>clear: both</code>.</p>
+                    </div>
+
+                    <h3>Multi-column text</h3>
+                    <div class="multi-col">
+                        <p>
+                            Linux began as a hobby in 1991 and today powers most of the modern internet.
+                            Its development is driven by thousands of contributors cooperating through a
+                            mailing list and, since 2005, the Git version control system created by Linus
+                            Torvalds himself. The kernel itself is a relatively small piece of the puzzle:
+                            any Linux distribution combines it with a bootloader, GNU tools, a desktop
+                            environment, and applications. Together these form an operating system that
+                            is free, open, and endlessly customizable.
+                        </p>
+                    </div>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 9. Colors & effects ============ -->
+                <section class="section sc-card" aria-labelledby="color-title">
+                    <h2 class="section-title" id="color-title">9 · Gradients, Effects &amp; Filters</h2>
+
+                    <div class="gradient-strips">
+                        <div class="g-linear">linear-gradient</div>
+                        <div class="g-radial">radial</div>
+                        <div class="g-conic">conic</div>
+                        <div class="g-repeat">repeating</div>
+                    </div>
+
+                    <h3>background-clip: text</h3>
+                    <p class="gradient-text">LINUX IS LIBRARY</p>
+
+                    <h3>Drop shadows &amp; glow</h3>
+                    <div class="effect-row">
+                        <div class="eff eff-shadow">box-shadow</div>
+                        <div class="eff eff-glow">text glow</div>
+                        <div class="eff eff-inner">inset</div>
+                    </div>
+
+                    <h3>CSS filters (hover me)</h3>
+                    <div class="filter-row">
+                        <img src="../assets/images/linus-300.webp" alt="blur" class="f-blur" />
+                        <img src="../assets/images/linus-300.webp" alt="grayscale" class="f-gray" />
+                        <img src="../assets/images/linus-300.webp" alt="sepia" class="f-sepia" />
+                        <img src="../assets/images/linus-300.webp" alt="invert" class="f-invert" />
+                    </div>
+
+                    <h3>clip-path shapes</h3>
+                    <div class="clip-row">
+                        <div class="clip clip-circle"></div>
+                        <div class="clip clip-hex"></div>
+                        <div class="clip clip-star"></div>
+                        <div class="clip clip-wave"></div>
+                    </div>
+
+                    <h3>backdrop-filter (blur behind)</h3>
+                    <div class="backdrop-demo">
+                        <img src="../assets/images/linus-454.webp" alt="background" />
+                        <div class="backdrop-card">Reading through a blur.</div>
+                    </div>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 10. Scroll snap ============ -->
+                <section class="section sc-card" aria-labelledby="snap-title">
+                    <h2 class="section-title" id="snap-title">10 · Scroll Snap Carousel</h2>
+                    <div class="snap-carousel" tabindex="0" role="region" aria-label="Horizontal carousel">
+                        <div class="snap-item" style="--c: #e4572e"></div>
+                        <div class="snap-item" style="--c: #f2b705"></div>
+                        <div class="snap-item" style="--c: #3a86ff"></div>
+                        <div class="snap-item" style="--c: #7a5cff"></div>
+                        <div class="snap-item" style="--c: #2ec4b6"></div>
+                    </div>
+                    <p class="fact">Scroll sideways — items snap into place.</p>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 11. Typography tricks ============ -->
+                <section class="section sc-card" aria-labelledby="typo-title">
+                    <h2 class="section-title" id="typo-title">11 · Typography Tricks</h2>
+                    <div class="split">
+                        <div>
+                            <p class="typo-shadow">text-shadow</p>
+                            <p class="typo-space">letter-spacing &amp; word-spacing</p>
+                            <p class="typo-vert">writing-mode: vertical</p>
+                        </div>
+                        <div>
+                            <p class="typo-clamp">This is long text clamped to two lines with line-clamp. Anything after the second line will be hidden and replaced by an ellipsis, thanks to the combination of overflow hidden and text-overflow.</p>
+                            <p class="typo-ellipsis">This long single-sentence line gets truncated with text-overflow: ellipsis when it does not fit.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 12. Selectors & combinator awards ============ -->
+                <section class="section sc-card" aria-labelledby="selector-title">
+                    <h2 class="section-title" id="selector-title">12 · Selectors, Pseudo &amp; Combinators</h2>
+
+                    <ul class="sel-list" data-theme="linux">
+                        <li data-type="red">:not() / attribute<span class="tag">[data-*]</span></li>
+                        <li class="special">:is() &amp; :where()</li>
+                        <li lang="es">attribute <code>[lang]</code> match</li>
+                        <li class="first-mark">:first-child</li>
+                        <li class="last-mark">:last-child</li>
+                        <li class="only">:only-of-type</li>
+                    </ul>
+
+                    <p class="sel-target">Try this anchor: <a href="#selector-title">same page link</a> — <code>:target</code> will highlight it.</p>
+                    <p class="fact">The <code class="mild">~</code> general sibling selector and <code class="mild">+</code> adjacent sibling selector power the CSS-only toggle below.</p>
+
+                    <div class="combo-demo">
+                        <p>p + p → styles this paragraph when it follows another <code>p</code>.</p>
+                        <p>And this one too (both selected by <code>p + p</code> or <code>li ~ li</code> effects).</p>
+                    </div>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 13. Container queries ============ -->
+                <section class="section sc-card" aria-labelledby="container-title">
+                    <h2 class="section-title" id="container-title">13 · Container Queries</h2>
+                    <div class="cq-host">
+                        <div class="cq-card">
+                            <strong>@container</strong><br />
+                            Resize the window — this card changes
+                            layout once its container passes a size threshold.
+                        </div>
+                        <div class="cq-card">
+                            <strong>Second card</strong><br />
+                            Both cards respond to their shared container width.
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="divider" />
+
+                <!-- ============ 14. Misc goodies ============ -->
+                <section class="section sc-card" aria-labelledby="misc-title">
+                    <h2 class="section-title" id="misc-title">14 · Misc Goodies</h2>
+                    <div class="split">
+                        <div>
+                            <h3>&lt;noscript&gt;</h3>
+                            <noscript>
+                                <p class="fact" style="color: var(--color-accent)">JavaScript is disabled.</p>
+                            </noscript>
+                            <p class="fact">If JS were off, the message above would appear.</p>
+                            <h3>data-* attributes</h3>
+                            <p data-hello="world" class="fact">
+                                This element carries <code>data-hello="world"</code> — read it from a browser console.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>draggable</h3>
+                            <p class="fact" draggable="true">Try dragging this text.</p>
+                            <h3>hidden attribute</h3>
+                            <div hidden class="hidden-attr">
+                                This element is hidden with the HTML <code>hidden</code> attribute and not visible.
+                            </div>
+                            <p class="fact">(Nothing above — it's hidden. Inspect to see the markup.)</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© 2026 My Personal Linux Library. All rights reserved.</p>
+                <p>Built with lots of HTML &amp; CSS.</p>
+            </div>
+        </footer>
+
+    </body>
+</html>

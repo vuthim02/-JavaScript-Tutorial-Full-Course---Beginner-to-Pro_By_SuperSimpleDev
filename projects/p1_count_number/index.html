@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="counter-container">
+      <h1>Counter</h1>
+
+      <!-- This shows the current number -->
+      <div class="counter-display" id="counter">0</div>
+
+      <!-- Buttons to change the number -->
+      <div class="button-group">
+        <button class="decrease" id="decreaseBtn">-</button>
+        <button class="reset" id="resetBtn">Reset</button>
+        <button class="increase" id="increaseBtn">+</button>
+      </div>
+
+      <div class="info">
+        <p>Use <kbd>↑</kbd> <kbd>↓</kbd> keys or click buttons</p>
+      </div>
+    </div>
+
+    <!-- Load our JavaScript at the end so HTML is ready first -->
+    <script src="app.js"></script>
+  </body>
+</html>

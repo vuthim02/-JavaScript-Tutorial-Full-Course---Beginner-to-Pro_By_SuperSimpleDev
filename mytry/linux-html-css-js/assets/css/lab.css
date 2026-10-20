@@ -1,0 +1,281 @@
+/* ============================================================
+   Interactive "lab" pages (API playground + Live WebSocket)
+   ============================================================ */
+
+.lab-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.lab-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: var(--shadow);
+}
+
+.lab-card h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.lab-methods {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.method-chip {
+    font-family: monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.method-chip.get { background: #2ec4b6; }
+.method-chip.post { background: #3a86ff; }
+.method-chip.put { background: #f2b705; color: #1a1a1a; }
+.method-chip.delete { background: #e4572e; }
+
+/* ---------- Buttons in lab ---------- */
+.lab-btn {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.lab-btn:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-1px);
+}
+
+.lab-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.lab-btn.primary {
+    background: var(--color-accent);
+    color: #1a1a1a;
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.lab-btn.danger {
+    background: transparent;
+    border-color: #e4572e;
+    color: #e4572e;
+}
+
+.lab-btn.danger:hover {
+    background: #e4572e;
+    color: #fff;
+}
+
+/* ---------- Status / log areas ---------- */
+.log-area {
+    background: #12161d;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1rem;
+    font-family: "JetBrains Mono", Consolas, monospace;
+    font-size: 0.85rem;
+    height: 260px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-top: 1rem;
+}
+
+.log-area .ok { color: #2ec4b6; }
+.log-area .warn { color: #f2ca5c; }
+.log-area .err { color: #ff6b6b; }
+.log-area .info { color: #9aa3af; }
+
+.stat-mini {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.stat-mini .stat {
+    background: var(--color-surface);
+}
+
+/* ---------- Status dot ---------- */
+.status-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #5b6673;
+    animation: pulse 2s infinite;
+}
+
+.status-line.online .status-dot { background: #2ec4b6; }
+.status-line.offline .status-dot { background: #ff6b6b; animation: none; }
+.status-line.connecting .status-dot { background: #f2ca5c; }
+
+/* ---------- Notes list ---------- */
+.note-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.note-item .note-body {
+    color: var(--color-muted);
+    white-space: pre-wrap;
+}
+
+.note-item .note-meta {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    margin-top: 0.4rem;
+}
+
+.note-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ---------- Live feed ---------- */
+.live-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.live-event {
+    font-family: "JetBrains Mono", Consolas, monospace;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    background: var(--color-surface);
+    color: var(--color-muted);
+    white-space: pre-wrap;
+    word-break: break-word;
+    animation: floatUp 0.25s ease both;
+}
+
+.live-event b { color: var(--color-text); }
+
+.live-event.visitor { border-left: 3px solid #3a86ff; }
+.live-event.chat { border-left: 3px solid #2ec4b6; color: var(--color-text); }
+.live-event.system { border-left: 3px solid var(--color-accent); }
+.live-event.error { border-left: 3px solid #ff6b6b; color: #ff6b6b; }
+
+/* ---------- Spinner ---------- */
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-top-color: var(--color-accent-2);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    vertical-align: -2px;
+    margin-right: 0.4rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---------- Inputs inside lab ---------- */
+.lab-row {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.6rem 0;
+}
+
+.lab-row input[type="text"],
+.lab-row input[type="email"],
+.lab--input,
+.lab-card input[type="text"],
+.lab-card textarea {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    padding: 0.6rem 0.8rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    min-width: 200px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lab-card input[type="text"],
+.lab-card textarea {
+    width: 100%;
+    margin-top: 0.4rem;
+}
+
+.lab-card input:focus,
+.lab-card textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(242, 183, 5, 0.2);
+}
+
+/* ---------- Token display ---------- */
+.token-display {
+    font-family: monospace;
+    font-size: 0.78rem;
+    background: var(--color-bg);
+    border: 1px dashed var(--color-border);
+    border-radius: 8px;
+    padding: 0.8rem;
+    color: #7fd4c1;
+    word-break: break-all;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+#trace-canvas {
+    display: block;
+    width: 100%;
+    height: 120px;
+    margin-top: 0.8rem;
+    background:
+        linear-gradient(180deg, rgba(46, 196, 182, 0.06), rgba(46, 196, 182, 0)),
+        var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+#trace-canvas:not([data-active]) {
+    filter: none;
+}

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#f2b705" />
+        <link rel="icon" type="image/svg+xml" href="../assets/images/icon.svg" />
+        <meta name="description" content="About Linus Torvalds, the creator of Linux and Git." />
+        <title>About Linus Torvalds | Linux & Linus Torvalds</title>
+        <link rel="stylesheet" href="../assets/css/style.css" />
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container navbar-inner">
+                <a href="../index.html" class="brand">Linux<span>Lib</span></a>
+                <nav class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="history.html">History of Linux</a>
+                    <a href="linus.html" class="active">About Linus</a>
+                    <a href="about-me.html">About Me</a>
+                    <a href="showcase.html">Showcase</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Linus Torvalds</h1>
+                    <p>The software engineer who started a revolution with a hobby project.</p>
+                </div>
+            </section>
+
+            <section class="container section">
+                <div class="split">
+                    <div>
+                        <h2 class="section-title">Who is Linus Torvalds?</h2>
+                        <p>
+                            Linus Benedict Torvalds is a Finnish-American software
+                            engineer, born on December 28, 1969, in Helsinki, Finland.
+                            He is best known as the creator and principal developer of
+                            the Linux kernel and the creator of Git, the version control
+                            system used by software teams around the world.
+                        </p>
+                        <p>
+                            What began in 1991 as a personal project — a "just a hobby,
+                            won't be big and professional" operating system — grew into
+                            the most successful open-source software in history.
+                        </p>
+                    </div>
+                    <div>
+                        <figure class="portrait-figure">
+                            <img src="../assets/images/linus.webp" alt="Linus Torvalds" class="portrait" />
+                            <figcaption>Linus Torvalds, creator of Linux &amp; Git</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container section">
+                <h2 class="section-title">Key Facts</h2>
+                <ul class="checked-list" style="max-width: 700px; margin: 0 auto;">
+                    <li><strong>Born:</strong> December 28, 1969, in Helsinki, Finland</li>
+                    <li><strong>Education:</strong> University of Helsinki (Computer Science)</li>
+                    <li><strong>Creator of:</strong> The Linux kernel (1991) and Git (2005)</li>
+                    <li><strong>Nationality:</strong> Finnish and American citizen</li>
+                    <li><strong>Leadership:</strong> Benevolent Dictator for Life (BDFL) of the Linux kernel project</li>
+                    <li><strong>Awards:</strong> Millennium Technology Prize (2012), IEEE Computer Pioneer Award, among many others</li>
+                    <li><strong>Famous quote:</strong> "Talk is cheap. Show me the code." (1991, when challenged about the power of Linux)</li>
+                </ul>
+            </section>
+
+            <section class="container section highlight">
+                <h2 class="section-title">The Linux Mascot: Tux</h2>
+                <p class="fact">
+                    The Linux mascot is a penguin named <strong>Tux</strong>, chosen in
+                    1996. The idea came about because Linus Torvalds was once bitten by a
+                    penguin at a zoo in Australia. The name "Tux" stands for
+                    (T)orvalds (U)ni(X), and the mascot was designed by Larry Ewing.
+                </p>
+            </section>
+
+            <section class="container section">
+                <h2 class="section-title">Git: Another Gift</h2>
+                <p class="fact">
+                    In 2005, Linus developed <strong>Git</strong>, a distributed version
+                    control system, to manage the rapidly growing Linux kernel
+                    development. It is now the standard tool for version control used by
+                    platforms like GitHub and GitLab.
+                </p>
+            </section>
+
+            <section class="container section">
+                <h2 class="section-title">Try Git Commands <span class="badge">Code</span></h2>
+                <p class="fact">
+                    Some everyday Git commands you can try on your own terminal:
+                </p>
+                <pre class="animate-in"><code>git init
+git add index.html
+git commit -m "First commit"
+git push origin main</code></pre>
+                <p class="fact" style="margin-top: 1.2rem;">
+                    Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to stop a running command, and
+                    <kbd>Ctrl</kbd> + <kbd>L</kbd> to clear your terminal.
+                </p>
+            </section>
+
+            <section class="container section">
+                <h2 class="section-title">Tell Me What You Think <span class="badge">Form</span></h2>
+                <form class="form-card animate-in" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Tim" required minlength="2" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                    </div>
+
+                    <fieldset>
+                        <legend>What do you use Linux for?</legend>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="use[]" value="desktop" /> Desktop</label>
+                            <label><input type="checkbox" name="use[]" value="server" /> Server</label>
+                            <label><input type="checkbox" name="use[]" value="dev" /> Development</label>
+                            <label><input type="checkbox" name="use[]" value="mobile" /> Mobile / Android</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Your experience level</legend>
+                        <div class="radio-group">
+                            <label><input type="radio" name="level" value="beginner" /> Beginner</label>
+                            <label><input type="radio" name="level" value="intermediate" /> Intermediate</label>
+                            <label><input type="radio" name="level" value="advanced" checked /> Advanced</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="topic">Favorite topic</label>
+                        <select id="topic" name="topic">
+                            <optgroup label="People">
+                                <option value="linus">Linus Torvalds</option>
+                                <option value="stallman">Richard Stallman</option>
+                            </optgroup>
+                            <optgroup label="History">
+                                <option value="unix">UNIX origins</option>
+                                <option value="kernel">Kernel evolution</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="distro">Choose a distro you like</label>
+                        <input
+                            type="text"
+                            id="distro"
+                            name="distro"
+                            list="distros"
+                            placeholder="Start typing..."
+                        />
+                        <datalist id="distros">
+                            <option value="Ubuntu"></option>
+                            <option value="Fedora"></option>
+                            <option value="Arch"></option>
+                            <option value="Debian"></option>
+                            <option value="Linux Mint"></option>
+                        </datalist>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">How much do you love Linux? <output id="rating-value">0</output></label>
+                        <input type="range" id="rating" name="rating" min="0" max="100" value="0" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Share your Linux story..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send feedback</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© 2026 My Personal Linux Library. All rights reserved.</p>
+                <p>Built with HTML & CSS.</p>
+            </div>
+        </footer>
+
+
+    </body>
+</html>

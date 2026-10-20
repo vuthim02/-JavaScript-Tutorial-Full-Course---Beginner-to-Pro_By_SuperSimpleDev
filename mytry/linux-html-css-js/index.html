@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="A personal website about the history of Linux and its creator Linus Torvalds." />
+        <meta name="theme-color" content="#f2b705" />
+        <link rel="manifest" href="./manifest.webmanifest" />
+        <link rel="icon" type="image/svg+xml" href="./assets/images/icon.svg" />
+        <title>Home | Linux & Linus Torvalds</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container navbar-inner">
+                <a href="index.html" class="brand">Linux<span>Lib</span></a>
+                <nav class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="pages/history.html">History of Linux</a>
+                    <a href="pages/linus.html">About Linus</a>
+                    <a href="pages/about-me.html">About Me</a>
+                    <a href="pages/terminal.html">Terminal</a>
+                    <a href="pages/api-playground.html">API Lab</a>
+                    <a href="pages/live.html">Live</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container hero-content">
+                    <h1>The World of <span>Linux</span></h1>
+                    <p>
+                        Discover the story behind the free operating system that powers
+                        everything from your phone to supercomputers, and the man who
+                        started it all: Linus Torvalds.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="pages/history.html" class="btn btn-primary">Explore History</a>
+                        <a href="pages/linus.html" class="btn btn-outline">Meet Linus</a>
+                    </div>
+                    <p style="margin-top: 1.2rem; color: var(--color-muted); font-size: 0.95rem;">
+                        Server time: <span id="live-clock" data-clock>--:--:--</span>
+                    </p>
+                </div>
+            </section>
+
+            <section class="container section highlight" id="api-status" data-reveal>
+                <h2 class="section-title">Live Server Status <span class="badge">Fetch + JSON</span></h2>
+                <p class="fact">
+                    Read live with <code>fetch()</code> from the Express API every time you load this page.
+                </p>
+                <div class="api-widget">
+                    <div class="stat">
+                        <div class="number"><span data-status-state class="status-dot online"></span></div>
+                        <div class="label">api state</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number" data-status-time>—</div>
+                        <div class="label">server time</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number" data-status-notes>—</div>
+                        <div class="label">notes stored</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number" data-status-live>—</div>
+                        <div class="label">live clients</div>
+                    </div>
+                </div>
+                <p class="fact" data-status-error hidden>
+                    Server offline. Start it with
+                    <code>cd server && npm start</code> — see <code>README.md</code>.
+                </p>
+            </section>
+
+            <section class="container section">
+                <h2 class="section-title">Quick Overview</h2>
+                <div class="cards">
+                    <article class="card" data-reveal>
+                        <h3>What is Linux?</h3>
+                        <p>
+                            Linux is a family of open-source operating systems based on a
+                            kernel first released publicly on September 17, 1991 by Linus
+                            Torvalds.
+                        </p>
+                        <a href="pages/history.html">Learn more →</a>
+                    </article>
+                    <article class="card" data-reveal>
+                        <h3>Who is Linus Torvalds?</h3>
+                        <p>
+                            A Finnish-American software engineer who created the Linux
+                            kernel and Git, the version control system used by developers
+                            worldwide.
+                        </p>
+                        <a href="pages/linus.html">Learn more →</a>
+                    </article>
+                    <article class="card" data-reveal>
+                        <h3>Why Open Source?</h3>
+                        <p>
+                            Linux introduced the world to the power of collaboration:
+                            thousands of developers around the globe building software
+                            together, freely and openly.
+                        </p>
+                        <a href="pages/history.html">Learn more →</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="container section highlight">
+                <h2 class="section-title">Did You Know?</h2>
+                <p class="fact">
+                    Linux runs about 90% of the public cloud workload and powers the vast
+                    majority of the world's supercomputers, yet it all started as a hobby
+                    project written by one student.
+                </p>
+            </section>
+
+            <section class="container section">
+                <h2 class="section-title">Linux in Numbers <span class="badge">Stats</span></h2>
+                <div class="stats-grid animate-in">
+                    <div class="stat">
+                        <div class="number">90%</div>
+                        <div class="label">Public cloud workloads</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">100%</div>
+                        <div class="label">of top 500 supercomputers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">2B+</div>
+                        <div class="label">Android devices</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">30M+</div>
+                        <div class="label">lines of kernel code</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container section">
+                <h2 class="section-title">Linux vs. Others <span class="badge">Table</span></h2>
+                <div class="table-wrap">
+                    <table class="animate-in">
+                        <caption>
+                            A quick comparison of operating systems
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Linux</th>
+                                <th>Windows</th>
+                                <th>macOS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Open source</td>
+                                <td><mark>Yes</mark></td>
+                                <td>No</td>
+                                <td>Partially</td>
+                            </tr>
+                            <tr>
+                                <td>Kernel creator</td>
+                                <td>Linus Torvalds</td>
+                                <td>Microsoft</td>
+                                <td>Apple</td>
+                            </tr>
+                            <tr>
+                                <td>Core price</td>
+                                <td>Free</td>
+                                <td>Paid</td>
+                                <td>Paid</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">
+                                    Source: various open public reports, approximate figures.
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section class="container section">
+                <h2 class="section-title">A Word From the Creator <span class="badge">Quote</span></h2>
+                <blockquote class="animate-in">
+                    "Talk is cheap. Show me the code."
+                    <cite>— Linus Torvalds, 2000</cite>
+                </blockquote>
+                <details>
+                    <summary>Read more about this famous quote</summary>
+                    <p>
+                        Linus wrote this in a mailing list discussion in <time datetime="2000-08-25">August 2000</time>,
+                        responding to someone who questioned the power of Linux. It captures the
+                        open-source spirit: <strong>action and working code matter more than words</strong>.
+                    </p>
+                </details>
+                <details>
+                    <summary>Where is <abbr title="Benevolent Dictator For Life">BDFL</abbr> used?</summary>
+                    <p>
+                        "BDFL" describes a single leader who has final say over a project. Linus Torvalds
+                        famously holds this title for the Linux kernel, and also held it for the Git project.
+                    </p>
+                </details>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© <span id="year"></span> My Personal Linux Library. All rights reserved.</p>
+                <p>Built with HTML & CSS.</p>
+            </div>
+        </footer>
+
+        <div id="toast-box"></div>
+
+        <script src="./assets/js/main.js"></script>
+        <script type="module" src="./assets/js/modules/site.js"></script>
+    </body>
+</html>

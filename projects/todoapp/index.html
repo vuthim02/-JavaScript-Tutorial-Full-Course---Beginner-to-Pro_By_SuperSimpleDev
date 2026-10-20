@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dayforge is a professional task workspace ready for Supabase auth and Postgres."
+    />
+    <title>Dayforge — Professional Task Workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Marketing -->
+    <section class="landing" id="landing">
+      <div class="landing__wrap">
+        <header class="landing__nav">
+          <div class="brand">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span class="brand__name">Dayforge</span>
+          </div>
+          <div class="landing__nav-actions">
+            <button type="button" class="btn btn--ghost" id="themeBtnLanding">Theme</button>
+            <button type="button" class="btn btn--ghost" id="goAuthBtn">Sign in</button>
+            <button type="button" class="btn btn--primary" id="goWorkspaceBtn">Open workspace</button>
+          </div>
+        </header>
+
+        <div class="landing__hero">
+          <div>
+            <p class="eyebrow">Frontend · Backend-ready · Supabase</p>
+            <h1><span class="brand__name">Dayforge</span></h1>
+            <p>
+              A production-style task product with auth screens, project boards,
+              and a clean API layer you can point at Supabase when you’re ready.
+            </p>
+            <div class="hero-actions">
+              <button type="button" class="btn btn--primary btn--lg" id="heroStartBtn">
+                Start free workspace
+              </button>
+              <a class="btn btn--ghost btn--lg" href="#architecture">View architecture</a>
+            </div>
+            <div class="hero-meta">
+              <span>Local mode works offline</span>
+              <span>Swap to Supabase in one config line</span>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-hidden="true">
+            <div class="mode-pill"><span>Live preview</span> <strong>Workspace</strong></div>
+            <div class="hero-card__row is-hot">Ship RLS policies · High</div>
+            <div class="hero-card__row">Connect auth session</div>
+            <div class="hero-card__row is-done">Design professional shell</div>
+          </aside>
+        </div>
+
+        <section class="landing__strip" id="architecture">
+          <article>
+            <h3>Frontend</h3>
+            <p>HTML + modular ES modules. Auth, views, and UI state separated cleanly.</p>
+          </article>
+          <article>
+            <h3>API layer</h3>
+            <p>`local-api` today. Flip `CONFIG.mode` to use `supabase-api` tomorrow.</p>
+          </article>
+          <article>
+            <h3>Database</h3>
+            <p>Ready-made SQL for `projects` + `tasks` with Row Level Security.</p>
+          </article>
+          <article>
+            <h3>Auth</h3>
+            <p>Sign-in / sign-up UI prepared for Supabase email + password.</p>
+          </article>
+        </section>
+      </div>
+    </section>
+
+    <!-- Auth -->
+    <section class="auth-screen is-hidden" id="authScreen" aria-hidden="true">
+      <form class="auth-card" id="authForm">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__name">Dayforge</span>
+        </div>
+        <div class="mode-pill">Backend <strong id="backendModeLabel">local</strong></div>
+        <h1 id="authTitle">Sign in</h1>
+        <p id="authSubtitle">Continue to your professional workspace.</p>
+
+        <label>
+          Email
+          <input class="field" type="email" id="authEmail" required placeholder="you@company.com" />
+        </label>
+        <label id="passwordField">
+          Password
+          <input class="field" type="password" id="authPassword" minlength="6" placeholder="••••••••" />
+        </label>
+
+        <button type="submit" class="btn btn--primary btn--block" id="authSubmitBtn">Continue</button>
+        <p class="auth-switch">
+          <span id="authSwitchText">Need an account?</span>
+          <button type="button" id="authToggleModeBtn">Create one</button>
+        </p>
+        <button type="button" class="btn btn--ghost btn--block" id="authBackBtn">Back to site</button>
+      </form>
+    </section>
+
+    <!-- App -->
+    <div class="app-shell is-hidden" id="app" aria-hidden="true">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__head">
+          <div class="brand">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span class="brand__name">Dayforge</span>
+          </div>
+          <button type="button" class="icon-btn" id="closeSidebarBtn" aria-label="Close menu">✕</button>
+        </div>
+
+        <div class="user-chip">
+          <div class="avatar" id="userAvatar">DF</div>
+          <div>
+            <strong id="userName">Operator</strong>
+            <small id="userEmail">you@dayforge.local</small>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Views">
+          <button type="button" class="nav-btn is-active" data-view="inbox">
+            <span>Inbox</span><span class="count" data-count="inbox">0</span>
+          </button>
+          <button type="button" class="nav-btn" data-view="today">
+            <span>Today</span><span class="count" data-count="today">0</span>
+          </button>
+          <button type="button" class="nav-btn" data-view="upcoming">
+            <span>Upcoming</span><span class="count" data-count="upcoming">0</span>
+          </button>
+          <button type="button" class="nav-btn" data-view="completed">
+            <span>Completed</span><span class="count" data-count="completed">0</span>
+          </button>
+        </nav>
+
+        <div>
+          <div class="section-label">
+            <span>Projects</span>
+            <button type="button" class="icon-btn" id="addProjectBtn" aria-label="Add project">+</button>
+          </div>
+          <div class="project-list" id="projectList"></div>
+        </div>
+
+        <div class="sidebar__foot">
+          <button type="button" class="btn btn--ghost btn--block" id="exportBtn">Export JSON</button>
+          <button type="button" class="btn btn--ghost btn--block" id="importBtn">Import JSON</button>
+          <input type="file" id="importFile" accept="application/json" hidden />
+          <button type="button" class="btn btn--ghost btn--block" id="themeBtnApp">Toggle theme</button>
+          <button type="button" class="btn btn--ghost btn--block" id="signOutBtn">Sign out</button>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <button type="button" class="icon-btn" id="openSidebarBtn" aria-label="Open menu">☰</button>
+          <div>
+            <h1 id="viewTitle">Inbox</h1>
+            <p id="viewSubtitle">Capture and triage unassigned work.</p>
+          </div>
+          <div class="topbar__right">
+            <label class="search">
+              <span aria-hidden="true">⌕</span>
+              <input type="search" id="searchInput" placeholder="Search tasks" />
+            </label>
+            <select class="field-soft" id="sortSelect" aria-label="Sort">
+              <option value="created">Newest</option>
+              <option value="priority">Priority</option>
+              <option value="due">Due date</option>
+              <option value="alpha">A → Z</option>
+            </select>
+          </div>
+        </header>
+
+        <main class="main">
+          <div class="stats-row">
+            <div class="stat"><span>Active</span><strong id="statActive">0</strong></div>
+            <div class="stat"><span>Due today</span><strong id="statToday">0</strong></div>
+            <div class="stat"><span>Completed</span><strong id="statDone">0</strong></div>
+          </div>
+
+          <form class="composer" id="composer">
+            <input id="taskTitle" type="text" placeholder="Add a professional task…" maxlength="120" required />
+            <div class="composer__row">
+              <select id="taskProject" aria-label="Project"></select>
+              <select id="taskPriority" aria-label="Priority">
+                <option value="1">Low</option>
+                <option value="2" selected>Medium</option>
+                <option value="3">High</option>
+              </select>
+              <input id="taskDue" type="date" aria-label="Due date" />
+              <button class="btn btn--primary" type="submit">Add</button>
+            </div>
+            <textarea id="taskNotes" rows="2" placeholder="Notes (optional)" maxlength="500"></textarea>
+          </form>
+
+          <div class="chips" id="priorityFilters">
+            <button type="button" class="chip is-active" data-priority="all">All</button>
+            <button type="button" class="chip" data-priority="3">High</button>
+            <button type="button" class="chip" data-priority="2">Medium</button>
+            <button type="button" class="chip" data-priority="1">Low</button>
+          </div>
+
+          <ul class="task-list" id="taskList"></ul>
+          <div class="empty is-hidden" id="emptyState">
+            <h2>No tasks in this view</h2>
+            <p>Add one above, or switch projects from the sidebar.</p>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <dialog class="modal" id="editModal">
+      <form method="dialog" class="modal__panel" id="editForm">
+        <header class="modal__head">
+          <h2>Edit task</h2>
+          <button class="icon-btn" value="cancel" aria-label="Close">✕</button>
+        </header>
+        <input type="hidden" id="editId" />
+        <label>Title <input id="editTitle" required maxlength="120" /></label>
+        <label>Notes <textarea id="editNotes" rows="4" maxlength="500"></textarea></label>
+        <div class="modal__grid">
+          <label>Project <select id="editProject"></select></label>
+          <label>
+            Priority
+            <select id="editPriority">
+              <option value="1">Low</option>
+              <option value="2">Medium</option>
+              <option value="3">High</option>
+            </select>
+          </label>
+          <label>Due <input id="editDue" type="date" /></label>
+        </div>
+        <footer class="modal__actions">
+          <button class="btn btn--danger" value="delete">Delete</button>
+          <button class="btn btn--ghost" value="cancel">Cancel</button>
+          <button class="btn btn--primary" value="save">Save</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="projectModal">
+      <form method="dialog" class="modal__panel" id="projectForm">
+        <header class="modal__head">
+          <h2>New project</h2>
+          <button class="icon-btn" value="cancel" aria-label="Close">✕</button>
+        </header>
+        <label>Name <input id="projectName" required maxlength="40" placeholder="e.g. Launch" /></label>
+        <label>
+          Color
+          <select id="projectColor">
+            <option value="#d4a24c">Amber</option>
+            <option value="#2fb892">Mint</option>
+            <option value="#5b8def">Blue</option>
+            <option value="#e05666">Rose</option>
+          </select>
+        </label>
+        <footer class="modal__actions">
+          <button class="btn btn--ghost" value="cancel">Cancel</button>
+          <button class="btn btn--primary" value="save">Create</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
